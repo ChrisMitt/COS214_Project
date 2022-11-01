@@ -16,11 +16,12 @@ public:
     Person();
     Person(string, string);
     string getType();
-    void clone();
+    string getStatus();
     virtual ~Person();
 
 protected:
     virtual void interact() = 0;
+    virtual Person* clone() = 0;
 
 private:
     string type;
@@ -35,9 +36,8 @@ public:
     Soldier(string, string);
     int attack();
     int defend();
-
-protected:
     virtual void interact();
+    virtual Soldier* clone();
 
 private:
     int damage;
@@ -47,10 +47,9 @@ class Medic : public Person{
 public:
     Medic();
     Medic(string, string);
-    void heal(Person);
-
-protected:
+    void heal(Person*);
     virtual void interact();
+    virtual Medic* clone();
 
 };
 
@@ -58,10 +57,9 @@ class Mechanic : public Person{
 public:
     Mechanic();
     Mechanic(string, string);
-    void repair(Vehicle);
-
-protected:
+    void repair(Vehicle*);
     virtual void interact();
+    virtual Mechanic* clone();
 
 };
 

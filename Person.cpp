@@ -21,9 +21,10 @@ string Person::getType() {
     return this->type;
 }
 
-void Person::clone() {
-    //Clone design pattern
+string Person::getStatus() {
+    return this->state;
 }
+
 
 Person::~Person() {
     delete this;
@@ -48,19 +49,27 @@ void Soldier::interact() {
     std::cout<<"ready for weapons upgrade" <<std::endl;
 }
 
+Soldier* Soldier::clone() {
+    return new Soldier(*this);
+}
+
 Medic::Medic() : Person(){
 }
 
 Medic::Medic(string t, string s) : Person(t, s){
 }
 
-void  Medic::heal(Person p) {
+void  Medic::heal(Person* p) {
     //apply memento here
-    std::cout << p.getType() << " is healed" << std::endl;
+    std::cout << p->getType() << " is healed" << std::endl;
 }
 
 void Medic::interact() {
     std::cout<<"ready for healing upgrade" <<std::endl;
+}
+
+Medic* Medic::clone() {
+    return new Medic(*this);
 }
 
 Mechanic::Mechanic() : Person(){
@@ -69,11 +78,15 @@ Mechanic::Mechanic() : Person(){
 Mechanic::Mechanic(string t, string s) : Person(t, s){
 }
 
-void  Mechanic::repair(Vehicle v) {
+void  Mechanic::repair(Vehicle* v) {
     //apply memento here
-    std::cout << v.getType() << " is repaired" << std::endl;
+    std::cout << v->getType() << " is repaired" << std::endl;
 }
 
 void Mechanic::interact() {
     std::cout<<"ready for repairing upgrade" <<std::endl;
+}
+
+Mechanic* Mechanic::clone() {
+    return new Mechanic(*this);
 }

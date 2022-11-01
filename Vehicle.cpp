@@ -27,6 +27,10 @@ string Vehicle::getType() {
     return this->type;
 }
 
+string Vehicle::getStatus() {
+    return this->state;
+}
+
 Vehicle::~Vehicle(){
     delete this;
 }
