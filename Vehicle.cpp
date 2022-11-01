@@ -27,7 +27,7 @@ string Vehicle::getType() {
     return this->type;
 }
 
-string Vehicle::getStatus() {
+string Vehicle::getState() {
     return this->state;
 }
 
