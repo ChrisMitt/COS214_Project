@@ -9,22 +9,40 @@ Person::Person() {
     type = "Civilian";
     state = "N/A";
     health = 100;
+    status = new Status();
 }
 
 Person::Person(string t, string s) {
     type = t;
     state = s;
     health = 100;
+    status = new Status();
 }
 
 string Person::getType() {
     return this->type;
 }
 
-string Person::getStatus() {
+string Person::getState() {
     return this->state;
 }
 
+void Person::setHealth(int h) {
+    this->health = health + h;
+}
+
+int Person::getHealth() {
+    return this->health;
+}
+
+Status* Person::getStatus() {
+    return this->status;
+}
+
+void Person::restore(UnitBackup* mem) {
+    health = mem->getHealth();
+    status = mem->getStatus();
+}
 
 Person::~Person() {
     delete this;
@@ -70,6 +88,18 @@ void Medic::interact() {
 
 Medic* Medic::clone() {
     return new Medic(*this);
+}
+
+UnitBackup* Medic::getMemento() {
+    return memento;
+}
+
+void Medic::setMemento(UnitBackup* mem) {
+    memento = mem;
+}
+
+UnitBackup* Soldier::makeBackup(){
+    return new UnitBackup(this->getHealth(), this->getStatus());
 }
 
 Mechanic::Mechanic() : Person(){
