@@ -1,3 +1,7 @@
+//
+// Created by Rebecca on 2022/10/31.
+//
+
 #include "Alliance.h"
 #include "CountryObserver.h"
 #include <algorithm>
