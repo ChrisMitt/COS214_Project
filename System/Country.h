@@ -14,6 +14,8 @@ using namespace std;
 class Country : public CountryObserver {
   public:
     void update();
+    void fight();
+    void add(CountryObserver* c);
   };
 
 #endif

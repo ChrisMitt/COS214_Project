@@ -1,6 +1,10 @@
 //
 // Created by Rebecca on 2022/10/31.
 //
+//
+// Composite added by Charl on 2022/11/02
+//
+
 
 #ifndef COUNTRYOBSERVER_H
 #define COUNTRYOBSERVER_H
@@ -24,6 +28,9 @@ class CountryObserver{
     void setSubject(Alliance*);
     Alliance* getSubject();
     virtual void update() = 0;
+    //Composite dp
+    virtual void fight()=0;
+    virtual void add(CountryObserver* c)=0;
   protected:
     int id;
     string name;
@@ -31,6 +38,8 @@ class CountryObserver{
     bool allianceState; // True if the country is part of an alliance, false if it is not
     State* state; // Conflict/Peace/Negotiating
     Alliance* subject; // The alliance the country is part of, which it observes
+
+    //Composite dp
 };
 
 #endif
