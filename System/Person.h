@@ -9,23 +9,32 @@
 
 #include <string>
 #include "Vehicle.h"
+#include "UnitBackup.h"
+#include "SoldierState.h"
 
 using namespace std;
+
 class Person {
 public:
     Person();
     Person(string, string);
     string getType();
-    void clone();
+    string getState();
+    int getHealth();
+    void setHealth(int);
+    Status* getStatus();
+    void restore(UnitBackup*);
     virtual ~Person();
 
 protected:
     virtual void interact() = 0;
+    virtual Person* clone() = 0;
 
 private:
     string type;
     string state;
     int health;
+    Status* status;
 };
 
 
@@ -35,9 +44,9 @@ public:
     Soldier(string, string);
     int attack();
     int defend();
-
-protected:
     virtual void interact();
+    virtual Soldier* clone();
+    UnitBackup* makeBackup();
 
 private:
     int damage;
@@ -47,21 +56,23 @@ class Medic : public Person{
 public:
     Medic();
     Medic(string, string);
-    void heal(Person);
-
-protected:
+    void heal(Person*);
     virtual void interact();
+    virtual Medic* clone();
+    UnitBackup* getMemento();
+    void setMemento(UnitBackup*);
 
+private:
+    UnitBackup* memento;
 };
 
 class Mechanic : public Person{
 public:
     Mechanic();
     Mechanic(string, string);
-    void repair(Vehicle);
-
-protected:
+    void repair(Vehicle*);
     virtual void interact();
+    virtual Mechanic* clone();
 
 };
 

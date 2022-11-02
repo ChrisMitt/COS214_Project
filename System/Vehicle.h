@@ -14,6 +14,7 @@ public:
     Vehicle(string, string);
     void clone();
     string getType();
+    string getState();
     virtual ~Vehicle();
 
 private:

@@ -1,0 +1,25 @@
+# ninja log v5
+2	644	6889995464140040	CMakeFiles/COS214_Project.dir/Person.cpp.obj	4c84633e356fc566
+846	1015	6889995467817543	COS214_Project.exe	7eae5dd3de98beb1
+2	275	6890007634103113	build.ninja	ec3fae3a472b473f
+586	846	6889995466166748	CMakeFiles/COS214_Project.dir/VehicleFactory.cpp.obj	8bfdb9de1827e32d
+10	614	6889995463746849	CMakeFiles/COS214_Project.dir/Person_test.cpp.obj	8ec6eec5e0b84c42
+14	633	6889995464030024	CMakeFiles/COS214_Project.dir/Vehicle.cpp.obj	fb2e223ed4380a4c
+19	615	6889995463736784	CMakeFiles/COS214_Project.dir/Status.cpp.obj	840bdc6cc5328f8e
+24	626	6889995463960040	CMakeFiles/COS214_Project.dir/UnitFactory.cpp.obj	90547db2b2747fe3
+6	585	6889995463385655	CMakeFiles/COS214_Project.dir/UnitBackup.cpp.obj	91f79cf4346107cc
+16	428	6890011398293379	CMakeFiles/COS214_Project.dir/VehicleFactory.cpp.obj	8bfdb9de1827e32d
+11	429	6890011398303563	CMakeFiles/COS214_Project.dir/UnitFactory.cpp.obj	90547db2b2747fe3
+20	435	6890011398369612	CMakeFiles/COS214_Project.dir/SoldierState.cpp.obj	c9a8b2be2ad4e5bf
+7	436	6890011398369612	CMakeFiles/COS214_Project.dir/Person_test.cpp.obj	8ec6eec5e0b84c42
+3	266	6890012349365199	CMakeFiles/COS214_Project.dir/Person.cpp.obj	4c84633e356fc566
+266	368	6890012350344699	COS214_Project.exe	fbcfd12fb6e92d04
+2	238	6890012915822929	CMakeFiles/COS214_Project.dir/Person_test.cpp.obj	8ec6eec5e0b84c42
+239	342	6890012916803885	COS214_Project.exe	fbcfd12fb6e92d04
+4	243	6890014475855488	CMakeFiles/COS214_Project.dir/Person_test.cpp.obj	8ec6eec5e0b84c42
+244	337	6890014476743127	COS214_Project.exe	fbcfd12fb6e92d04
+3	315	6890018058174352	CMakeFiles/COS214_Project.dir/Person_test.cpp.obj	8ec6eec5e0b84c42
+16	331	6890018058340231	CMakeFiles/COS214_Project.dir/UnitFactory.cpp.obj	90547db2b2747fe3
+12	347	6890018058500368	CMakeFiles/COS214_Project.dir/VehicleFactory.cpp.obj	8bfdb9de1827e32d
+7	360	6890018058641061	CMakeFiles/COS214_Project.dir/Person.cpp.obj	4c84633e356fc566
+360	456	6890018059541704	COS214_Project.exe	fbcfd12fb6e92d04
