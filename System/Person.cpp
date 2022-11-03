@@ -51,8 +51,9 @@ Person::~Person() {
 Soldier::Soldier() : Person(){
 }
 
-Soldier::Soldier(string t, string s) : Person(t, s){
+Soldier::Soldier(string t, string s, RnD* up) : Person(t, s){
     damage = 25;
+    upgrade = up;
 }
 
 int Soldier::attack() {
@@ -61,6 +62,10 @@ int Soldier::attack() {
 
 int Soldier::defend() {
     return this->damage;
+}
+
+int Soldier::research() {
+    upgrade->research();
 }
 
 void Soldier::interact() {
@@ -119,4 +124,12 @@ void Mechanic::interact() {
 
 Mechanic* Mechanic::clone() {
     return new Mechanic(*this);
+}
+
+UnitBackup* Mechanic::getMemento() {
+    return memento;
+}
+
+void Mechanic::setMemento(UnitBackup* mem) {
+    memento = mem;
 }

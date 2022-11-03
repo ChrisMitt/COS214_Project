@@ -10,7 +10,7 @@
 #include <string>
 #include "Vehicle.h"
 #include "UnitBackup.h"
-#include "SoldierState.h"
+//#include "SoldierState.h"
 
 using namespace std;
 
@@ -41,15 +41,17 @@ private:
 class Soldier : public Person{
 public:
     Soldier();
-    Soldier(string, string);
+    Soldier(string, string, RnD*);
     int attack();
     int defend();
+    int research();
     virtual void interact();
     virtual Soldier* clone();
     UnitBackup* makeBackup();
 
 private:
     int damage;
+    RnD* upgrade;
 };
 
 class Medic : public Person{
@@ -73,7 +75,11 @@ public:
     void repair(Vehicle*);
     virtual void interact();
     virtual Mechanic* clone();
+    UnitBackup* getMemento();
+    void setMemento(UnitBackup*);
 
+private:
+    UnitBackup* memento;
 };
 
 #endif //COS214_PROJECT_PERSON_H
