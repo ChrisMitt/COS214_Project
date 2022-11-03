@@ -6,13 +6,33 @@
 
 using namespace std;
 
+/**
+*  A Negotiate class. ConcreteStrategy Class for the StrategyPattern .
+*/
+
 class Negotiate : public WarStrategy
 {
 private:
     /* data */
 public:
+
+    /**
+    * A constructor.
+    * Default Negotiate constructor.
+    */
     Negotiate();
+
+    /**
+    * A destructor.
+    * Negotiate destructor.
+    */
     ~Negotiate();
+
+    /**
+    * A normal member.
+    * @see Negotiate()
+    * @see ~Negotiate()
+    */
     void RulesofEngagement();
 };
 
