@@ -1,15 +1,29 @@
+//
+// Created by Akani Hlungwani
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef PHASESOFWAR_H
 #define PHASESOFWAR_H
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "WarPhaseChanger.h"
 #include <iostream>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using namespace std;
+
 class WarPhaseChanger;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /**
 *  A PhasesofWar class. State Class for the StatePattern .
 */
-
 class PhasesofWar
 {
     private:
@@ -31,19 +45,15 @@ class PhasesofWar
 
         /**
         * A pure virtual member.
-        * @see PhasesofWar()
-        * @see ~PhasesofWar()
-        * @see getPhase()
         * @param WPC  a pointer argument
         */
         virtual void changePhase(WarPhaseChanger* WPC) = 0;
 
         /**
         * A pure virtual member.
-        * @see changePhase()
         * @return A string 
         */
-        virtual std::string getPhase() = 0;
+        virtual string getPhase() = 0;
 
 };
 

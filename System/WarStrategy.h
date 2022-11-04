@@ -1,14 +1,42 @@
+//
+// Created by Akani Hlungwani
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef WARSTRATEGY_H
 #define WARSTRATEGY_H
 
-/**
- *  A WarStrategy class. Startegy Class which is abstract .
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <string>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using namespace std;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *  A WarStrategy class. Abstract class that represents the Startegy Class in the Strategy Pattern.
+ */
 class WarStrategy
 {
-    private:
-        /* data */
+    public:
+
+       /** 
+       * A private variable.
+       * A String that holds the name of the Strategy.
+       */
+        string startegy_name;
+
+        
+       /** 
+       * A private variable.
+       * A Boolean that stores the status of the Strategy.
+       */
+        bool status;
+
     public:
 
         /**
@@ -23,12 +51,11 @@ class WarStrategy
        */
         ~WarStrategy();
 
-        /**
+       /**
        * A pure virtual member.
-       * @see WarStrategy()
-       * @see ~WarStrategy()
        */
         virtual void RulesofEngagement() = 0; 
+
 };
 
 

@@ -1,35 +1,46 @@
+//
+// Created by Akani Hlungwani
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef WARPHASECHANGER_H
 #define WARPHASECHANGER_H
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "PhasesofWar.h"
 #include "WarStrategy.h"
-
 #include <iostream>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using namespace std;
 
+/*Foward Declaration*/
 class PhasesofWar;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  *  A WarPhaseChanger class. Context Class for both the Strategy and State Pattern .
  */
-
 class WarPhaseChanger
 {
     private:
        
        /** 
-       * a public variable.
+       * a private variable.
        * A pointer to a PhasesofWar Object/Class.
        */
         PhasesofWar* War_phase;
         
        /** 
-       * a public variable.
+       * a private variable.
        * A pointer to a WarStrategy Object/Class.
        */
         WarStrategy* CountryStrat;
+
     public:
 
        /**
@@ -47,19 +58,12 @@ class WarPhaseChanger
        /**
        * a normal member taking one arguments and sets the WarStrategy pointer.
        * @param Strategy a pointer argument.
-       * @see WarPhaseChanger()
-       * @see ~WarPhaseChanger()
-       * @see Engage()
-       * @see setPhase()
-       * @see requestPhase()
-       * @see getPhase()
        */
         void setStrategy(WarStrategy* Strategy);
 
        /**
        *  a normal member taking one arguments and sets the WarStrategy pointer.
        * @param Strategy a pointer argument.
-       * @see setStrategy()
        */
         void Engage();  
 
@@ -79,6 +83,18 @@ class WarPhaseChanger
        *  @return The String name of the Phase
        */
         string getPhase();
+
+       /**
+       *  a normal member that return that type of Srategy.
+       *  @return The String name of the Strategy
+       */
+        string getStrategy();
+
+        /**
+       *  a normal member that gets the Status of the Strategy.
+       *  @return The Boolean Status of the Strategy
+       */
+        bool Status();
 
 };
 
