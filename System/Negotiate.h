@@ -1,39 +1,50 @@
+//
+// Created by Akani Hlungwani
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef NEGOTIATE_H
 #define NEGOTIATE_H
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "WarStrategy.h"
 #include <iostream>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using namespace std;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
 *  A Negotiate class. ConcreteStrategy Class for the StrategyPattern .
 */
-
 class Negotiate : public WarStrategy
 {
-private:
-    /* data */
-public:
+    private:
 
-    /**
-    * A constructor.
-    * Default Negotiate constructor.
-    */
-    Negotiate();
+    public:
 
-    /**
-    * A destructor.
-    * Negotiate destructor.
-    */
-    ~Negotiate();
+        /**
+        * A constructor.
+        * Default Negotiate constructor.
+        */
+        Negotiate();
 
-    /**
-    * A normal member.
-    * @see Negotiate()
-    * @see ~Negotiate()
-    */
-    void RulesofEngagement();
+        /**
+        * A destructor.
+        * Negotiate destructor.
+        */
+        ~Negotiate();
+
+        /**
+        * A normal member.
+        * @see Negotiate()
+        * @see ~Negotiate()
+        */
+        void RulesofEngagement();
 };
 
 #endif

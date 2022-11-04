@@ -1,10 +1,22 @@
+
+//
+// Created by Akani Hlungwani
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef DIPLOMACY_H
 #define DIPLOMACY_H
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "WarStrategy.h"
 #include <iostream>
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using namespace std;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
 *  A Diplomacy class. ConcreteStrategy Class for the StrategyPattern .
@@ -12,30 +24,27 @@ using namespace std;
 
 class Diplomacy : public WarStrategy
 {
-private:
-    /* data */
+    private:
+   
+    public:
 
-public:
+        /**
+        * A constructor.
+        * Default Diplomacy constructor.
+        */
 
-    /**
-    * A constructor.
-    * Default Diplomacy constructor.
-    */
+        Diplomacy();
 
-    Diplomacy();
+        /**
+        * A destructor.
+        * Diplomacy destructor.
+        */
+        ~Diplomacy();
 
-    /**
-    * A destructor.
-    * Diplomacy destructor.
-    */
-    ~Diplomacy();
-
-    /**
-    * A normal member.
-    * @see Diplomacy()
-    * @see ~Diplomacy()
-    */
-    void RulesofEngagement();
+        /**
+        * A normal member.
+        */
+        void RulesofEngagement();
 
 };
 
