@@ -14,7 +14,8 @@ class VehicleFactory : public UnitFactory {
 public:
     VehicleFactory();
     ~VehicleFactory();
-    Vehicle* createVehicle(string);
+    Person* createPerson(string, string);
+    Vehicle* createVehicle(string, string);
 };
 
 

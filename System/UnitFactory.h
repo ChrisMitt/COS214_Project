@@ -15,8 +15,8 @@ class UnitFactory {
 public:
     UnitFactory();
     virtual ~UnitFactory();
-    virtual Person* createPerson(string) = 0;
-    virtual Vehicle* createVehicle(string) = 0;
+    virtual Person* createPerson(string, string) = 0;
+    virtual Vehicle* createVehicle(string, string) = 0;
 
 protected:
     string getName();

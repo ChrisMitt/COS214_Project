@@ -14,7 +14,8 @@ class PersonFactory : public UnitFactory {
 public:
     PersonFactory();
     ~PersonFactory();
-    Person* createPerson(string);
+    Vehicle* createVehicle(string, string);
+    Person* createPerson(string, string);
 };
 
 #endif //PROJ_FACTORIES_CONCRETEPERSONFACTORY_H

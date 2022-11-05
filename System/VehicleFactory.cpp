@@ -12,29 +12,29 @@ using namespace std;
 
 VehicleFactory::VehicleFactory()
 {
-
+    cout<<"The Vehicle Factory is open to create vehicles."<<endl;
 }
 
 VehicleFactory::~VehicleFactory()
 {
-
+    cout<<"The Vehicle Factory is closed down."<<endl;
 }
 
-Vehicle* VehicleFactory::createVehicle(string vehicleType)
+Vehicle* VehicleFactory::createVehicle(string vehicleType, string subType)
 {
     if (vehicleType == "tank")
     {
-        Tank* createdTank = new Tank("tank", "creating", new Research);
+        Tank* createdTank = new Tank(subType, "creating", new Research);
         return createdTank;
     }
     else if (vehicleType == "ship")
     {
-        Ship* createdShip = new Ship("ship", "creating", new Research);
+        Ship* createdShip = new Ship(subType, "creating", new Research);
         return createdShip;
     }
     else
     {
-        Plane* createdPlane = new Plane("plane", "creating", new Research);
+        Plane* createdPlane = new Plane(subType, "creating", new Research);
         return createdPlane;
     }
     //Soldier* s = new Soldier(0, 0, "", "");
