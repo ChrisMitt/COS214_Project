@@ -10,6 +10,7 @@
 #include <string>
 #include "Vehicle.h"
 #include "UnitBackup.h"
+#include "Decorator.h"
 //#include "SoldierState.h"
 
 using namespace std;
