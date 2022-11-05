@@ -72,6 +72,8 @@ class CountryObserver{
     vector<Soldier*> soldiers;
     vector<Mechanic*> mechanics;
     vector<Tank*> tanks;
+    vector<Ship*> ships;
+    vector<Plane*> planes;
   protected:
     int id;
     string name;
