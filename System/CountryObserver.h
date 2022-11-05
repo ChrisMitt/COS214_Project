@@ -1,113 +1,87 @@
 //
 // Created by Rebecca on 2022/10/31.
-//
-
+// Edited by Charl on 2022/11/02
 #ifndef COUNTRYOBSERVER_H
 #define COUNTRYOBSERVER_H
 #include "Alliance.h"
 #include "State.h"
+#include "Person.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
+//The default/minimum values for any country's army
+struct Army
+{
+    struct{
+        int amount = 0;
+        int instanceHP = 100;
+    } medics;
+    struct{
+        int amount = 0;
+        int instanceHP = 200;
+        int instanceDMG = 120;
+    } soldiers;
+    struct{
+        int amount=0;
+        int instanceHP = 150;
+    } mechanics;
+    struct{
+        string name="Sherman";
+        int amount=2;
+        int instanceHP=20;
+        int instanceDMG=1000;
+        int instanceArmour=400;//take 400 less damage from each shot
+    } tanks;
+};
+
 class Alliance;
-/**
- * @brief a CountryObserver class. an observer class
- *  for the alliance class, an observer for the observer design pattern
- * 
- */
+
 class CountryObserver{
   public:
-  /**
-   * @brief Construct a new Country Observer object
-   * 
-   */
     CountryObserver();
-    /**
-     * @brief Set the Name object
-     * @param String a string argument
-     */
+    ~CountryObserver();
     void setName(string);
-    /**
-     * @brief Get the Name object
-     * 
-     * @return string 
-     */
     string getName();
-    /**
-     * @brief get the ID object
-     * 
-     * @return int 
-     */
     int getID();
     void setState(State*);
-    /**
-     * @brief Get the State object
-     * 
-     * @return State* 
-     */
     State* getState();
-    /**
-     * @brief Get the Alliance State object
-     * 
-     * @return true 
-     * @return false 
-     */
     bool getAllianceState();
-    /**
-     * @brief Set the Alliance State object
-     * @param bool a bool argument
-     */
     void setAllianceState(bool);
-    /**
-     * @brief Set the Subject object
-     * @param Alliance a pointer argument
-     */
     void setSubject(Alliance*);
-    /**
-     * @brief Get the Subject object
-     * 
-     * @return Alliance* 
-     */
     Alliance* getSubject();
-    /**
-     * @brief a pure virtual member
-     * 
-     */
     virtual void update() = 0;
+    //War Theatre
+    virtual void fight()=0;
+    virtual void add(CountryObserver* c)=0;
+    void setEntities(string countryName);//sets the military forces based on the country
+    void fillArmyStruct();
+    void createArmy();
+    void printArmy();
+    void printMedics();
+    void printSoldiers();
+    void printMechanics();
+    void printTanks();
+    //1.Ground
+    vector<Medic*> medics;
+    vector<Soldier*> soldiers;
+    vector<Mechanic*> mechanics;
+    vector<Tank*> tanks;
+    //2.Navy
+    vector<Ship*> ships;
+    //3.Air
+    vector<Plane*> planes;
   protected:
-  /**
-   * @brief a private variable
-   * an int int that holds the id
-   */
     int id;
-    /**
-     * @brief a private variable
-     * a string that holds  the name
-     * 
-     */
     string name;
-    /**
-     * a  private variable
-     * a static int that holds the total number of contries
-     * 
-     */
     static int total; // Total number of countries
-    /**
-     * @brief a private member
-     * a boolean that holds True if the country is part of an alliance, false if it is not
-     */
     bool allianceState; // True if the country is part of an alliance, false if it is not
- /**
-     * a private variable
-     * a State pointer that holds the phase of the war
-     * 
-     */
     State* state; // Conflict/Peace/Negotiating
-    /**
-     * @brief a private variable
-     *an Alliannce pointer that holds The alliance the country is part of, which it observe
-     */
     Alliance* subject; // The alliance the country is part of, which it observes
+
+    //Army stats
+    Army* army;
+
 };
 
 #endif
