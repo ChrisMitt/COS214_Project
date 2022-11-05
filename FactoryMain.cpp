@@ -7,9 +7,9 @@
 
 int main()
 {
-   //Begin
-   cout<< "///////////////////Testing The///////////////////" <<endl;
-   cout<< "////////////////////Factories////////////////////" <<endl;
+    //Begin
+    cout<< "///////////////////Testing The///////////////////" <<endl;
+    cout<< "////////////////////Factories////////////////////" <<endl;
 
     // factories
     int numFacs = 2;
@@ -51,9 +51,9 @@ int main()
     int numP;
     cout<< "How many persons are there?" <<endl;
     cin>>numP;
-    Person** persons = new Vehicle*[numP];
+    Person** persons = new Person*[numP];
     int personType;
-    string subType;
+    //string subType;
     for (int i = 0; i < numP; i++)
     {
         cout<< "What is the person type of person " << i+1 << "? "<<endl;
@@ -94,7 +94,7 @@ int main()
     {
         delete factories[i];
     }
-    delete [] factories;
+    //delete [] factories;
 
     return 0;
 }
