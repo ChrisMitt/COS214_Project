@@ -1,6 +1,7 @@
 //
 // Created by Rebecca on 2022/10/31.
 //
+// Edited by Charl on 2022/10/31
 
 #include <iostream>
 #include "Country.h"
@@ -8,6 +9,7 @@
 #include "State.h"
 #include <list>
 #include <iterator>
+#include "WarTheatre.h"
 using namespace std;
 
 Country* UN[12]; // Array of countries in UN
@@ -166,14 +168,21 @@ void showUN()
     }
 }
 
+void startBattle(){
+    WarTheatre* w = new WarTheatre();
+    w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "land", "Afghanistan");
+}
+
 int main()
 {
     //Populating countries array
-    string names[12] = {"Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan", "Bahamas"};
+    string names[12] = {"Afghanistan", "China", "France", "Germany", "Japan", "North Korea", "Norway", "Russia", "South Korea", "United Kingdom", "United States of America", "Zimbabwe"};
     for (int i = 0; i < 12; i++)
     {
         UN[i] = new Country();
         UN[i] -> setName(names[i]);
+        UN[i] -> setEntities(names[i]);//set the base armies for the countries
+        UN[i] -> printArmy();
     }
     
     
@@ -197,8 +206,10 @@ int main()
         else if (input == 4)
         {
             showUN();
+        }else if (input==5){
+            startBattle();
         }
-        cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[0] Exit\n";
+        cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[5] Start battle\n[0] Exit\n";
         cin >> input;
     }
     

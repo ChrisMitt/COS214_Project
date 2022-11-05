@@ -18,7 +18,8 @@ using namespace std;
 class Person {
 public:
     Person();
-    Person(string, string);
+    Person(string, string, int h=100);
+    Person(Person*);
     string getType();
     string getState();
     int getHealth();
@@ -26,12 +27,13 @@ public:
     Status* getStatus();
     void restore(UnitBackup*);
     virtual ~Person();
+    void takeDamage(int amount);
 
 protected:
     virtual void interact() = 0;
     virtual Person* clone() = 0;
 
-private:
+protected:
     string type;
     string state;
     int health;
@@ -43,13 +45,15 @@ class Soldier : public Person{
 public:
     Soldier();
     Soldier(string, string, RnD*);
+    Soldier(string, string, int h=100, int d=25);
     int attack();
     int defend();
     int research();
     virtual void interact();
     virtual Soldier* clone();
     UnitBackup* makeBackup();
-
+    int getDamage();
+    void doDamage(Person* victim);
 private:
     int damage;
     RnD* upgrade;
@@ -58,7 +62,7 @@ private:
 class Medic : public Person{
 public:
     Medic();
-    Medic(string, string);
+    Medic(string, string, int h=100);
     void heal(Person*);
     virtual void interact();
     virtual Medic* clone();
@@ -72,7 +76,7 @@ private:
 class Mechanic : public Person{
 public:
     Mechanic();
-    Mechanic(string, string);
+    Mechanic(string, string, int h=100);
     void repair(Vehicle*);
     virtual void interact();
     virtual Mechanic* clone();

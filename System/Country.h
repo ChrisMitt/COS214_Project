@@ -21,6 +21,8 @@ class Country : public CountryObserver {
    * 
    */
     void update();
+    void fight();
+    void add(CountryObserver* c);
   };
 
 #endif
