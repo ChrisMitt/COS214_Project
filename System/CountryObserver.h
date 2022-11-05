@@ -1,11 +1,6 @@
 //
 // Created by Rebecca on 2022/10/31.
-//
-//
 // Edited by Charl on 2022/11/02
-//
-
-
 #ifndef COUNTRYOBSERVER_H
 #define COUNTRYOBSERVER_H
 #include "Alliance.h"

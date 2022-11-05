@@ -1,8 +1,6 @@
 //
 // Created by Rebecca on 2022/10/31.
-//
-// Edited by Charl on 2022/11/04
-
+// Edited by Charl on 2022/10/31
 #include "CountryObserver.h"
 using namespace std;
 
