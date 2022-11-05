@@ -31,17 +31,19 @@ int main()
         cout<< "1 == Plane" <<endl;
         cout<< "2 == Ship" <<endl;
         cin>>vehicleType;
+        cout<< "What is the vehicle " << i+1 << "'s name/model? "<<endl;
+        cin>>subType;
         if (vehicleType == 0)
         {
-            vehicles[i] = factories[0]->createVehicle("tank", "Rooikat");
+            vehicles[i] = factories[0]->createVehicle("tank", subType);
         }
         else if (vehicleType == 1)
         {
-            vehicles[i] = factories[0]->createVehicle("ship", "SAS Johanna van der Merwe");
+            vehicles[i] = factories[0]->createVehicle("ship", subType);
         }
         else if (vehicleType == 2)
         {
-            vehicles[i] = factories[0]->createVehicle("plane", "Atlas Cheetah");
+            vehicles[i] = factories[0]->createVehicle("plane", subType);
         }
     }
 
@@ -59,17 +61,19 @@ int main()
         cout<< "1 == Medic" <<endl;
         cout<< "2 == Mechanic" <<endl;
         cin>>personType;
+        cout<< "What is the person " << i+1 << "'s rank? "<<endl;
+        cin>>subType;
         if (personType == 0)
         {
-            persons[i] = factories[0]->createVehicle("soldier", "Major");
+            persons[i] = factories[1]->createPerson("soldier", subType);
         }
         else if (personType == 1)
         {
-            persons[i] = factories[0]->createVehicle("medic", "Nurse");
+            persons[i] = factories[1]->createPerson("medic", subType);
         }
         else if (personType == 2)
         {
-            persons[i] = factories[0]->createVehicle("mechanic", "Apprentice");
+            persons[i] = factories[1]->createPerson("mechanic", subType);
         }
     }
     return 0;
