@@ -12,8 +12,8 @@ int main()
     cout<< "////////////////////Factories////////////////////" <<endl;
 
     // factories
-    int numFacs = 2;
-    UnitFactory* factories[numFacs];
+    //int numFacs = 2;
+    UnitFactory* factories[2];
     factories[0] = new VehicleFactory();
     factories[1] = new PersonFactory();
 
@@ -90,7 +90,7 @@ int main()
     }
     delete [] persons;
 
-    for (int i = 0; i < numFacs; i++)
+    for (int i = 0; i < 2; i++)
     {
         delete factories[i];
     }
