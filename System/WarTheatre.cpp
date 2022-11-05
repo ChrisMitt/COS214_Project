@@ -66,7 +66,7 @@ void WarTheatre::fight(){
 }
 
 void WarTheatre::soldiersFight(){
-    cout<<"1: SOLDIERS FIGHTING"<<endl;
+    cout<<"== 1: SOLDIERS FIGHTING =="<<endl;
     bool done=false;
     int i=0;
     srand( time(NULL) );
@@ -127,7 +127,7 @@ void WarTheatre::tanksFight(){
         i++;
     }*/
 
-    cout<<"2: TANKS FIGHTING\n";
+    cout<<"== 2: TANKS FIGHTING: ==\n";
     vector<Tank*> allTanks;
 }
 
