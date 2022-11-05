@@ -76,5 +76,25 @@ int main()
             persons[i] = factories[1]->createPerson("mechanic", subType);
         }
     }
+
+    //Deletes
+    for (int i = 0; i < numV; i++)
+    {
+        delete vehicles[i];
+    }
+    delete [] vehicles;
+
+    for (int i = 0; i < numP; i++)
+    {
+        delete persons[i];
+    }
+    delete [] persons;
+
+    for (int i = 0; i < numFacs; i++)
+    {
+        delete factories[i];
+    }
+    delete [] factories;
+
     return 0;
 }
