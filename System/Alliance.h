@@ -86,7 +86,7 @@ class Alliance {
     int id;
     /**
      * a private variable
-     * a string that holds name of contries in the alliance
+     * a string that holds name
      * 
      */
     string name;
