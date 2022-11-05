@@ -67,7 +67,9 @@ class CountryObserver{
     vector<Soldier*> soldiers;
     vector<Mechanic*> mechanics;
     vector<Tank*> tanks;
+    //2.Navy
     vector<Ship*> ships;
+    //3.Air
     vector<Plane*> planes;
   protected:
     int id;
