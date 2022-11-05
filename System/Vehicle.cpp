@@ -52,11 +52,12 @@ void Vehicle::restore(UnitBackup* mem) {
 }
 
 UnitBackup* Vehicle::makeBackup(){
-    return new UnitBackup(this->getAmour(), this->getStatus());
+    return new UnitBackup(this->getArmour(), this->getStatus());
 }
 
 int Vehicle::research() {
     upgrade->research();
+    return 0;
 }
 
 int Vehicle::getArmour(){

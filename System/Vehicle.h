@@ -23,7 +23,7 @@ public:
     string getType();
     string getState();
     UnitBackup* makeBackup();
-    int getAmour();
+    //int getAmour();
     void setArmour(int);
     Status* getStatus();
     void restore(UnitBackup*);

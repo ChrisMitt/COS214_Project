@@ -7,6 +7,7 @@
 
 int Research::research() {
     //cout<< "Extra "<< this->getType() << " added." <<endl;
+    return 0;
 }
 
 Upgrade::Upgrade(RnD* up) {
@@ -17,6 +18,7 @@ int Upgrade::research() {
     if(newUpgrade){
         newUpgrade->research();
     }
+    return 0;
 }
 
 Upgrade::~Upgrade(){
