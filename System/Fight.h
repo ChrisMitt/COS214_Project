@@ -31,7 +31,7 @@ class Fight : public WarStrategy
         * A constructor.
         * Default Fight constructor.
         */
-        Fight();
+        Fight(bool s);
         
         /**
         * A destructor.

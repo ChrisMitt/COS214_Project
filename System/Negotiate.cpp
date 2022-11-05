@@ -12,7 +12,7 @@ using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Negotiate::Negotiate() : WarStrategy()
+Negotiate::Negotiate(bool s) : WarStrategy(s)
 {
     this->startegy_name="Negotiate";
 }

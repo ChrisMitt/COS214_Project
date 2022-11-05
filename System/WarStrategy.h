@@ -43,7 +43,7 @@ class WarStrategy
        * A constructor.
        * Default War Startegy constructor.
        */
-        WarStrategy();
+        WarStrategy(bool s);
 
        /**
        * A destructor.
