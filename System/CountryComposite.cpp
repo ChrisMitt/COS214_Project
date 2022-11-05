@@ -1,4 +1,7 @@
 #include "CountryComposite.h"
+#include <vector>
+
+using namespace std;
 
 CountryComposite::CountryComposite(/* args */)
 {
@@ -9,9 +12,10 @@ CountryComposite::~CountryComposite()
 }
 
 void CountryComposite::fight(){
-    vector<CountryObserver>::iterator it;
+    vector<CountryObserver*>::iterator it;
     for(it=children.begin(); it!=children.end(); it++){
-        (*it)->print();
+        cout << name << " is now fighting, for alliance: " << subject->getName() << endl;
+        (*it)->fight();
     }
 }
 
