@@ -1,5 +1,6 @@
 # ninja log v5
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 9	614	6891697707670407	CMakeFiles/COS214_Project.dir/Person.cpp.obj	28a862c015dd4bbd
 251	348	6891700226708239	COS214_Project.exe	fbcfd12fb6e92d04
 2	275	6891716196023331	build.ninja	ec3fae3a472b473f
@@ -80,6 +81,8 @@
 3	246	6891834178978778	CMakeFiles/COS214_Project.dir/Person_test.cpp.obj	c19bbc2285914dcb
 246	335	6891834179832719	COS214_Project.exe	100ad08b33a6f15d
 =======
+=======
+>>>>>>> Stashed changes
 1229	1448	6893913933702391	COS214_Project.exe	fbcfd12fb6e92d04
 5	1010	6893913929361956	CMakeFiles/COS214_Project.dir/Person.cpp.obj	28a862c015dd4bbd
 1	191	6893914314724472	build.ninja	42589e2d48712dd5
@@ -90,4 +93,7 @@
 23	963	6893913928713936	CMakeFiles/COS214_Project.dir/UnitFactory.cpp.obj	3c727c197662df65
 955	1229	6893913931556173	CMakeFiles/COS214_Project.dir/UnitBackup.cpp.obj	e665b33cb60994d4
 947	1216	6893913931425011	CMakeFiles/COS214_Project.dir/SoldierState.cpp.obj	511eab6fb5037ac8
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
