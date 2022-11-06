@@ -13,6 +13,7 @@
 #include <iterator>
 #include "CountryComposite.h"
 #include "Squad.h"
+#include "DeployContext.h"
 using namespace std;
 
 
@@ -28,7 +29,6 @@ private:
  * @brief a list of Alliances 
  * 
  */
-    list<Alliance*> allAlliances;
     /**
      * @brief A squad pointer object
      * 
@@ -40,11 +40,22 @@ private:
      */
     Squad* attackers;
 
-    //used by fight methods
+    //Context of Strategy dp
+    DeployContext* deploySoldiers;
+    DeployContext* deployTanks;
+
+public:
+    list<Alliance*> allAlliances;
     vector<Soldier*> allSoldiers;//combined attacker and defender soldiers
-    vector<Tank*> allTanks;//combined attacker and defender tanks
     list<Soldier*> deadSoldiers;
+    vector<Tank*> allTanks;//combined attacker and defender tanks
     list<Tank*> deadTanks;
+    list<Ship*> allShips;
+    list<Ship*> deadShips;
+    Squad* getDefenders();
+    Squad* getAttackers();
+
+
     string country;
     string area;
 
@@ -89,22 +100,11 @@ public:
      * @brief a normal member
      * 
      */
-    void soldiersFight();
-    /**
-     * @brief a normal member
-     * 
-     */
     void tanksFight();
     /**
      * @brief a normal member
      * 
      */
-    void medicsHeal();
-    /**
-     * @brief a normal member
-     * 
-     */
-    void mechanicsRepair();
     /**
      * @brief a normal member
      * 

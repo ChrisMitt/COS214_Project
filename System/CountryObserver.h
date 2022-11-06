@@ -18,7 +18,7 @@ struct Army
         int instanceHP = 100;
     } medics;
     struct{
-        int amount = 2;
+        int amount = 20;
         int instanceHP = 200;
         int instanceDMG = 80;
     } soldiers;

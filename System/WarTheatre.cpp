@@ -19,6 +19,9 @@ WarTheatre::WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, strin
     attackers = new Squad(a, aAlliance->getName());
 
     allAlliances=aa;
+
+    deploySoldiers = new DeployContext( new SoldierDeploy(this) );
+    deployTanks = new DeployContext( new TankDeploy(this) );
 }
 
 WarTheatre::WarTheatre(list<Alliance*> as){
@@ -77,7 +80,8 @@ void WarTheatre::fillLists(){
 }
 
 WarTheatre::~WarTheatre(){
-
+    delete deploySoldiers;
+    delete deployTanks;
 }
 
 void WarTheatre::battle(){
@@ -90,42 +94,12 @@ void WarTheatre::battle(){
 }
 
 void WarTheatre::fight(){
-    //soldiersFight();
-    tanksFight();
+    deploySoldiers->go();
+    deployTanks->go();
     //medicsHeal();
 }
 
-void WarTheatre::soldiersFight(){
-    cout<<"== 1: SOLDIERS FIGHTING =="<<endl;
-    if(defenders->getSoldiers().size()==0 || attackers->getSoldiers().size()==0){
-        return;
-    }
-    //for all soldiers do
-    for(auto it=allSoldiers.begin(); it!=allSoldiers.end(); it++){
-        Soldier* currSoldier = *it; //current soldier attacking
-        //Soldier* currSoldier = allSoldiers[i];
-        if(currSoldier->isAlive()){
-            Squad* enemySquad; //the enemy squad of the current soldier's squad
-            //1. set who the enemy squad is
-            if( defenders->contains(currSoldier) ){//if curr soldier is a defender
-                enemySquad = attackers;
-            }else if( attackers->contains(currSoldier) ){
-                enemySquad = defenders;
-            }
-            //2. get a random soldier in the enemy squad
-            Soldier* enemySoldier = (Soldier*) (getRandPerson("soldier", enemySquad));
 
-            //3. do damage to the random enemy
-            currSoldier->doDamage(enemySoldier);
-
-            //4. remove the random soldier from the enemy squad, if he died
-            if(!enemySoldier->isAlive()){
-                enemySquad->remove(enemySoldier);
-                deadSoldiers.push_back(enemySoldier);
-            }
-        }
-    }
-}
 
 Person* WarTheatre::getRandPerson(string type, Squad* squad){
     if(type=="soldier"){
@@ -152,16 +126,35 @@ void WarTheatre::tanksFight(){
             }else if( attackers->contains(currTank) ){
                 enemySquad = defenders;
             }
-            //2. get a random tank in the enemy squad
-            Tank* enemyTank = (Tank*) (getRandVehicle("tank", enemySquad));
 
-            //3. do damage to the random enemy
-            currTank->doDamage(enemyTank);
+            //2. decide to aim for a tank or for soldiers
+            int randNum = rand()%100+1;
 
-            //4. remove the random tank from the enemy squad, if he died
-            if(!enemyTank->isAlive()){
-                enemySquad->remove(enemyTank);
-                deadTanks.push_back(enemyTank);
+            //if decided on tank
+            if(enemySquad->getTanks().size()>0 &&  (randNum<=50 || enemySquad->getSoldiers().size()==0) ){
+                if(enemySquad->getTanks().size()>0){
+                    //3. hit random enemy tank
+                    Tank* enemyTank = (Tank*) (getRandVehicle("tank", enemySquad));
+                    currTank->doDamage(enemyTank);
+                    //4. remove the random tank from the enemy squad, if he died
+                    if(!enemyTank->isAlive()){
+                        enemySquad->remove(enemyTank);
+                        deadTanks.push_back(enemyTank);
+                    }
+                }
+            }else{
+                int maxSoldiersHit = 5;
+                if(enemySquad->getSoldiers().size()<maxSoldiersHit){
+                    maxSoldiersHit = enemySquad->getSoldiers().size();
+                }
+                int amountHit = rand()%maxSoldiersHit+1;
+                cout<<currTank->getType()<<" kills "<<amountHit<<" enemy soldiers\n";
+                for(int i=0; i<maxSoldiersHit; i++){
+                    Soldier* randSoldier = (Soldier*)getRandPerson("soldier", enemySquad);
+                    currTank->doDamage(randSoldier);
+                    enemySquad->remove(randSoldier);
+                    deadSoldiers.push_back(randSoldier);
+                }
             }
         }
     }
@@ -198,4 +191,12 @@ void WarTheatre::deleteUnits(){
     for(auto it=deadTanks.begin(); it!=deadTanks.end(); it++){
         delete (*it);
     }
+}
+
+Squad* WarTheatre::getDefenders(){
+    return defenders;
+}
+
+Squad* WarTheatre::getAttackers(){
+    return attackers;
 }
