@@ -63,6 +63,11 @@ void WarTheatre::fight(){
     soldiersFight();
     tanksFight();
     //medicsHeal();
+
+    // Losers do resource management
+    createResources(/*CountryObserver* dm*/);
+
+
 }
 
 void WarTheatre::soldiersFight(){
@@ -159,4 +164,15 @@ void WarTheatre::tankAttack(Tank* damageDealer, Squad* enemySquad){//returns tru
             damageDealer->doDamage(randSoldier);
         }
     }
+}
+
+void WarTheatre::createResources(CountryObserver* co) {
+
+    int val = co->resources;
+    ResourceManagement* rs = new UnitProducer(4);
+    rs->add(new UnitProducer(3));
+    rs->add(new UnitProducer(2));
+    rs->add(new UnitProducer(1));
+
+
 }

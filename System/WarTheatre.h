@@ -13,6 +13,7 @@
 #include <iterator>
 #include "CountryComposite.h"
 #include "Squad.h"
+#include "ResourceManagement.h"
 using namespace std;
 
 
@@ -112,4 +113,5 @@ public:
      * 
      */
     void removeDeadUnits();
+    void createResources(CountryObserver*);
 };
