@@ -9,14 +9,39 @@
 
 using namespace std;
 
+/**
+ * @brief a Status class
+ * 
+ */
 class Status {
 public:
+/**
+ * @brief Construct a new Status object
+ * 
+ */
     Status();
+    /**
+     * @brief Construct a new Status object
+     * @param  Status
+     * 
+     */
     Status(const Status&);
+    /**
+     * @brief Set the Health Changed object
+     * 
+     */
     void setHealthChanged();
+    /**
+     * @brief a normal member
+     * 
+     */
     void showStatus();
 
 private:
+/**
+ * @brief a private object
+ * a boolean oibject
+ */
     bool healthChanged;
 
 };
