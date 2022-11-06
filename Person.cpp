@@ -1,6 +1,9 @@
 //
 // Created by chris on 2022/10/31.
 //
+//
+// Edited by Charl on 2022/11/04
+//
 
 #include "Person.h"
 #include <iostream>
@@ -12,10 +15,7 @@ Person::Person() {
     status = new Status();
 }
 
-Person::Person(string t, string s) {
-    type = t;
-    state = s;
-    health = 100;
+Person::Person(string t, string s, int h) : type(t), state(s), health(h){
     status = new Status();
 }
 
@@ -45,6 +45,7 @@ void Person::restore(UnitBackup* mem) {
 }
 
 Person::~Person() {
+    cout<<"Person destructor called"<<endl;
     delete this;
 }
 
@@ -54,6 +55,10 @@ Soldier::Soldier() : Person(){
 Soldier::Soldier(string t, string s, RnD* up) : Person(t, s){
     damage = 25;
     upgrade = up;
+}
+
+Soldier::Soldier(string t, string s, int h, int d) : Person(t, s, h), damage(d){
+    
 }
 
 int Soldier::attack() {
@@ -66,6 +71,7 @@ int Soldier::defend() {
 
 int Soldier::research() {
     upgrade->research();
+    return 0;
 }
 
 void Soldier::interact() {
@@ -79,7 +85,7 @@ Soldier* Soldier::clone() {
 Medic::Medic() : Person(){
 }
 
-Medic::Medic(string t, string s) : Person(t, s){
+Medic::Medic(string t, string s, int h) : Person(t, s, h){
 }
 
 void  Medic::heal(Person* p) {
@@ -110,7 +116,7 @@ UnitBackup* Soldier::makeBackup(){
 Mechanic::Mechanic() : Person(){
 }
 
-Mechanic::Mechanic(string t, string s) : Person(t, s){
+Mechanic::Mechanic(string t, string s, int h) : Person(t, s, h){
 }
 
 void  Mechanic::repair(Vehicle* v) {
@@ -132,4 +138,25 @@ UnitBackup* Mechanic::getMemento() {
 
 void Mechanic::setMemento(UnitBackup* mem) {
     memento = mem;
+}
+
+int Soldier::getDamage(){
+    return damage;
+}
+
+void Soldier::doDamage(Person* victim){
+    cout<< type << " doing " << damage << " damage to " <<victim->getType() << endl;
+    victim->takeDamage(damage);
+}
+
+void Person::takeDamage(int amount){
+    int oldHealth=health;
+    health-=amount;
+    if(health<0){
+        health=0;
+        cout<< type <<" died a brave death"<<endl;
+    }else{
+        cout<< type <<" went from "<< oldHealth <<"HP, to "<<health<<"HP\n";
+    }
+    cout<<"------------------"<<endl;
 }

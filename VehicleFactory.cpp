@@ -20,6 +20,12 @@ VehicleFactory::~VehicleFactory()
     cout<<"The Vehicle Factory is closed down."<<endl;
 }
 
+Person* VehicleFactory::createPerson(string personType, string subType)
+{
+    Soldier* createdSoldier = new Soldier(personType, subType);
+    return createdSoldier;
+}
+
 Vehicle* VehicleFactory::createVehicle(string vehicleType, string subType)
 {
     if (vehicleType == "tank")
