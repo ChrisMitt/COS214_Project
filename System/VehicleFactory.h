@@ -10,11 +10,29 @@
 
 using namespace std;
 
+/**
+ * @brief a noramal member
+ * 
+ */
 class VehicleFactory : public UnitFactory {
 public:
+/**
+ * @brief Construct a new Vehicle Factory object
+ * 
+ */
     VehicleFactory();
+    /**
+     * @brief Destroy the Vehicle Factory object
+     * 
+     */
     ~VehicleFactory();
     //Person* createPerson(string, string);
+    /**
+     * @brief Create a Vehicle object
+     * @param string
+     * @param string
+     * @return Vehicle* 
+     */
     Vehicle* createVehicle(string, string);
 };
 
