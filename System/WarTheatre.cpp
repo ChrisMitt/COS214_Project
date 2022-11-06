@@ -128,7 +128,7 @@ void WarTheatre::tanksFight(){
     }*/
 
     cout<<"== 2: TANKS FIGHTING: ==\n";
-    vector<Tank*> allTanks;
+    
 }
 
 void WarTheatre::tankAttack(Tank* damageDealer, Squad* enemySquad){//returns true if last enemy tank destroyed
