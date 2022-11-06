@@ -27,7 +27,7 @@ Phase5::~Phase5()
 
 void Phase5::changePhase(WarPhaseChanger* WPC) 
 {
-    if(WPC->getStrategy()=="Diplomacy" )
+    if(WPC->getStrategy()=="Diplomacy" && WPC!=NULL)
     {
         if(WPC->Status()==true)
         {

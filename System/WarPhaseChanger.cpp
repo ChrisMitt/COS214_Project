@@ -23,7 +23,7 @@ WarPhaseChanger::WarPhaseChanger()
 
 WarPhaseChanger::~WarPhaseChanger()
 {
-    cout<< "Destructor called" <<endl;
+    cout<< "Phases do not exist and the War is over" <<endl;
     delete War_phase;
     War_phase=0;
 }
@@ -32,7 +32,11 @@ WarPhaseChanger::~WarPhaseChanger()
 
 void WarPhaseChanger::setStrategy(WarStrategy* Strategy)
 {
-    CountryStrat=Strategy;
+    if(Strategy!=NULL)
+    {
+        CountryStrat=Strategy;
+    }
+    
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,9 +50,12 @@ void WarPhaseChanger::Engage()
 
 void WarPhaseChanger::setPhase(PhasesofWar* phase)
 {
-    cout << "War Phase Changed" << endl;
-    delete War_phase;
-    War_phase = phase;
+    if(phase!=NULL)
+    {
+        cout << "War Phase Changed" << endl;
+        delete War_phase;
+        War_phase = phase;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

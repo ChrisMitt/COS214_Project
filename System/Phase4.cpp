@@ -26,7 +26,7 @@ Phase4::~Phase4()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Phase4::changePhase(WarPhaseChanger* WPC) 
 {
-    if(WPC->getStrategy()=="Negotiate")
+    if(WPC->getStrategy()=="Negotiate" && WPC!=NULL)
     {
         if(WPC->Status()==true)
         {
