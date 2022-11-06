@@ -71,6 +71,7 @@ class CountryObserver{
     vector<Ship*> ships;
     //3.Air
     vector<Plane*> planes;
+    int resources; // The resources which a country can spend on troop creation
   protected:
     int id;
     string name;

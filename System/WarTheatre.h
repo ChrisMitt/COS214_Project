@@ -13,6 +13,7 @@
 #include <iterator>
 #include "CountryComposite.h"
 #include "Squad.h"
+#include "ResourceManagement.h"
 using namespace std;
 
 class WarTheatre
@@ -39,4 +40,5 @@ public:
     void mechanicsRepair();
     void tankAttack(Tank* damageDealer, Squad* enemySquad);
     void removeDeadUnits();
+    void createResources(CountryObserver*);
 };
