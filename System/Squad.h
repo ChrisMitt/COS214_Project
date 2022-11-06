@@ -183,4 +183,6 @@ public:
      * 
      */
     void remove(Tank*);
+    bool contains(Soldier* s);
+    bool contains(Tank* t);
 };

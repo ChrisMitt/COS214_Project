@@ -168,9 +168,18 @@ void showUN()
     }
 }
 
-void startBattle(){
-    WarTheatre* w = new WarTheatre();
-    w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "land", "Afghanistan");
+void startBattle(bool firstBattle){
+    if(firstBattle){
+        allAlliances.push_back(new Alliance("Goodies"));
+        allAlliances.push_back(new Alliance("Baddies"));
+        allAlliances.front()->addCountry( UN[1] );
+        allAlliances.back()->addCountry( UN[2] );
+        printAlliances();
+    }
+
+    WarTheatre* w = new WarTheatre( allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "land", "Afghanistan", allAlliances );
+    w->battle();
+    delete w;
 }
 
 int main()
@@ -189,6 +198,7 @@ int main()
     cout << "Welcome to the simulator!\n";
     
     int input = -1;
+    bool firstBattle=true;
     while (input != 0)
     {
         if (input == 1)
@@ -207,7 +217,8 @@ int main()
         {
             showUN();
         }else if (input==5){
-            startBattle();
+            startBattle(firstBattle);
+            firstBattle=false;
         }
         cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[5] Start battle\n[0] Exit\n";
         cin >> input;

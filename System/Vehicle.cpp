@@ -22,8 +22,8 @@ Vehicle::Vehicle(string t, string s, RnD* up) {
     upgrade = up;
 }
 
-Vehicle::Vehicle(string t, string s, int a, int d, int h) : type(t), state(s), armour(a), damage(d), health(h) {
-    
+Vehicle::Vehicle(string t, string s, int a, int d, int h, CountryObserver* c) : type(t), state(s), armour(a), damage(d), health(h) {
+    country=c;
 }
 
 void Vehicle::clone() {
@@ -72,9 +72,16 @@ int Vehicle::getHealth(){
     return health;
 }
 
+bool Vehicle::isAlive(){
+    return (health>0);
+}
+
+CountryObserver* Vehicle::getCountry(){
+    return country;
+}
+
 Vehicle::~Vehicle(){
     delete upgrade;
-    delete this;
 }
 
 void Vehicle::doDamage(Vehicle* victim){
@@ -114,7 +121,7 @@ Plane::Plane(string t, string s, RnD* up) : Vehicle(t, s, up){
 }
 
 
-Plane::Plane(string t, string s, int a, int d, int h, int b, int st) : Vehicle(t, s, a, d, h), bomb(b), strafe(st){
+Plane::Plane(string t, string s, int a, int d, int h, CountryObserver* c, int b, int st) : Vehicle(t, s, a, d, h, c), bomb(b), strafe(st){
 }
 
 int Plane::bombingRun() {
@@ -134,7 +141,7 @@ Tank::Tank(string t,string s, RnD* up) : Vehicle(t, s, up){
     upgrade = up;
 }
 
-Tank::Tank(string t, string s, int a, int d, int h) : Vehicle(t, s, a, d, h){
+Tank::Tank(string t, string s, int a, int d, int h, CountryObserver* c) : Vehicle(t, s, a, d, h, c){
     
 }
 
@@ -156,7 +163,7 @@ Ship::Ship(string t, string s, RnD* up) : Vehicle(t, s, up) {
     upgrade = up;
 }
 
-Ship::Ship(string t, string s, int a, int d, int h, int sh, int ca) : Vehicle(t, s, a, d, h), shell(sh), canon(ca) {
+Ship::Ship(string t, string s, int a, int d, int h, CountryObserver* c, int sh, int ca) : Vehicle(t, s, a, d, h, c), shell(sh), canon(ca) {
     
 }
 

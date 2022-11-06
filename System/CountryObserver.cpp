@@ -1,6 +1,7 @@
 //
 // Created by Rebecca on 2022/10/31.
 // Edited by Charl on 2022/10/31
+#include<bits/stdc++.h>
 #include "CountryObserver.h"
 using namespace std;
 
@@ -77,22 +78,25 @@ void CountryObserver::fillArmyStruct(){
         army->soldiers.amount=20;
         army->mechanics.amount=5;
     }
+    if(name=="France"){
+        
+    }
 }
 
 void CountryObserver::createArmy(){
     //medics
     for(int i=0; i < army->medics.amount; i++){
-        medics.push_back( new Medic(name+" medic #"+to_string(i+1), "in battle", army->medics.instanceHP) );
+        medics.push_back( new Medic(name+" medic #"+to_string(i+1), "in battle", army->medics.instanceHP, this) );
         //eg France medic #1, in battle
     }
     //soldiers
     for(int i=0; i < army->soldiers.amount; i++){
-        soldiers.push_back( new Soldier(name+" soldier #"+to_string(i+1), "in battle", army->soldiers.instanceHP, army->soldiers.instanceDMG ) );
+        soldiers.push_back( new Soldier(name+" soldier #"+to_string(i+1), "in battle", army->soldiers.instanceHP, this, army->soldiers.instanceDMG ) );
         //eg France soldier #1, in battle
     }
     //mechanics
     for(int i=0; i < army->mechanics.amount; i++){
-        mechanics.push_back( new Mechanic(name+" mechanic #"+to_string(i+1), "in battle", army->mechanics.instanceHP) );
+        mechanics.push_back( new Mechanic(name+" mechanic #"+to_string(i+1), "in battle", army->mechanics.instanceHP, this) );
         //eg France mechanic #1, in battle
     }
     //tanks
@@ -103,7 +107,8 @@ void CountryObserver::createArmy(){
                 "in battle", 
                 army->tanks.instanceArmour, 
                 army->tanks.instanceDMG, 
-                army->tanks.instanceHP
+                army->tanks.instanceHP,
+                this
             ) 
         );
         //eg Germany Sherman #1, in battle
@@ -162,4 +167,30 @@ void CountryObserver::printTanks(){
         cout<<"Damage: "<<(*it)->getDamage()<<endl;
     }
     cout<<tanks.size()<<"X ";
+}
+
+bool CountryObserver::removeSoldier(Soldier* s){
+    auto it = soldiers.begin();
+    bool found = false;
+    for(it; it!=soldiers.end() && !found ; it++){
+        if((*it)==s && !found){
+            soldiers.erase(it);
+            found=true;
+            return true;
+        }
+    }
+    return false;
+}
+
+bool CountryObserver::removeTank(Tank* t){
+    auto it = tanks.begin();
+    bool found = false;
+    for(it; it!=tanks.end() && !found ; it++){
+        if((*it)==t && !found){
+            tanks.erase(it);
+            found=true;
+            return true;
+        }
+    }
+    return false;
 }

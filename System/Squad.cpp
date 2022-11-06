@@ -1,4 +1,5 @@
 #include "Squad.h"
+#include <algorithm>
 
 Squad::Squad()
 {
@@ -16,6 +17,7 @@ Squad::Squad(list<CountryObserver*> countries, string allianceName)
 
 Squad::~Squad()
 {
+    
 }
 
 void Squad::addTroops(CountryObserver* co){
@@ -103,4 +105,12 @@ void Squad::remove(Tank* t){
             found=true;
         }
     }
+}
+
+bool Squad::contains(Soldier* s){
+    return ( find(soldiers.begin(), soldiers.end(), s) != soldiers.end() );
+}
+
+bool Squad::contains(Tank* t){
+    return ( find(tanks.begin(), tanks.end(), t) != tanks.end() );
 }

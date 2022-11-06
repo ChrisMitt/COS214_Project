@@ -41,15 +41,19 @@ private:
     Squad* attackers;
 
     //used by fight methods
-    list<Soldier*> allSoldiers;//combined attacker and defender soldiers
-    list<Tank*> allTanks;//combined attacker and defender tanks
+    vector<Soldier*> allSoldiers;//combined attacker and defender soldiers
+    vector<Tank*> allTanks;//combined attacker and defender tanks
+    list<Soldier*> deadSoldiers;
+    list<Tank*> deadTanks;
+    string country;
+    string area;
 
 public:
 /**
  * @brief  Construct a new War Theatre object
  * 
  */
-    WarTheatre(/* args */);
+    WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, string area, string country, list<Alliance*>  aa);
     /**
      * @brief Construct a new War Theatre object
      * 
@@ -65,6 +69,7 @@ public:
      * @brief a normal member
      * 
      */
+    void printInit();
     void fillLists();//allSoldiers, allTanks etc..
     /**
      * @brief a normal member
@@ -74,7 +79,7 @@ public:
      * @param area 
      * @param country 
      */
-    void battle( list<CountryObserver*> d, list<CountryObserver*> a, string area, string country );
+    void battle();
     /**
      * @brief a normal member
      * 
@@ -112,4 +117,8 @@ public:
      * 
      */
     void removeDeadUnits();
+    Person* getRandPerson(string type, Squad* squad);
+    Vehicle* getRandVehicle(string type, Squad* squad);
+    void deleteUnits();
+    void clearLists();
 };
