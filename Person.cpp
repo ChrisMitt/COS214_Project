@@ -70,8 +70,7 @@ int Soldier::defend() {
 }
 
 int Soldier::research() {
-    upgrade->research();
-    return 0;
+    return upgrade->research();
 }
 
 void Soldier::interact() {
