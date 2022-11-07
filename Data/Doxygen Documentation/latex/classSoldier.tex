@@ -1,0 +1,225 @@
+\hypertarget{classSoldier}{}\doxysection{Soldier Class Reference}
+\label{classSoldier}\index{Soldier@{Soldier}}
+
+
+A soldier class. a product of the person class.  
+
+
+
+
+{\ttfamily \#include $<$Person.\+h$>$}
+
+
+
+Inheritance diagram for Soldier\+:
+% FIG 0
+
+
+Collaboration diagram for Soldier\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSoldier_ad3144b22a146ef85eaff30a2a5ab78c0}{Soldier}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classSoldier}{Soldier}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSoldier_a5980eca9bf99f71f8cae1ef617e89248}{Soldier}} (string, string, \mbox{\hyperlink{classRnD}{RnD}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classSoldier}{Soldier}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSoldier_a87e09aae0ddc6d04e777eca279a9a755}{Soldier}} (string, string, int h=100, \mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$c=N\+U\+LL, int d=25)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classSoldier}{Soldier}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSoldier_adc5eb3729d4cd16fead83e2dcb50c57d}{attack}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSoldier_a53ecc4f93ec345e6375ebbfebfde6666}{defend}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSoldier_a86d7ad563f94ead543b5446f92aad876}{interact}} ()
+\begin{DoxyCompactList}\small\item\em a virtual memeber \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSoldier}{Soldier}} $\ast$ \mbox{\hyperlink{classSoldier_a750f27dae795c1f1c7a9641913944e02}{clone}} ()
+\begin{DoxyCompactList}\small\item\em a virtual member \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$ \mbox{\hyperlink{classSoldier_ac461223b6f6d0b1d7060eba5c57c9eae}{make\+Backup}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSoldier_a7f8b7fc362ce0347301171d59e98e50b}{get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Get the Damage object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSoldier_a58b1cc709ec378555ce90e3cf3320b29}{do\+Damage}} (\mbox{\hyperlink{classPerson}{Person}} $\ast$victim)
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSoldier_a41888a54d99a5398f7444bf8fa2c5843}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em a normal agurment \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A soldier class. a product of the person class. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSoldier_ad3144b22a146ef85eaff30a2a5ab78c0}\label{classSoldier_ad3144b22a146ef85eaff30a2a5ab78c0}} 
+\index{Soldier@{Soldier}!Soldier@{Soldier}}
+\index{Soldier@{Soldier}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{Soldier()}{Soldier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Soldier\+::\+Soldier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classSoldier}{Soldier}} object. 
+
+\mbox{\Hypertarget{classSoldier_a5980eca9bf99f71f8cae1ef617e89248}\label{classSoldier_a5980eca9bf99f71f8cae1ef617e89248}} 
+\index{Soldier@{Soldier}!Soldier@{Soldier}}
+\index{Soldier@{Soldier}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{Soldier()}{Soldier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Soldier\+::\+Soldier (\begin{DoxyParamCaption}\item[{string}]{t,  }\item[{string}]{s,  }\item[{\mbox{\hyperlink{classRnD}{RnD}} $\ast$}]{up }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classSoldier}{Soldier}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+{\em Rn\+D$\ast$} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSoldier_a87e09aae0ddc6d04e777eca279a9a755}\label{classSoldier_a87e09aae0ddc6d04e777eca279a9a755}} 
+\index{Soldier@{Soldier}!Soldier@{Soldier}}
+\index{Soldier@{Soldier}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{Soldier()}{Soldier()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Soldier\+::\+Soldier (\begin{DoxyParamCaption}\item[{string}]{t,  }\item[{string}]{s,  }\item[{int}]{h = {\ttfamily 100},  }\item[{\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$}]{c = {\ttfamily NULL},  }\item[{int}]{d = {\ttfamily 25} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classSoldier}{Soldier}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSoldier_adc5eb3729d4cd16fead83e2dcb50c57d}\label{classSoldier_adc5eb3729d4cd16fead83e2dcb50c57d}} 
+\index{Soldier@{Soldier}!attack@{attack}}
+\index{attack@{attack}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily int Soldier\+::attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSoldier_a750f27dae795c1f1c7a9641913944e02}\label{classSoldier_a750f27dae795c1f1c7a9641913944e02}} 
+\index{Soldier@{Soldier}!clone@{clone}}
+\index{clone@{clone}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSoldier}{Soldier}} $\ast$ Soldier\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a virtual member 
+
+\begin{DoxyReturn}{Returns}
+Soldier$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPerson_a1b1099a7fe99bd551e8785d7458a560f}{Person}}.
+
+\mbox{\Hypertarget{classSoldier_a53ecc4f93ec345e6375ebbfebfde6666}\label{classSoldier_a53ecc4f93ec345e6375ebbfebfde6666}} 
+\index{Soldier@{Soldier}!defend@{defend}}
+\index{defend@{defend}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{defend()}{defend()}}
+{\footnotesize\ttfamily int Soldier\+::defend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSoldier_a58b1cc709ec378555ce90e3cf3320b29}\label{classSoldier_a58b1cc709ec378555ce90e3cf3320b29}} 
+\index{Soldier@{Soldier}!doDamage@{doDamage}}
+\index{doDamage@{doDamage}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{doDamage()}{doDamage()}}
+{\footnotesize\ttfamily void Soldier\+::do\+Damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPerson}{Person}} $\ast$}]{victim }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+
+\begin{DoxyParams}{Parameters}
+{\em victim} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSoldier_a7f8b7fc362ce0347301171d59e98e50b}\label{classSoldier_a7f8b7fc362ce0347301171d59e98e50b}} 
+\index{Soldier@{Soldier}!getDamage@{getDamage}}
+\index{getDamage@{getDamage}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{getDamage()}{getDamage()}}
+{\footnotesize\ttfamily int Soldier\+::get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Damage object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSoldier_a41888a54d99a5398f7444bf8fa2c5843}\label{classSoldier_a41888a54d99a5398f7444bf8fa2c5843}} 
+\index{Soldier@{Soldier}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int Soldier\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a normal agurment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPerson_a5b21018464a92363d02637fd7be666cd}{Person}}.
+
+\mbox{\Hypertarget{classSoldier_a86d7ad563f94ead543b5446f92aad876}\label{classSoldier_a86d7ad563f94ead543b5446f92aad876}} 
+\index{Soldier@{Soldier}!interact@{interact}}
+\index{interact@{interact}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{interact()}{interact()}}
+{\footnotesize\ttfamily void Soldier\+::interact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a virtual memeber 
+
+
+
+Implements \mbox{\hyperlink{classPerson_aaac0eec8058450c6c94bd531d6edc5bb}{Person}}.
+
+\mbox{\Hypertarget{classSoldier_ac461223b6f6d0b1d7060eba5c57c9eae}\label{classSoldier_ac461223b6f6d0b1d7060eba5c57c9eae}} 
+\index{Soldier@{Soldier}!makeBackup@{makeBackup}}
+\index{makeBackup@{makeBackup}!Soldier@{Soldier}}
+\doxysubsubsection{\texorpdfstring{makeBackup()}{makeBackup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$ Soldier\+::make\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\begin{DoxyReturn}{Returns}
+Unit\+Backup$\ast$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Person.\+h\item 
+Person.\+cpp\end{DoxyCompactItemize}

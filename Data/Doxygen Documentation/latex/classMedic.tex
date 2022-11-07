@@ -1,0 +1,152 @@
+\hypertarget{classMedic}{}\doxysection{Medic Class Reference}
+\label{classMedic}\index{Medic@{Medic}}
+
+
+a medic class. a product class of the person class  
+
+
+
+
+{\ttfamily \#include $<$Person.\+h$>$}
+
+
+
+Inheritance diagram for Medic\+:
+% FIG 0
+
+
+Collaboration diagram for Medic\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMedic_a6bd1946f4e44fe417380daf53d70eb17}{Medic}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMedic}{Medic}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMedic_a8ac6dcb2700e23c2aa945c3a8e70303e}{Medic}} (string, string, int h=100, \mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$c=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMedic}{Medic}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMedic_ab233bb3bdc8a7e5424b86ce905f86a48}{heal}} (\mbox{\hyperlink{classPerson}{Person}} $\ast$)
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMedic_a13eb2d98ac1c3ab2e42f005a1072c9d9}{interact}} ()
+\begin{DoxyCompactList}\small\item\em a virtual member \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMedic}{Medic}} $\ast$ \mbox{\hyperlink{classMedic_af7272a6ec508972b04999f06d80ab0a0}{clone}} ()
+\begin{DoxyCompactList}\small\item\em a virtual member \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$ \mbox{\hyperlink{classMedic_a0ae145efb86c2b61087421f39d3b0e05}{get\+Memento}} ()
+\begin{DoxyCompactList}\small\item\em Get the Memento object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMedic_abc6c05c382bcd5acd4a3d536d2b85285}{set\+Memento}} (\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Set the Memento object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+a medic class. a product class of the person class 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMedic_a6bd1946f4e44fe417380daf53d70eb17}\label{classMedic_a6bd1946f4e44fe417380daf53d70eb17}} 
+\index{Medic@{Medic}!Medic@{Medic}}
+\index{Medic@{Medic}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{Medic()}{Medic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Medic\+::\+Medic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMedic}{Medic}} object. 
+
+\mbox{\Hypertarget{classMedic_a8ac6dcb2700e23c2aa945c3a8e70303e}\label{classMedic_a8ac6dcb2700e23c2aa945c3a8e70303e}} 
+\index{Medic@{Medic}!Medic@{Medic}}
+\index{Medic@{Medic}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{Medic()}{Medic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Medic\+::\+Medic (\begin{DoxyParamCaption}\item[{string}]{t,  }\item[{string}]{s,  }\item[{int}]{h = {\ttfamily 100},  }\item[{\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$}]{c = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMedic}{Medic}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+{\em h} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMedic_af7272a6ec508972b04999f06d80ab0a0}\label{classMedic_af7272a6ec508972b04999f06d80ab0a0}} 
+\index{Medic@{Medic}!clone@{clone}}
+\index{clone@{clone}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMedic}{Medic}} $\ast$ Medic\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a virtual member 
+
+\begin{DoxyReturn}{Returns}
+Medic$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPerson_a1b1099a7fe99bd551e8785d7458a560f}{Person}}.
+
+\mbox{\Hypertarget{classMedic_a0ae145efb86c2b61087421f39d3b0e05}\label{classMedic_a0ae145efb86c2b61087421f39d3b0e05}} 
+\index{Medic@{Medic}!getMemento@{getMemento}}
+\index{getMemento@{getMemento}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{getMemento()}{getMemento()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$ Medic\+::get\+Memento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Memento object. 
+
+\begin{DoxyReturn}{Returns}
+Unit\+Backup$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMedic_ab233bb3bdc8a7e5424b86ce905f86a48}\label{classMedic_ab233bb3bdc8a7e5424b86ce905f86a48}} 
+\index{Medic@{Medic}!heal@{heal}}
+\index{heal@{heal}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{heal()}{heal()}}
+{\footnotesize\ttfamily void Medic\+::heal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPerson}{Person}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Person$\ast$} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMedic_a13eb2d98ac1c3ab2e42f005a1072c9d9}\label{classMedic_a13eb2d98ac1c3ab2e42f005a1072c9d9}} 
+\index{Medic@{Medic}!interact@{interact}}
+\index{interact@{interact}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{interact()}{interact()}}
+{\footnotesize\ttfamily void Medic\+::interact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a virtual member 
+
+
+
+Implements \mbox{\hyperlink{classPerson_aaac0eec8058450c6c94bd531d6edc5bb}{Person}}.
+
+\mbox{\Hypertarget{classMedic_abc6c05c382bcd5acd4a3d536d2b85285}\label{classMedic_abc6c05c382bcd5acd4a3d536d2b85285}} 
+\index{Medic@{Medic}!setMemento@{setMemento}}
+\index{setMemento@{setMemento}!Medic@{Medic}}
+\doxysubsubsection{\texorpdfstring{setMemento()}{setMemento()}}
+{\footnotesize\ttfamily void Medic\+::set\+Memento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$}]{mem }\end{DoxyParamCaption})}
+
+
+
+Set the Memento object. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Person.\+h\item 
+Person.\+cpp\end{DoxyCompactItemize}

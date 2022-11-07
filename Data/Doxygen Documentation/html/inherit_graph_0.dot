@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Aggregate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAggregate.html",tooltip="description an Aggregate class for turncontrol, an aggregate class for the iterator pattern"];
+  Node0 -> Node1 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="ConcreteAggregate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConcreteAggregate.html",tooltip="Concrete Aggregate class for Aggregate class, a Concrete aggregate class for the iterator pattern."];
+}

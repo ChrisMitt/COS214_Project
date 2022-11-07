@@ -1,0 +1,115 @@
+\hypertarget{classUnitFactory}{}\doxysection{Unit\+Factory Class Reference}
+\label{classUnitFactory}\index{UnitFactory@{UnitFactory}}
+
+
+a \mbox{\hyperlink{classUnitFactory}{Unit\+Factory}} class. an abstractfactory class for the abstarct factory design pattern  
+
+
+
+
+{\ttfamily \#include $<$Unit\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Unit\+Factory\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUnitFactory_a80d72d19128bfb2adb7580405bf058af}{Unit\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Unit Factory object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUnitFactory_a711fba8252a25f2c3b146c48467de0f4}{$\sim$\+Unit\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Unit Factory object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPerson}{Person}} $\ast$ \mbox{\hyperlink{classUnitFactory_a671cc6d908253a99f4a9fac82e8e235b}{create\+Person}} (string, string)=0
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classPerson}{Person}} object a pure virtual member. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$ \mbox{\hyperlink{classUnitFactory_a44352952b3618d1cab534eae29e57c5a}{create\+Vehicle}} (string, string)=0
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classVehicle}{Vehicle}} object a pure virtual member. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classUnitFactory_ac72527a6e8e38f52b7ad52cafe0b528b}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the Name object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a \mbox{\hyperlink{classUnitFactory}{Unit\+Factory}} class. an abstractfactory class for the abstarct factory design pattern 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUnitFactory_a80d72d19128bfb2adb7580405bf058af}\label{classUnitFactory_a80d72d19128bfb2adb7580405bf058af}} 
+\index{UnitFactory@{UnitFactory}!UnitFactory@{UnitFactory}}
+\index{UnitFactory@{UnitFactory}!UnitFactory@{UnitFactory}}
+\doxysubsubsection{\texorpdfstring{UnitFactory()}{UnitFactory()}}
+{\footnotesize\ttfamily Unit\+Factory\+::\+Unit\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Unit Factory object. 
+
+\mbox{\Hypertarget{classUnitFactory_a711fba8252a25f2c3b146c48467de0f4}\label{classUnitFactory_a711fba8252a25f2c3b146c48467de0f4}} 
+\index{UnitFactory@{UnitFactory}!````~UnitFactory@{$\sim$UnitFactory}}
+\index{````~UnitFactory@{$\sim$UnitFactory}!UnitFactory@{UnitFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$UnitFactory()}{~UnitFactory()}}
+{\footnotesize\ttfamily Unit\+Factory\+::$\sim$\+Unit\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the Unit Factory object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUnitFactory_a671cc6d908253a99f4a9fac82e8e235b}\label{classUnitFactory_a671cc6d908253a99f4a9fac82e8e235b}} 
+\index{UnitFactory@{UnitFactory}!createPerson@{createPerson}}
+\index{createPerson@{createPerson}!UnitFactory@{UnitFactory}}
+\doxysubsubsection{\texorpdfstring{createPerson()}{createPerson()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classPerson}{Person}}$\ast$ Unit\+Factory\+::create\+Person (\begin{DoxyParamCaption}\item[{string}]{,  }\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a \mbox{\hyperlink{classPerson}{Person}} object a pure virtual member. 
+
+\begin{DoxyReturn}{Returns}
+Person$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPersonFactory_acca26106709ddd361fda787d27b71bd7}{Person\+Factory}}, and \mbox{\hyperlink{classVehicleFactory_a3b449f49edb2b5de28199a0307aee4a0}{Vehicle\+Factory}}.
+
+\mbox{\Hypertarget{classUnitFactory_a44352952b3618d1cab534eae29e57c5a}\label{classUnitFactory_a44352952b3618d1cab534eae29e57c5a}} 
+\index{UnitFactory@{UnitFactory}!createVehicle@{createVehicle}}
+\index{createVehicle@{createVehicle}!UnitFactory@{UnitFactory}}
+\doxysubsubsection{\texorpdfstring{createVehicle()}{createVehicle()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classVehicle}{Vehicle}}$\ast$ Unit\+Factory\+::create\+Vehicle (\begin{DoxyParamCaption}\item[{string}]{,  }\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a \mbox{\hyperlink{classVehicle}{Vehicle}} object a pure virtual member. 
+
+\begin{DoxyReturn}{Returns}
+Vehicle$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVehicleFactory_a0c5123dbf01aef667832093ab97e4798}{Vehicle\+Factory}}, and \mbox{\hyperlink{classPersonFactory_a32a7bd8300f3e2fa5b886a7af1b9dfb5}{Person\+Factory}}.
+
+\mbox{\Hypertarget{classUnitFactory_ac72527a6e8e38f52b7ad52cafe0b528b}\label{classUnitFactory_ac72527a6e8e38f52b7ad52cafe0b528b}} 
+\index{UnitFactory@{UnitFactory}!getName@{getName}}
+\index{getName@{getName}!UnitFactory@{UnitFactory}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Unit\+Factory\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get the Name object. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Unit\+Factory.\+h\item 
+Unit\+Factory.\+cpp\end{DoxyCompactItemize}

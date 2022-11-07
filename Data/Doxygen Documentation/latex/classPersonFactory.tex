@@ -1,0 +1,116 @@
+\hypertarget{classPersonFactory}{}\doxysection{Person\+Factory Class Reference}
+\label{classPersonFactory}\index{PersonFactory@{PersonFactory}}
+
+
+a person\+Factory class. a concrete factory for the unifactory class a concretefactory class for the abstract factory design pattern  
+
+
+
+
+{\ttfamily \#include $<$Person\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Person\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Person\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPersonFactory_af33ef05de2d9b064661497f5857e8f1c}{Person\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classPerson}{Person}} Factory object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPersonFactory_afba68e78ea6a5521ccee78b6ff9c0e90}{$\sim$\+Person\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classPerson}{Person}} Factory object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$ \mbox{\hyperlink{classPersonFactory_a32a7bd8300f3e2fa5b886a7af1b9dfb5}{create\+Vehicle}} (string, string)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classVehicle}{Vehicle}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPerson}{Person}} $\ast$ \mbox{\hyperlink{classPersonFactory_acca26106709ddd361fda787d27b71bd7}{create\+Person}} (string, string)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classPerson}{Person}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+a person\+Factory class. a concrete factory for the unifactory class a concretefactory class for the abstract factory design pattern 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPersonFactory_af33ef05de2d9b064661497f5857e8f1c}\label{classPersonFactory_af33ef05de2d9b064661497f5857e8f1c}} 
+\index{PersonFactory@{PersonFactory}!PersonFactory@{PersonFactory}}
+\index{PersonFactory@{PersonFactory}!PersonFactory@{PersonFactory}}
+\doxysubsubsection{\texorpdfstring{PersonFactory()}{PersonFactory()}}
+{\footnotesize\ttfamily Person\+Factory\+::\+Person\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classPerson}{Person}} Factory object. 
+
+\mbox{\Hypertarget{classPersonFactory_afba68e78ea6a5521ccee78b6ff9c0e90}\label{classPersonFactory_afba68e78ea6a5521ccee78b6ff9c0e90}} 
+\index{PersonFactory@{PersonFactory}!````~PersonFactory@{$\sim$PersonFactory}}
+\index{````~PersonFactory@{$\sim$PersonFactory}!PersonFactory@{PersonFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$PersonFactory()}{~PersonFactory()}}
+{\footnotesize\ttfamily Person\+Factory\+::$\sim$\+Person\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classPerson}{Person}} Factory object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPersonFactory_acca26106709ddd361fda787d27b71bd7}\label{classPersonFactory_acca26106709ddd361fda787d27b71bd7}} 
+\index{PersonFactory@{PersonFactory}!createPerson@{createPerson}}
+\index{createPerson@{createPerson}!PersonFactory@{PersonFactory}}
+\doxysubsubsection{\texorpdfstring{createPerson()}{createPerson()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPerson}{Person}} $\ast$ Person\+Factory\+::create\+Person (\begin{DoxyParamCaption}\item[{string}]{person\+Type,  }\item[{string}]{sub\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a \mbox{\hyperlink{classPerson}{Person}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Person$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUnitFactory_a671cc6d908253a99f4a9fac82e8e235b}{Unit\+Factory}}.
+
+\mbox{\Hypertarget{classPersonFactory_a32a7bd8300f3e2fa5b886a7af1b9dfb5}\label{classPersonFactory_a32a7bd8300f3e2fa5b886a7af1b9dfb5}} 
+\index{PersonFactory@{PersonFactory}!createVehicle@{createVehicle}}
+\index{createVehicle@{createVehicle}!PersonFactory@{PersonFactory}}
+\doxysubsubsection{\texorpdfstring{createVehicle()}{createVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$ Person\+Factory\+::create\+Vehicle (\begin{DoxyParamCaption}\item[{string}]{vehicle\+Type,  }\item[{string}]{sub\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a \mbox{\hyperlink{classVehicle}{Vehicle}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vehicle$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUnitFactory_a44352952b3618d1cab534eae29e57c5a}{Unit\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Person\+Factory.\+h\item 
+Person\+Factory.\+cpp\end{DoxyCompactItemize}
