@@ -108,9 +108,9 @@ void Vehicle::takeDamage(int amount){
     }else{
         int oldHealth = health;
 
-        if(research() == 50){
+        /*if(research() == 50){
             amount -= research();
-        }
+        }*/
 
         health -= amount-armour;
         if(health<0){

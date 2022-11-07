@@ -56,7 +56,7 @@ public:
      * 
      * @return int 
      */
-    int getHealth();
+    virtual int getHealth();
     /**
      * @brief Set the Health object
      * @param int
@@ -187,12 +187,6 @@ public:
      */
     UnitBackup* makeBackup();
     /**
-     * @brief Get the Health object
-     *
-     * @return int
-     */
-    int getHealth();
-    /**
      * @brief Get the Damage object
      * 
      * @return int 
@@ -209,7 +203,8 @@ public:
      *
      * @param amount
      */
-    void takeDamage(int amount);
+    //void takeDamage(int amount);
+    int getHealth();
 
 private:
 /**

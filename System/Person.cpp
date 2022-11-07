@@ -89,12 +89,13 @@ void Soldier::interact() {
 }
 
 int Soldier::getHealth() {
-    if(this->research() == 50){
+    return health;
+    /*if(this->research() == 50){
         return (health + research());
     }
     else{
         return health;
-    }
+    }*/
 }
 
 Soldier* Soldier::clone() {
@@ -177,12 +178,12 @@ void Soldier::doDamage(Person* victim){
     victim->takeDamage(damage);
 }
 
-void Soldier::takeDamage(int amount){
+void Person::takeDamage(int amount){
     int oldHealth=health;
 
-    if(research() == 50){
+    /*if(research() == 50){
         amount -= research();
-    }
+    }*/
 
     health-=amount;
     if(health<0){
