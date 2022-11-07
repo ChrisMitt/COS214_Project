@@ -7,10 +7,31 @@
 
 #include "Status.h"
 
+/**
+ * @brief a UnitBackup class
+ * 
+ */
 class UnitBackup {
 public:
+/**
+ * @brief Construct a new Unit Backup object
+ * 
+ * @param
+ * 
+ * @param Status*
+ */
     UnitBackup(int, Status*);
+    /**
+     * @brief Get the Health object
+     * 
+     * @return int 
+     */
     int getHealth();
+    /**
+     * @brief Get the Status object
+     * 
+     * @return Status* 
+     */
     Status* getStatus();
 
 private:

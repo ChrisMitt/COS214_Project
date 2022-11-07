@@ -4,7 +4,7 @@
 
 
 /**
- * an Aggregate class for turncontrol, an aggregate class for the iterator pattern
+ *@brief description an Aggregate class for turncontrol, an aggregate class for the iterator pattern
  */
 class Aggregate {
 
