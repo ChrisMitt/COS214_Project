@@ -74,6 +74,6 @@ int main() {
     int ret = rs->createUpgradedUnit(2, co);
     cout<<co->resources<<endl;
 
-
+    return 0;
 
 }
