@@ -39,7 +39,8 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Communication_
 
 <li>Object Diagrams:</li>
 <ul>
-<li></li>
+<li>War Theatre:</li>
+https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Object_Diagram/WT_Object_Diagram.jpg <br/>
 <li></li>
 </ul>
 </ol>
@@ -48,6 +49,7 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Communication_
 
 <ol>
 <li>Doxygen:</li>
+
 </ol>
 
 <h4>Final Report and Presentation Material:</h4>
