@@ -15,7 +15,7 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Spec.pdf
 
 
 <h4>Video:</h4>
-
+https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Video/Intro%20Video.mp4
 
 
 <h4>Final Class Diagram:</h4>
