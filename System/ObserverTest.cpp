@@ -171,14 +171,14 @@ void startBattle(bool firstBattle){
     if(firstBattle){
         allAlliances.push_back(new Alliance("Royal soldiers"));
         allAlliances.push_back(new Alliance("United troops"));
-        allAlliances.front()->addCountry( UN[1] );
-        allAlliances.front()->addCountry( UN[2] );
-        allAlliances.back()->addCountry( UN[3] );
-        allAlliances.back()->addCountry( UN[4] );
+        allAlliances.front()->addCountry(UN[1]);
+        allAlliances.front()->addCountry(UN[2]);
+        allAlliances.back()->addCountry(UN[3]);
+        allAlliances.back()->addCountry(UN[4]);
         printAlliances();
     }
 
-    WarTheatre* w = new WarTheatre( allAlliances );
+    WarTheatre* w = new WarTheatre(allAlliances);
     w->battle();
     delete w;
 }
@@ -196,10 +196,10 @@ int main()
     }
     
     
-    cout << "Welcome to the simulator!\n";
+    cout << "Welcome to the war simulator!\n";
     
     int input = -1;
-    bool firstBattle=true;
+    bool firstBattle = true;
     while (input != 0)
     {
         if (input == 1)
@@ -217,9 +217,10 @@ int main()
         else if (input == 4)
         {
             showUN();
-        }else if (input==5){
+        }else if (input == 5)
+        {
             startBattle(firstBattle);
-            firstBattle=false;
+            firstBattle = false;
         }
         cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[5] Start battle\n[0] Exit\n";
         cin >> input;
