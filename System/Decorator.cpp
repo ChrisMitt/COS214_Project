@@ -8,6 +8,7 @@
 int Research::research() {
     //cout<< "Extra "<< 1 << " added." <<endl;
     //return 25;
+    return 0;
 }
 
 Upgrade::Upgrade(RnD* up) {
@@ -18,6 +19,7 @@ int Upgrade::research() {
     if(newUpgrade){
         return newUpgrade->research();
     }
+    return -1;
 }
 
 Upgrade::~Upgrade(){

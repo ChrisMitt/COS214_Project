@@ -29,6 +29,7 @@ int ResourceManagement::createUpgradedUnit(int i, Country* co) {
     else{
         //cout<< "&&Unit type " << i << " was created.";
     }
+    return -1;
 }
 
 UnitProducer::UnitProducer(int v, int t) : ResourceManagement() {
@@ -57,4 +58,5 @@ int UnitProducer::createUpgradedUnit(int i, Country* co) {
     else{
         ResourceManagement::createUpgradedUnit(i, co);
     }
+    return -1;
 }
