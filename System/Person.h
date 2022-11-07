@@ -86,6 +86,7 @@ public:
     void takeDamage(int amount);
     bool isAlive();
     CountryObserver* getCountry();
+    research();
 
 protected:
 /**
@@ -122,6 +123,7 @@ protected:
  */
     Status* status;
     CountryObserver* country;
+    RnD* upgrade;
 };
 
 /**
@@ -163,12 +165,6 @@ public:
      * @return int 
      */
     int defend();
-    /**
-     * @brief a normal member
-     * 
-     * @return int 
-     */
-    int research();
     /**
      * @brief a virtual memeber
      * 
@@ -213,17 +209,6 @@ private:
  * 
  */
     int damage;
-    /**
-     * @brief a private variable
-     * an RnD* pointer variable
-     * 
-     */
-    RnD* upgrade;
-    /**
-     * @brief a private variable
-     * an int pointer variable
-     *
-     */
 };
 
 

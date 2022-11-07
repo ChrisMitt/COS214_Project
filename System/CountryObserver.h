@@ -9,8 +9,15 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/**
+ * @brief CountryObserver class, an obseverclass for countries
+ * 
+ */
 //The default/minimum values for any country's army
+/**
+ * @brief he default/minimum values for any country's army
+ * 
+ */
 struct Army
 {
     struct{
@@ -52,29 +59,132 @@ class Alliance;
 
 class CountryObserver{
   public:
+  /**
+   * @brief Construct a new Country Observer object
+   * 
+   */
     CountryObserver();
+    /**
+     * @brief Destroy the Country Observer object
+     * 
+     */
     ~CountryObserver();
+    /**
+     * @brief Set the Name object
+     * @param string
+     */
     void setName(string);
+    /**
+     * @brief Get the Name object
+     * 
+     * @return string 
+     */
     string getName();
+    /**
+     * @brief 
+     * 
+     * @return int 
+     */
     int getID();
+    /**
+     * @brief Set the State object
+     * @param State*
+     *
     void setState(State*);
+    /**
+     * @brief Get the State object
+     * 
+     * @return State* 
+     */
     State* getState();
+    /**
+     * @brief Get the Alliance State object
+     * 
+     * @return true 
+     * @return false 
+     */
     bool getAllianceState();
+    /**
+     * @brief Set the Alliance State object
+     * @param bool
+     */
     void setAllianceState(bool);
+    /**
+     * @brief Set the Subject object
+     * @param Alliance*
+     */
     void setSubject(Alliance*);
+    /**
+     * @brief Get the Subject object
+     * 
+     * @return Alliance* 
+     */
     Alliance* getSubject();
+    /**
+     * @brief a pure virtual member
+     * 
+     */
     virtual void update() = 0;
     //War Theatre
+    /**
+     * @brief a pure virtual member
+     * 
+     */
     virtual void fight()=0;
+    /**
+     * @brief a pure virtual memner
+     * 
+     * @param c 
+     */
     virtual void add(CountryObserver* c)=0;
+    /**
+     * @brief Set the Entities object
+     * 
+     * @param countryName 
+     */
     void setEntities(string countryName);//sets the military forces based on the country
+    /**
+     * @brief a normal member
+     * 
+     */
     void fillArmyStruct();
+    /**
+     * @brief Create a Army object
+     * 
+     */
     void createArmy();
+    /**
+     * @brief a normal member
+     * 
+     */
     void printArmy();
+    /**
+     * @brief 
+     * 
+     */
     void printMedics();
+    /**
+     * @brief a normal memeber
+     * 
+     */
     void printSoldiers();
+    /**
+     * @brief a normal member
+     * 
+     */
     void printMechanics();
+    /**
+     * @brief a normal member
+     * 
+     */
     void printTanks();
+    /**
+     * @brief remove soldiers, remove tank, remove ship, remove plane member functions
+     * 
+     * @param s 
+     * @return true 
+     * @return false 
+     */
     bool removeSoldier(Soldier* s);
     bool removeTank(Tank* t);
     bool removeShip(Ship* s);

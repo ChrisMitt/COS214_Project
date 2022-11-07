@@ -9,14 +9,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "WarPhaseChanger.h"
+#include "Phase.h"
 #include <iostream>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using namespace std;
 
-class WarPhaseChanger;
+class Phase;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,13 +24,8 @@ class WarPhaseChanger;
 /**
 *  A PhasesofWar class. State Class for the StatePattern .
 */
-class PhasesofWar
-{
-    private:
-        /* data */
-        
-    public:
-
+class PhasesofWar{
+public:
         /**
         * A constructor.
         * Default PhasesofWar constructor.
@@ -44,16 +39,28 @@ class PhasesofWar
         virtual ~PhasesofWar();
 
         /**
-        * A pure virtual member.
-        * @param WPC  a pointer argument
+        * A void member.
         */
-        virtual void changePhase(WarPhaseChanger* WPC) = 0;
+        void changePhase();
 
         /**
-        * A pure virtual member.
+        * A void member.
         * @return A string 
         */
-        virtual string getPhase() = 0;
+        string getPhase();
+
+    /**
+    * A void member.
+    * @param p  a pointer argument
+    */
+    void setPhase(Phase* p);
+
+private:
+    /**
+     * @brief A Phase pointer object
+     *
+     */
+    Phase* phase;
 
 };
 

@@ -15,6 +15,7 @@
 #include "Squad.h"
 #include "ResourceManagement.h"
 #include "DeployContext.h"
+#include "ArmyGeneral.h"
 using namespace std;
 
 
@@ -26,6 +27,8 @@ using namespace std;
 class WarTheatre
 {
 private:
+    ArmyGeneral* general;
+    ConcreteSquadBuilder* squadBuilder;
 /**
  * @brief a list of Alliances 
  * 
@@ -46,6 +49,7 @@ private:
     Alliance* dAlliance;
     Alliance* aAlliance;
 public:
+/***/
     list<Alliance*> allAlliances;
     vector<Soldier*> allSoldiers;//combined attacker and defender soldiers
     list<Soldier*> deadSoldiers;
@@ -57,7 +61,17 @@ public:
     list<Plane*> deadPlanes;
     list<Medic*> allMedics;
     list<Mechanic*> allMechanics;
+    /**
+     * @brief Get the Defenders object
+     * 
+     * @return Squad* 
+     */
     Squad* getDefenders();
+    /**
+     * @brief Get the Attackers object
+     * 
+     * @return Squad* 
+     */
     Squad* getAttackers();
     void printResult();
 
@@ -108,8 +122,26 @@ public:
      * 
      */
     void removeDeadUnits();
+    /**
+     * @brief Create a Resources object
+     * 
+     */
     void createResources(Country*);
+    /**
+     * @brief Get the Rand Person object
+     * 
+     * @param type 
+     * @param squad 
+     * @return Person* 
+     */
     Person* getRandPerson(string type, Squad* squad);
+    /**
+     * @brief Get the Rand Vehicle object
+     * 
+     * @param type 
+     * @param squad 
+     * @return Vehicle* 
+     */
     Vehicle* getRandVehicle(string type, Squad* squad);
     void deleteUnits();
     void clearLists();

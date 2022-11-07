@@ -48,6 +48,10 @@ void Person::restore(UnitBackup* mem) {
     status = mem->getStatus();
 }
 
+int Person::research() {
+    return upgrade->research();
+}
+
 Person::~Person() {
     
 }
@@ -78,10 +82,6 @@ int Soldier::attack() {
 
 int Soldier::defend() {
     return this->damage;
-}
-
-int Soldier::research() {
-    return upgrade->research();
 }
 
 void Soldier::interact() {
