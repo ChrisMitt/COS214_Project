@@ -12,7 +12,7 @@ using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Diplomacy::Diplomacy() : WarStrategy()
+Diplomacy::Diplomacy(bool s) : WarStrategy(s)
 {
     this->strategy_name="Diplomacy";
 }

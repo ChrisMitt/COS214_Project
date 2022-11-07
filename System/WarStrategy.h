@@ -43,7 +43,7 @@ class WarStrategy
        * A constructor.
        * Default War Startegy constructor.
        */
-        WarStrategy();
+        WarStrategy(bool s);
 
        /**
        * A destructor.
@@ -55,6 +55,21 @@ class WarStrategy
        * A pure virtual member.
        */
         virtual void RulesofEngagement() = 0; 
+
+        /**
+       * A normal member.
+       */
+        string getName(); 
+
+        /**
+       * A normal member.
+       */
+        bool getStatus();       
+
+         /**
+       * A normal member.
+       */
+        void setStatus(bool s);   
 
 };
 

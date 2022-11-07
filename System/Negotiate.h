@@ -31,7 +31,7 @@ class Negotiate : public WarStrategy
         * A constructor.
         * Default Negotiate constructor.
         */
-        Negotiate();
+        Negotiate(bool s);
 
         /**
         * A destructor.
