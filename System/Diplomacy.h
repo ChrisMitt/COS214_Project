@@ -21,7 +21,6 @@ using namespace std;
 /**
 *  A Diplomacy class. ConcreteStrategy Class for the StrategyPattern .
 */
-
 class Diplomacy : public WarStrategy
 {
     private:
@@ -32,8 +31,7 @@ class Diplomacy : public WarStrategy
         * A constructor.
         * Default Diplomacy constructor.
         */
-
-        Diplomacy();
+        Diplomacy(bool s);
 
         /**
         * A destructor.

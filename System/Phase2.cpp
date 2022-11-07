@@ -28,7 +28,14 @@ Phase2::~Phase2()
 void Phase2::changePhase(WarPhaseChanger* WPC) 
 {
     
-    WPC->setPhase(new Phase3());
+    if(WPC->getStrategy()=="Fight" && WPC!=NULL)
+    {
+        if(WPC->Status()==true)
+        {
+            WPC->setPhase(new Phase3());;
+        }
+    }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

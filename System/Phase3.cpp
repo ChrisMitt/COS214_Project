@@ -27,7 +27,10 @@ Phase3::~Phase3()
 
 void Phase3::changePhase(WarPhaseChanger* WPC) 
 {
-    WPC->setPhase(new Phase4());
+    if(WPC!=NULL)
+    {
+        WPC->setPhase(new Phase4());
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
