@@ -28,7 +28,7 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Activity_Diagr
 <li>Our Patterns:</li>
 https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Patterns/Design_Patterns.pdf <br/>
 <li>Our Classes:</li>
-
+https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Classes/Classes.pdf <br/>
 <li>Class Diagram:</li>
 
 <li>Sequence Diagram:</li>
