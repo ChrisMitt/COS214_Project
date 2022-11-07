@@ -25,13 +25,21 @@ void createAlliance()
     while (countryLoop != 0)
     {
         cout << "What country would you like to add to "<< aName << "?\n";
-        cout << "[0] Stop adding countries\n";
-        for (int i = 0; i < 12; i+=6)
+        cout << "0    Stop adding countries\n";
+        
+        for (int i = 0; i < 20; i+=4)
         {
-            cout << "["<< (i+1) << "] " << UN[i]->getName() << "\t["<< (i+2) << "] " << UN[i+1]->getName()
-            << "\t["<< (i+3) << "] " << UN[i+2]->getName()<< "\t["<< (i+4) << "] " << UN[i+3]->getName()
-            << "\t["<< (i+5) << "] " << UN[i+4]->getName()<< "\t["<< (i+6) << "] " << UN[i+5]->getName()<< endl;
+            cout.width(5); cout << left << i+1;
+            cout.width(30); cout << left << UN[i] -> getName();
+            cout.width(5); cout << left << i+2;
+            cout.width(30); cout << left << UN[i+1] -> getName();
+            cout.width(5); cout << left << i+3;
+            cout.width(30); cout << left << UN[i+2] -> getName();
+            cout.width(5); cout << left << i+4;
+            cout.width(30); cout << left << UN[i+3] -> getName();
+            cout<<endl;
         }
+        
         cin >> countryLoop;
         if (countryLoop != 0)
         {
@@ -88,13 +96,20 @@ void editAlliances()
                         while (add != 0)
                         {
                             cout << "Which country would you like to add to " << (*itr)->getName() << "?\n";
-                            cout << "[0] Stop adding countries\n";
-                            for (int i = 0; i < 12; i+=6)
+                            cout << "0    Stop adding countries\n";
+                            for (int i = 0; i < 20; i+=4)
                             {
-                                cout << "["<< (i+1) << "] " << UN[i]->getName() << "\t["<< (i+2) << "] " << UN[i+1]->getName()
-                                << "\t["<< (i+3) << "] " << UN[i+2]->getName()<< "\t["<< (i+4) << "] " << UN[i+3]->getName()
-                                << "\t["<< (i+5) << "] " << UN[i+4]->getName()<< "\t["<< (i+6) << "] " << UN[i+5]->getName()<< endl;
+                                cout.width(5); cout << left << i+1;
+                                cout.width(30); cout << left << UN[i] -> getName();
+                                cout.width(5); cout << left << i+2;
+                                cout.width(30); cout << left << UN[i+1] -> getName();
+                                cout.width(5); cout << left << i+3;
+                                cout.width(30); cout << left << UN[i+2] -> getName();
+                                cout.width(5); cout << left << i+4;
+                                cout.width(30); cout << left << UN[i+3] -> getName();
+                                cout<<endl;
                             }
+                            
                             cin >> add;
                             if (add != 0)
                             {
@@ -151,7 +166,7 @@ void showUN()
     cout.width(20); cout << left << "ALLIANCE";
     cout << left << "STATE\n";
     
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < 20; i++)
     {
         cout.width(15); cout << left << i+1;
         cout.width(35); cout << left << UN[i] -> getName();
@@ -199,7 +214,7 @@ int main()
     cout << "Welcome to the war simulator!\n";
     
     int input = -1;
-    bool firstBattle = true;
+    bool firstBattle=true;
     while (input != 0)
     {
         if (input == 1)
@@ -218,10 +233,10 @@ int main()
         {
             showUN();
         }
-        else if (input == 5)
+        else if (input==5)
         {
             startBattle(firstBattle);
-            firstBattle = false;
+            firstBattle=false;
         }
         cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[5] Start battle\n[0] Exit\n";
         cin >> input;
@@ -229,11 +244,3 @@ int main()
     
     return 0;
 }
-
-
-
-
-
-
-
-
