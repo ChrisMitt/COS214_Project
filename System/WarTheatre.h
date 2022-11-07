@@ -113,5 +113,5 @@ public:
      * 
      */
     void removeDeadUnits();
-    void createResources(CountryObserver*);
+    void createResources(Country*);
 };

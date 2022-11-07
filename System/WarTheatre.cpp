@@ -57,6 +57,7 @@ void WarTheatre::battle(list<CountryObserver*> d, list<CountryObserver*> a, stri
     cout<<"\n=============================\n";
 
     fight();
+    // Losers do resource management
 }
 
 void WarTheatre::fight(){
@@ -65,7 +66,6 @@ void WarTheatre::fight(){
     //medicsHeal();
 
     // Losers do resource management
-    createResources(/*CountryObserver* dm*/);
 
 
 }
@@ -166,13 +166,64 @@ void WarTheatre::tankAttack(Tank* damageDealer, Squad* enemySquad){//returns tru
     }
 }
 
-void WarTheatre::createResources(CountryObserver* co) {
+void WarTheatre::createResources(Country* co) {
 
+    int unitType = (rand()%4)+1;
     int val = co->resources;
-    ResourceManagement* rs = new UnitProducer(4);
-    rs->add(new UnitProducer(3));
-    rs->add(new UnitProducer(2));
-    rs->add(new UnitProducer(1));
+    ResourceManagement* rs = new UnitProducer(60, 4);
+    rs->add(new UnitProducer(40, 3));
+    rs->add(new UnitProducer(20, 2));
+    rs->add(new UnitProducer(2, 1));
+
+    int ret = rs->createUpgradedUnit(unitType, co);
+    int choice = (rand()%1);
 
 
+    switch (ret) {
+        case 0:
+            break;
+        {case 1:
+            Soldier* upgradedSoldier;
+            if(choice==1){
+                upgradedSoldier = new Soldier("Colonel", "Deployed", new ExtraHealth(new Research));
+            }
+            else{
+                upgradedSoldier = new Soldier("Heavy", "Deployed", new ExtraDamage(new Research));
+            }
+            co->soldiers.push_back(upgradedSoldier);
+            break;}
+
+        {case 2:
+            Tank* upgradedTank;
+            if(choice==1){
+                upgradedTank = new Tank("Tiger", "Deployed", new ExtraHealth(new Research));
+            }
+            else{
+                upgradedTank = new Tank("Tiger", "Deployed", new ExtraDamage(new Research));
+            }
+            co->tanks.push_back(upgradedTank);
+            break;}
+
+        {case 3:
+            Plane* upgradedPlane;
+            if(choice==1){
+                upgradedPlane = new Plane("Bomber", "Deployed", new ExtraHealth(new Research));
+            }
+            else{
+                upgradedPlane = new Plane("Fighter", "Deployed", new ExtraDamage(new Research));
+            }
+            co->planes.push_back(upgradedPlane);
+            break;}
+
+        {case 4:
+            Ship* upgradedShip;
+            if(choice==1){
+                upgradedShip = new Ship("Cruiser", "Deployed", new ExtraHealth(new Research));
+            }
+            else{
+                upgradedShip = new Ship("Destroyer", "Deployed", new ExtraDamage(new Research));
+            }
+            co->ships.push_back(upgradedShip);
+            break;}
+    }
 }

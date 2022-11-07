@@ -56,8 +56,7 @@ UnitBackup* Vehicle::makeBackup(){
 }
 
 int Vehicle::research() {
-    upgrade->research();
-    return 0;
+    return upgrade->research();
 }
 
 int Vehicle::getArmour(){

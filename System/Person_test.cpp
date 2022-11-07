@@ -3,11 +3,15 @@
 #include "Vehicle.h"
 #include "VehicleFactory.h"
 #include "Decorator.h"
+#include "ResourceManagement.h"
+#include "CountryObserver.h"
+#include "Country.h"
 
 using namespace std;
 int main() {
     //Person units
-    Soldier* maj = new Soldier("Major", "Deployed", new ExtraDamage(new Research));
+    Research* re = new Research;
+    Soldier* maj = new Soldier("Major", "Deployed", re);
     Medic* med = new Medic("Field Doctor", "in training");
     Mechanic* mech = new Mechanic("Airplane Mechanic", "Deployed");
     Person* civ = new Soldier();
@@ -16,7 +20,8 @@ int main() {
 
     //Vehicle Units
     Vehicle* plane = new Plane();
-    Plane* bomber = new Plane("Bomber", "Damaged", new ExtraDamage(new Research));
+    ExtraDamage* ed = new ExtraDamage(re);
+    Plane* bomber = new Plane("Bomber", "Damaged", ed);
 
     //Memento
 
@@ -37,12 +42,12 @@ int main() {
     maj->restore(med->getMemento());
     cout<< "Soldier Health: " << maj->getHealth() <<endl;
 
-    cout<< "Bomber Armour: " << bomber->getAmour() <<endl;
+    cout<< "Bomber Armour: " << bomber->getArmour() <<endl;
     mech->setMemento(bomber->makeBackup());
-    bomber->setArmour(-75);
-    cout<< "Bomber was shot, armour now at " << bomber->getAmour() <<endl;
+    bomber->setArmour(-5);
+    cout<< "Bomber was shot, armour now at " << bomber->getArmour() <<endl;
     bomber->restore(mech->getMemento());
-    cout<< "Bomber was repaired by " << mech->getType() << ". Bomber armour now at " << bomber->getAmour() <<endl;
+    cout<< "Bomber was repaired by " << mech->getType() << ". Bomber armour now at " << bomber->getArmour() <<endl;
 
     //Decorator
     cout<< "Bomber decorator:" <<endl;
@@ -55,6 +60,19 @@ int main() {
         int dam = maj->research();
         cout << dam <<endl;
     }
+
+    cout<<endl;
+    cout<<"Resources"<<endl;
+    Country* co = new Country();
+    co->resources = 200;
+    cout<<co->resources<<endl;
+    ResourceManagement* rs = new UnitProducer(60 ,4);
+    rs->add(new UnitProducer(40, 3));
+    rs->add(new UnitProducer(20, 2));
+    rs->add(new UnitProducer(2, 1));
+
+    int ret = rs->createUpgradedUnit(2, co);
+    cout<<co->resources<<endl;
 
 
     return 0;

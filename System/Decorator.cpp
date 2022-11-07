@@ -6,8 +6,8 @@
 #include "Decorator.h"
 
 int Research::research() {
-    //cout<< "Extra "<< this->getType() << " added." <<endl;
-    return 0;
+    //cout<< "Extra "<< 1 << " added." <<endl;
+    //return 25;
 }
 
 Upgrade::Upgrade(RnD* up) {
@@ -16,9 +16,8 @@ Upgrade::Upgrade(RnD* up) {
 
 int Upgrade::research() {
     if(newUpgrade){
-        newUpgrade->research();
+        return newUpgrade->research();
     }
-    return 0;
 }
 
 Upgrade::~Upgrade(){
