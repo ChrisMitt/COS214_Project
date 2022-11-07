@@ -18,16 +18,16 @@ void ResourceManagement::add(ResourceManagement* rm) {
 }
 
 int ResourceManagement::createUpgradedUnit(int i, Country* co) {
-    if(i >= 0){
+    if(i > 0){
         if(next){
             next->createUpgradedUnit(i, co);
         }
         else{
-            cout<< "Country has depleted its resources. Unable to produce more units." <<endl;
+            //cout<< "&&Country has depleted its resources. Unable to produce more units." <<endl;
         }
     }
     else{
-        cout<< "Unit type " << i << " was created.";
+        //cout<< "&&Unit type " << i << " was created.";
     }
 }
 
@@ -40,18 +40,18 @@ int UnitProducer::createUpgradedUnit(int i, Country* co) {
     if(i == this->unitType) {
         if (this->value <= co->resources) {
             if (i == 0) {
-                cout << "Country has depleted its resources. Unable to produce more units." << endl;
+                //cout << "Country has depleted its resources. Unable to produce more units." << endl;
                 return 0;
             } else {
-                cout << "Unit type " << i << " was created." << endl;
+                //cout << "Unit type " << i << " was created." << endl;
                 int resource = co->resources;
                 resource = resource - value;
                 co->resources = resource;
                 return i;
             }
         } else {
-            cout << i << " not enough resources to produce. pass on." << endl;
-            ResourceManagement::createUpgradedUnit(i, co);
+            //cout << i << " not enough resources to produce. pass on." << endl;
+            ResourceManagement::createUpgradedUnit(i-1, co);
         }
     }
     else{
