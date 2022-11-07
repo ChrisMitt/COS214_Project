@@ -81,6 +81,16 @@ WarTheatre::WarTheatre(list<Alliance*> aa){
 
     dAlliance = d.front()->getSubject();
     defenders = new Squad(d, dAlliance->getName());
+
+    /*dAlliance = d.front()->getSubject();
+    squadBuilder = new ConcreteSquadBuilder(dAlliance);
+    cout<<"a\n";
+    general = new ArmyGeneral(squadBuilder);
+    cout<<"b\n";
+    general->construct(area);
+    cout<<"c\n";
+    defenders = squadBuilder->getResult();
+    cout<<"d\n";*/
     
     aAlliance = a.front()->getSubject();
     attackers = new Squad(a, aAlliance->getName());

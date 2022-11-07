@@ -15,6 +15,7 @@
 #include "Squad.h"
 #include "ResourceManagement.h"
 #include "DeployContext.h"
+#include "ArmyGeneral.h"
 using namespace std;
 
 
@@ -26,6 +27,8 @@ using namespace std;
 class WarTheatre
 {
 private:
+    ArmyGeneral* general;
+    ConcreteSquadBuilder* squadBuilder;
 /**
  * @brief a list of Alliances 
  * 
