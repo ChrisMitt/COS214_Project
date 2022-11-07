@@ -19,7 +19,7 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
-*  A Negotiate class. ConcreteStrategy Class for the StrategyPattern .
+*  @brief A Negotiate class. ConcreteStrategy Class for the StrategyPattern .
 */
 class Negotiate : public WarStrategy
 {
@@ -28,21 +28,19 @@ class Negotiate : public WarStrategy
     public:
 
         /**
-        * A constructor.
+        * @brief A constructor.
         * Default Negotiate constructor.
         */
         Negotiate(bool s);
 
         /**
-        * A destructor.
+        * @brief A destructor.
         * Negotiate destructor.
         */
         ~Negotiate();
 
         /**
-        * A normal member.
-        * @see Negotiate()
-        * @see ~Negotiate()
+        * @brief A normal member.
         */
         void RulesofEngagement();
 };

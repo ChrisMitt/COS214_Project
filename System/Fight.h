@@ -19,7 +19,7 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
-*  A Fight class. ConcreteStrategy Class for the StrategyPattern .
+*  @brief A Fight class. ConcreteStrategy Class for the StrategyPattern .
 */
 class Fight : public WarStrategy
 {
@@ -28,19 +28,19 @@ class Fight : public WarStrategy
     public:
 
         /**
-        * A constructor.
+        * @brief A constructor.
         * Default Fight constructor.
         */
         Fight(bool s);
         
         /**
-        * A destructor.
+        * @brief A destructor.
         * Fight destructor.
         */
         ~Fight();
 
         /**
-        * A normal member.
+        * @brief A normal member.
         */
         void RulesofEngagement();
 };

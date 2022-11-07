@@ -19,7 +19,7 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
-*  A Phases4 class. ConcreteState Class for the StatePattern .
+*  @brief A Phases4 class. ConcreteState Class for the StatePattern .
 */
 class Phase4 : public PhasesofWar
 {
@@ -28,25 +28,25 @@ class Phase4 : public PhasesofWar
     public:
 
         /**
-        * A constructor.
+        * @brief A constructor.
         * Default Phase4 constructor.
         */
         Phase4();
 
         /**
-        * A destructor.
+        * @brief A destructor.
         * Phase4 destructor.
         */
         ~Phase4();
 
         /**
-        * A virtual member.
+        * @brief A virtual member.
         * @param WPC  a pointer argument
         */
         virtual void changePhase(WarPhaseChanger* WPC) ;
 
         /**
-        * A pure virtual member.
+        * @brief A pure virtual member.
         * @return A string 
         */
         virtual string getPhase();
