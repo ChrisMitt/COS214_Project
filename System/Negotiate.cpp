@@ -14,7 +14,7 @@ using namespace std;
 
 Negotiate::Negotiate() : WarStrategy()
 {
-    this->startegy_name="Negotiate";
+    this->strategy_name="Negotiate";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

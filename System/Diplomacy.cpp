@@ -14,7 +14,7 @@ using namespace std;
 
 Diplomacy::Diplomacy() : WarStrategy()
 {
-    this->startegy_name="Diplomacy";
+    this->strategy_name="Diplomacy";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
