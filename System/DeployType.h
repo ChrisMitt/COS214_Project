@@ -46,3 +46,11 @@ public:
     void deploy();
 };
 
+class MedicDeploy:public DeployType
+{
+public:
+    MedicDeploy(WarTheatre* w);
+    ~MedicDeploy();
+    void deploy();
+};
+

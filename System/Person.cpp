@@ -155,7 +155,11 @@ int Soldier::getDamage(){
 }
 
 void Soldier::doDamage(Person* victim){
-    cout<< type << " doing " << damage << " damage to " <<victim->getType() << endl;
+    if( damage >= victim->getHealth() ){
+        cout<< type << " shoots and kills " << victim->getType()<<endl;
+    }else{
+        cout<< type << " shoots and damages " << victim->getType()<<endl;
+    }
     victim->takeDamage(damage);
 }
 
@@ -164,10 +168,7 @@ void Person::takeDamage(int amount){
     health-=amount;
     if(health<0){
         health=0;
-        cout<< type <<" went from "<< oldHealth <<"HP, to "<<health<<"HP\n";
-        cout<< type <<" died a brave death"<<endl;
     }else{
-        cout<< type <<" went from "<< oldHealth <<"HP, to "<<health<<"HP\n";
+        
     }
-    cout<<"------------------"<<endl;
 }

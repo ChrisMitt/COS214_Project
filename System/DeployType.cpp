@@ -100,6 +100,7 @@ void TankDeploy::deploy(){
                         enemySquad->remove(randSoldier);
                         w->deadSoldiers.push_back(randSoldier);
                     }
+                    cout<<"---------------------\n";
                 }
             }
         }
@@ -224,9 +225,39 @@ void PlaneDeploy::deploy(){
                         enemySquad->remove(randSoldier);
                         w->deadSoldiers.push_back(randSoldier);
                     }
+                    cout<<"---------------------\n";
                 }
             }
 
+        }
+    }
+}
+
+MedicDeploy::MedicDeploy(WarTheatre* w) : DeployType(w){
+
+}
+
+void MedicDeploy::deploy(){
+    cout<<"== 5: MEDICS DEPLOYED =="<<endl;
+    if( defenders->getSoldiers().size() == 0 || attackers->getSoldiers().size()==0 ){
+        return;
+    }
+    
+    for(auto it=w->allMedics.begin(); it!=w->allMedics.end(); it++){
+        Medic* currMedic = *it;
+        Squad* currSquad;
+        if( defenders->contains(currMedic) ){
+            currSquad = defenders;
+        }else{
+            currSquad = attackers;
+        }
+        for(auto sIT=currSquad->getSoldiers().begin(); sIT!=currSquad->getSoldiers().end(); sIT++){
+            if( (*sIT)!=NULL && ( (*sIT)->getHealth()>0 ) && ( (*sIT)->getHealth()<=50 ) ){
+                cout<< currMedic->getType() <<" sends " << (*sIT)->getType() << " to the hospital to fight another day\n";
+                (*sIT)->setHealth(200);
+                currSquad->remove(*sIT);
+                break;
+            }
         }
     }
 }

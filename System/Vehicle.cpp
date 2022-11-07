@@ -95,7 +95,7 @@ void Vehicle::doDamage(Person* victim){
 
 void Vehicle::takeDamage(int amount){
     if(amount<=armour){
-        cout<<getType()<<" blocked all of the damage\n";
+        cout<<"    "<<getType()<<" blocked all of the damage\n";
     }else{
         int oldHealth = health;
         health -= amount-armour;
@@ -103,12 +103,12 @@ void Vehicle::takeDamage(int amount){
             health=0;
         }
         if(health==0){
-            cout<<getType()<<" has been destroyed\n";
+            cout<<"    "<<getType()<<" has been destroyed\n";
         }else{
-            cout<<getType()<<" blocked " << armour << " damage, went from " << oldHealth << "HP, to " << health << "HP\n";
+            cout<<"    "<<getType()<<" blocked " << armour << " damage, went from " << oldHealth << "HP, to " << health << "HP\n";
         }
     }
-    cout<<"-----------------\n";
+    cout<<"---------------------\n";
 }
 
 Plane::Plane() : Vehicle(){

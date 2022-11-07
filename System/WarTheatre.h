@@ -53,6 +53,8 @@ public:
     list<Ship*> deadShips;
     list<Plane*> allPlanes;
     list<Plane*> deadPlanes;
+    list<Medic*> allMedics;
+    list<Mechanic*> allMechanics;
     Squad* getDefenders();
     Squad* getAttackers();
 

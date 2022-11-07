@@ -85,6 +85,7 @@ void Squad::printSquad(){
     cout<<"Total tanks: "<<tanks.size()<<endl;
     cout<<"Total ships: "<<ships.size()<<endl;
     cout<<"Total planes: "<<planes.size()<<endl;
+    cout<<"Total medics: "<<medics.size()<<endl;
 }
 
 vector<Medic*> Squad::getMedics(){
@@ -150,6 +151,17 @@ void Squad::remove(Plane* p){
     for(it; it!=planes.end() && !found ; it++){
         if((*it)==p && !found){
             planes.erase(it);
+            found=true;
+        }
+    }
+}
+
+void Squad::remove(Medic* m){
+    auto it = medics.begin();
+    bool found = false;
+    for(it; it!=medics.end() && !found ; it++){
+        if((*it)==m && !found){
+            medics.erase(it);
             found=true;
         }
     }

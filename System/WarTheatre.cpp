@@ -24,6 +24,7 @@ WarTheatre::WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, strin
     deployments.push_back( new DeployContext( new TankDeploy(this) ) );
     deployments.push_back( new DeployContext( new ShipDeploy(this) ) );
     deployments.push_back( new DeployContext( new PlaneDeploy(this) ) );
+    deployments.push_back( new DeployContext( new MedicDeploy(this) ) );
 }
 
 WarTheatre::WarTheatre(list<Alliance*> as){
@@ -92,7 +93,7 @@ void WarTheatre::fillLists(){
         }
     }
 
-    //Panes
+    //Planes
     int maxPlaneSize=0;
     defenders->getPlanes().size() >= attackers->getPlanes().size() ? maxPlaneSize = defenders->getPlanes().size() : maxPlaneSize = attackers->getPlanes().size();
     for(int i=0; i<maxPlaneSize; i++){
@@ -101,6 +102,18 @@ void WarTheatre::fillLists(){
         }
         if(i<attackers->getPlanes().size()){
             allPlanes.push_back( attackers->getPlanes()[i] );
+        }
+    }
+
+    //Medics
+    int maxMedicSize=0;
+    defenders->getMedics().size() >= attackers->getMedics().size() ? maxMedicSize = defenders->getMedics().size() : maxMedicSize = attackers->getMedics().size();
+    for(int i=0; i<maxMedicSize; i++){
+        if(i<defenders->getMedics().size()){
+            allMedics.push_back(defenders->getMedics()[i]);
+        }
+        if(i<attackers->getMedics().size()){
+            allMedics.push_back( attackers->getMedics()[i] );
         }
     }
 }
@@ -123,6 +136,7 @@ void WarTheatre::battle(){
 void WarTheatre::fight(){
     for(auto it = deployments.begin(); it!=deployments.end(); it++){
         (*it)->go();
+        cout<<endl<<endl;
     }
 }
 
