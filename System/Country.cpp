@@ -11,7 +11,7 @@ void Country::update()
 }
 
 void Country::fight(){
-    cout<<name<<" is now fighting\n";
+    cout << name << " is now fighting\n";
 }
 
 void Country::add(CountryObserver* c){

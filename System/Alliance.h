@@ -81,7 +81,7 @@ class Alliance {
   private:
   /**
    * a private variable
-   * an int that hollds the id
+   * an int that holds the alliance id
    */
     int id;
     /**
@@ -91,14 +91,14 @@ class Alliance {
      */
     string name;
     /**
-     * a  private variable
+     * a private variable
      * a static int that holds the total number of alliances
      * 
      */
     static int total; // Total number of alliances
     /**
      * a private variable
-     * a list that holds the countrues in an alliance
+     * a list that holds the countries in an alliance
      * 
      */
     list<CountryObserver*> countryList; // List of countries in the alliance
