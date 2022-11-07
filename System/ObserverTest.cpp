@@ -12,7 +12,7 @@
 #include "WarTheatre.h"
 using namespace std;
 
-Country* UN[12]; // Array of countries in UN
+Country* UN[20]; // Array of countries in UN
 list<Alliance*> allAlliances;// List of all alliances
 
 void createAlliance()
@@ -186,8 +186,8 @@ void startBattle(bool firstBattle){
 int main()
 {
     //Populating countries array
-    string names[12] = {"Afghanistan", "China", "France", "Germany", "Japan", "North Korea", "Norway", "Russia", "South Korea", "United Kingdom", "United States of America", "Zimbabwe"};
-    for (int i = 0; i < 12; i++)
+    string names[20] = {"Afghanistan", "Austria", "Brazil", "Canada", "China", "Ethiopia", "France", "Germany", "India", "Israel", "Japan", "North Korea", "Norway", "Russia", "South Africa", "South Korea", "United Kingdom", "United States of America", "Vietnam", "Zimbabwe"};
+    for (int i = 0; i < 20; i++)
     {
         UN[i] = new Country();
         UN[i] -> setName(names[i]);
@@ -217,7 +217,8 @@ int main()
         else if (input == 4)
         {
             showUN();
-        }else if (input == 5)
+        }
+        else if (input == 5)
         {
             startBattle(firstBattle);
             firstBattle = false;
@@ -228,3 +229,11 @@ int main()
     
     return 0;
 }
+
+
+
+
+
+
+
+
