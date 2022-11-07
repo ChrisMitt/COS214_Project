@@ -18,9 +18,9 @@ struct Army
         int instanceHP = 100;
     } medics;
     struct{
-        int amount = 0;
+        int amount = 20;
         int instanceHP = 200;
-        int instanceDMG = 120;
+        int instanceDMG = 160;
     } soldiers;
     struct{
         int amount=0;
@@ -28,11 +28,24 @@ struct Army
     } mechanics;
     struct{
         string name="Sherman";
-        int amount=2;
-        int instanceHP=20;
-        int instanceDMG=1000;
+        int amount=8;
+        int instanceHP=2000;
+        int instanceDMG=2000;
         int instanceArmour=400;//take 400 less damage from each shot
     } tanks;
+    struct{
+        int amount=2;
+        int instanceHP=10000;
+        int instanceDMG=6000;
+        int instanceArmour=800;//take 400 less damage from each shot
+    } ships;
+    struct{
+        string name = "Spitfire";
+        int amount=2;
+        int instanceHP=1000;
+        int instanceDMG=1400;
+        int instanceArmour=500;//take 400 less damage from each shot
+    } planes;
 };
 
 class Alliance;
@@ -62,6 +75,11 @@ class CountryObserver{
     void printSoldiers();
     void printMechanics();
     void printTanks();
+    bool removeSoldier(Soldier* s);
+    bool removeTank(Tank* t);
+    bool removeShip(Ship* s);
+    bool removePlane(Plane* s);
+
     //1.Ground
     vector<Medic*> medics;
     vector<Soldier*> soldiers;

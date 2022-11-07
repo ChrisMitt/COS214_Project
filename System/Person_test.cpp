@@ -64,14 +64,17 @@ int main() {
     cout << "Resources" << endl;
     Country *co = new Country();
     co->resources = 200;
-    cout << co->resources << endl;
-    ResourceManagement *rs = new UnitProducer(60, 4);
-    rs->add(new UnitProducer(40, 3));
-    rs->add(new UnitProducer(20, 2));
-    rs->add(new UnitProducer(2, 1));
 
-    int ret = rs->createUpgradedUnit(2, co);
-    cout << co->resources << endl;
+    while(co->resources > 0) {
+        int amount = (rand()%4)+1;
+        ResourceManagement *rs = new UnitProducer(60, 4);
+        rs->add(new UnitProducer(40, 3));
+        rs->add(new UnitProducer(20, 2));
+        rs->add(new UnitProducer(2, 1));
+
+        int ret = rs->createUpgradedUnit(amount, co);
+        cout << "Resources left : " << co->resources << endl;
+    }
 
     cout << endl;
     cout << "Damage testing" << endl;

@@ -19,6 +19,7 @@ using namespace std;
  * @brief a person class. an abstract product for the personfactory class
  * an abtract product class for the abtract factory pattern
  */
+class CountryObserver;
 class Person {
 public:
 /**
@@ -32,7 +33,7 @@ public:
      * @param string a  string argument
      * @param h 
      */
-    Person(string, string, int h=100);
+    Person(string, string, int h=100, CountryObserver* c=NULL);
     /**
      * @brief Construct a new Person object
      * @param Person a a pointer argument
@@ -77,6 +78,14 @@ public:
      * 
      */
     virtual ~Person();
+    /**
+     * @brief a normal agurment
+     * 
+     * @param amount 
+     */
+    void takeDamage(int amount);
+    bool isAlive();
+    CountryObserver* getCountry();
 
 protected:
 /**
@@ -112,6 +121,7 @@ protected:
  * a Status pointer object
  */
     Status* status;
+    CountryObserver* country;
 };
 
 /**
@@ -140,7 +150,7 @@ public:
      * @param h 
      * @param d 
      */
-    Soldier(string, string, int h=100, int d=25);
+    Soldier(string, string, int h=100, CountryObserver* c=NULL,int d=25);
     /**
      * @brief a normal member
      * 
@@ -193,7 +203,7 @@ public:
      * 
      * @param victim 
      */
-    void doDamage(Soldier* victim);
+    void doDamage(Person* victim);
     /**
      * @brief a normal agurment
      *
@@ -239,7 +249,7 @@ public:
      * @param string
      * @param h 
      */
-    Medic(string, string, int h=100);
+    Medic(string, string, int h=100, CountryObserver* c=NULL);
     /**
      * @brief a normal member
      * @param Person*
@@ -295,7 +305,7 @@ public:
      * @param string
      * @param h 
      */
-    Mechanic(string, string, int h=100);
+    Mechanic(string, string, int h=100, CountryObserver* c=NULL);
     /**
      * @brief a normal member
      * @param Vehicle

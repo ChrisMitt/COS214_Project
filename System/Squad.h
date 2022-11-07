@@ -72,6 +72,13 @@ private:
     //land wil allow troops and air
     //sea will allow boats and air
     //mountains will only allow air
+    string name;
+    int soldiersKilled;
+    int tanksKilled;
+    int shipsKilled;
+    int planesKilled;
+    int hospCount;
+    int tankRepairs;
 public:
 /**
  * @brief construct a new Squad object
@@ -90,6 +97,22 @@ public:
      * 
      */
     ~Squad();
+    string getName();
+    int getSoldiersKilled();
+    int getTanksKilled();
+    int getShipsKilled();
+    int getPlanesKilled();
+    int getHospCount();
+    int getTankRepairs();
+
+    void increaseSoldiersKilled(int t);
+    void increaseTanksKilled(int t);
+    void increaseShipsKilled(int t);
+    void increasePlanesKilled(int t);
+    void increaseHospCount(int t);
+    void increaseTankRepairs(int t);
+
+    int calcFirepower();
 /**
  * @brief a normal member
  * 
@@ -183,4 +206,15 @@ public:
      * 
      */
     void remove(Tank*);
+    void remove(Ship*);
+    void remove(Plane*);
+    void remove(Medic*);
+    void remove(Mechanic*);
+    
+    bool contains(Soldier* s);
+    bool contains(Tank* t);
+    bool contains(Ship* s);
+    bool contains(Plane* t);
+    bool contains(Medic* s);
+    bool contains(Mechanic* t);
 };

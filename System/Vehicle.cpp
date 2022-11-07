@@ -22,8 +22,8 @@ Vehicle::Vehicle(string t, string s, RnD* up) {
     upgrade = up;
 }
 
-Vehicle::Vehicle(string t, string s, int a, int d, int h) : type(t), state(s), armour(a), damage(d), health(h) {
-    
+Vehicle::Vehicle(string t, string s, int a, int d, int h, CountryObserver* c) : type(t), state(s), armour(a), damage(d), health(h) {
+    country=c;
 }
 
 void Vehicle::clone() {
@@ -81,9 +81,16 @@ int Vehicle::getHealth(){
     }
 }
 
+bool Vehicle::isAlive(){
+    return (health>0);
+}
+
+CountryObserver* Vehicle::getCountry(){
+    return country;
+}
+
 Vehicle::~Vehicle(){
-    delete upgrade;
-    delete this;
+    //delete upgrade;
 }
 
 void Vehicle::doDamage(Vehicle* victim){
@@ -97,7 +104,7 @@ void Vehicle::doDamage(Soldier* victim){
 
 void Vehicle::takeDamage(int amount){
     if(amount<=armour){
-        cout<<getType()<<" blocked all of the damage\n";
+        cout<<"    "<<getType()<<" blocked all of the damage\n";
     }else{
         int oldHealth = health;
 
@@ -110,12 +117,16 @@ void Vehicle::takeDamage(int amount){
             health=0;
         }
         if(health==0){
-            cout<<getType()<<" has been destroyed\n";
+            cout<<"    "<<getType()<<" has been destroyed\n";
         }else{
-            cout<<getType()<<" blocked " << armour << " damage, went from " << oldHealth << "HP, to " << health << "HP\n";
+            cout<<"    "<<getType()<<" blocked " << armour << " damage, went from " << oldHealth << "HP, to " << health << "HP\n";
         }
     }
-    cout<<"-----------------\n";
+    cout<<"---------------------\n";
+}
+
+void Vehicle::setHealth(int h){
+    health=h;
 }
 
 Plane::Plane() : Vehicle(){
@@ -128,7 +139,7 @@ Plane::Plane(string t, string s, RnD* up) : Vehicle(t, s, up){
 }
 
 
-Plane::Plane(string t, string s, int a, int d, int h, int b, int st) : Vehicle(t, s, a, d, h), bomb(b), strafe(st){
+Plane::Plane(string t, string s, int a, int d, int h, CountryObserver* c, int b, int st) : Vehicle(t, s, a, d, h, c), bomb(b), strafe(st){
 }
 
 int Plane::bombingRun() {
@@ -148,7 +159,7 @@ Tank::Tank(string t,string s, RnD* up) : Vehicle(t, s, up){
     upgrade = up;
 }
 
-Tank::Tank(string t, string s, int a, int d, int h) : Vehicle(t, s, a, d, h){
+Tank::Tank(string t, string s, int a, int d, int h, CountryObserver* c) : Vehicle(t, s, a, d, h, c){
     
 }
 
@@ -170,7 +181,7 @@ Ship::Ship(string t, string s, RnD* up) : Vehicle(t, s, up) {
     upgrade = up;
 }
 
-Ship::Ship(string t, string s, int a, int d, int h, int sh, int ca) : Vehicle(t, s, a, d, h), shell(sh), canon(ca) {
+Ship::Ship(string t, string s, int a, int d, int h, CountryObserver* c, int sh, int ca) : Vehicle(t, s, a, d, h, c), shell(sh), canon(ca) {
     
 }
 
