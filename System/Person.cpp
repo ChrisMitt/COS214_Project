@@ -7,6 +7,7 @@
 
 #include "Person.h"
 #include "Vehicle.h"
+#include "CountryObserver.h"
 #include <iostream>
 
 Person::Person() {
@@ -14,9 +15,11 @@ Person::Person() {
     state = "N/A";
     health = 100;
     status = new Status();
+    country=NULL;
 }
 
-Person::Person(string t, string s, int h) : type(t), state(s), health(h){
+Person::Person(string t, string s, int h, CountryObserver* c) : type(t), state(s), health(h){
+    country=c;
     status = new Status();
 }
 
@@ -46,8 +49,15 @@ void Person::restore(UnitBackup* mem) {
 }
 
 Person::~Person() {
-    cout<<"Person destructor called"<<endl;
-    delete this;
+    
+}
+
+CountryObserver* Person::getCountry(){
+    return country;
+}
+
+bool Person::isAlive(){
+    return (health>0);
 }
 
 Soldier::Soldier() : Person(){
@@ -58,7 +68,7 @@ Soldier::Soldier(string t, string s, RnD* up) : Person(t, s){
     upgrade = up;
 }
 
-Soldier::Soldier(string t, string s, int h, int d) : Person(t, s, h), damage(d){
+Soldier::Soldier(string t, string s, int h, CountryObserver* c, int d) : Person(t, s, h, c), damage(d){
     
 }
 
@@ -94,7 +104,7 @@ Soldier* Soldier::clone() {
 Medic::Medic() : Person(){
 }
 
-Medic::Medic(string t, string s, int h) : Person(t, s, h){
+Medic::Medic(string t, string s, int h, CountryObserver* c) : Person(t, s, h, c){
 }
 
 void  Medic::heal(Person* p) {
@@ -125,7 +135,7 @@ UnitBackup* Soldier::makeBackup(){
 Mechanic::Mechanic() : Person(){
 }
 
-Mechanic::Mechanic(string t, string s, int h) : Person(t, s, h){
+Mechanic::Mechanic(string t, string s, int h, CountryObserver* c) : Person(t, s, h, c){
 }
 
 void  Mechanic::repair(Vehicle* v) {
@@ -158,9 +168,13 @@ int Soldier::getDamage(){
     }
 }
 
-void Soldier::doDamage(Soldier* victim){
-    cout<< type << " doing " << getDamage() << " damage to " <<victim->getType() << endl;
-    victim->takeDamage(getDamage());
+void Soldier::doDamage(Person* victim){
+    if( damage >= victim->getHealth() ){
+        cout<< type << " shoots and kills " << victim->getType()<<endl;
+    }else{
+        cout<< type << " shoots and damages " << victim->getType()<<endl;
+    }
+    victim->takeDamage(damage);
 }
 
 void Soldier::takeDamage(int amount){
@@ -173,9 +187,7 @@ void Soldier::takeDamage(int amount){
     health-=amount;
     if(health<0){
         health=0;
-        cout<< type <<" died a brave death"<<endl;
     }else{
-        cout<< type <<" went from "<< oldHealth <<"HP, to "<<health<<"HP\n";
+        
     }
-    cout<<"------------------"<<endl;
 }

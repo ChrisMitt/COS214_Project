@@ -167,35 +167,20 @@ void showUN()
     }
 }
 
-void startBattle(){
-    WarTheatre* w = new WarTheatre();
+void startBattle(bool firstBattle){
+    if(firstBattle){
+        allAlliances.push_back(new Alliance("Royal soldiers"));
+        allAlliances.push_back(new Alliance("United troops"));
+        allAlliances.front()->addCountry( UN[1] );
+        allAlliances.front()->addCountry( UN[2] );
+        allAlliances.back()->addCountry( UN[3] );
+        allAlliances.back()->addCountry( UN[4] );
+        printAlliances();
+    }
 
-    cout << "Where will the battle take place?\n";
-    for (int i = 0; i < 12; i+=6)
-    {
-        cout << "["<< (i+1) << "] " << UN[i]->getName() << "\t["<< (i+2) << "] " << UN[i+1]->getName()
-        << "\t["<< (i+3) << "] " << UN[i+2]->getName()<< "\t["<< (i+4) << "] " << UN[i+3]->getName()
-        << "\t["<< (i+5) << "] " << UN[i+4]->getName()<< "\t["<< (i+6) << "] " << UN[i+5]->getName()<< endl;
-    }
-    int location;
-    cin >> location;
-
-    cout << "\nWhat type of battle will take place?\n[1] Land\n[2] Sea\n[3] Airspace\n";
-    int type;
-    cin >> type;
-
-    if (type == 1)
-    {
-        w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "Land", UN[location+1]->getName());
-    }
-    else if (type == 2)
-    {
-        w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "Sea", UN[location+1]->getName());
-    }
-    else
-    {
-        w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "Airspace", UN[location+1]->getName());
-    }
+    WarTheatre* w = new WarTheatre( allAlliances );
+    w->battle();
+    delete w;
 }
 
 int main()
@@ -214,6 +199,7 @@ int main()
     cout << "Welcome to the simulator!\n";
     
     int input = -1;
+    bool firstBattle=true;
     while (input != 0)
     {
         if (input == 1)
@@ -231,10 +217,9 @@ int main()
         else if (input == 4)
         {
             showUN();
-        }
-        else if (input==5)
-        {
-            startBattle();
+        }else if (input==5){
+            startBattle(firstBattle);
+            firstBattle=false;
         }
         cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[5] Start battle\n[0] Exit\n";
         cin >> input;

@@ -14,6 +14,7 @@
 #include "CountryComposite.h"
 #include "Squad.h"
 #include "ResourceManagement.h"
+#include "DeployContext.h"
 using namespace std;
 
 
@@ -29,7 +30,6 @@ private:
  * @brief a list of Alliances 
  * 
  */
-    list<Alliance*> allAlliances;
     /**
      * @brief A squad pointer object
      * 
@@ -41,22 +41,36 @@ private:
      */
     Squad* attackers;
 
-    //used by fight methods
-    list<Soldier*> allSoldiers;//combined attacker and defender soldiers
-    list<Tank*> allTanks;//combined attacker and defender tanks
+    //Context of Strategy dp
+    list<DeployContext*> deployments;
+    Alliance* dAlliance;
+    Alliance* aAlliance;
+public:
+    list<Alliance*> allAlliances;
+    vector<Soldier*> allSoldiers;//combined attacker and defender soldiers
+    list<Soldier*> deadSoldiers;
+    vector<Tank*> allTanks;//combined attacker and defender tanks
+    list<Tank*> deadTanks;
+    list<Ship*> allShips;
+    list<Ship*> deadShips;
+    list<Plane*> allPlanes;
+    list<Plane*> deadPlanes;
+    list<Medic*> allMedics;
+    list<Mechanic*> allMechanics;
+    Squad* getDefenders();
+    Squad* getAttackers();
+    void printResult();
+
+
+    string country;
+    string area;
 
 public:
 /**
  * @brief  Construct a new War Theatre object
  * 
  */
-    WarTheatre(/* args */);
-    /**
-     * @brief Construct a new War Theatre object
-     * 
-     * @param as 
-     */
-    WarTheatre(list<Alliance*> as);
+    WarTheatre(list<Alliance*>  aa);
     /**
      * @brief Destroy the War Theatre object
      * 
@@ -66,6 +80,7 @@ public:
      * @brief a normal member
      * 
      */
+    void printInit();
     void fillLists();//allSoldiers, allTanks etc..
     /**
      * @brief a normal member
@@ -75,32 +90,12 @@ public:
      * @param area 
      * @param country 
      */
-    void battle( list<CountryObserver*> d, list<CountryObserver*> a, string area, string country );
+    void battle();
     /**
      * @brief a normal member
      * 
      */
     void fight();
-    /**
-     * @brief a normal member
-     * 
-     */
-    void soldiersFight();
-    /**
-     * @brief a normal member
-     * 
-     */
-    void tanksFight();
-    /**
-     * @brief a normal member
-     * 
-     */
-    void medicsHeal();
-    /**
-     * @brief a normal member
-     * 
-     */
-    void mechanicsRepair();
     /**
      * @brief a normal member
      * 
@@ -114,4 +109,8 @@ public:
      */
     void removeDeadUnits();
     void createResources(Country*);
+    Person* getRandPerson(string type, Squad* squad);
+    Vehicle* getRandVehicle(string type, Squad* squad);
+    void deleteUnits();
+    void clearLists();
 };

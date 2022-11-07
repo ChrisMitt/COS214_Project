@@ -15,6 +15,8 @@
 
 class Soldier;
 
+class CountryObserver;
+class Person;
 using namespace std;
 
 /**
@@ -45,7 +47,7 @@ public:
      * @param d 
      * @param h 
      */
-    Vehicle(string t, string s, int a=200, int d=75, int h=1000);
+    Vehicle(string t, string s, int a=200, int d=75, int h=1000, CountryObserver* c=NULL);
     /**
      * @brief a normal member
      * 
@@ -129,6 +131,10 @@ public:
      * @param amount 
      */
     void takeDamage(int amount);
+    bool isAlive();
+    CountryObserver* getCountry();
+    void setHealth(int h);
+    
 
 protected:
 /**
@@ -166,6 +172,7 @@ protected:
  * 
  */
     int health;
+    CountryObserver* country;
 };
 
 
@@ -196,7 +203,7 @@ public:
      * @param b 
      * @param st 
      */
-    Plane(string t, string s, int a=200, int d=75, int h=1000, int b=150, int st=50);
+    Plane(string t, string s, int a=200, int d=75, int h=1000, CountryObserver* c=NULL, int b=150, int st=50);
     /**
      * @brief a normal member
      * 
@@ -243,7 +250,7 @@ public:
      * @param d 
      * @param h 
      */
-    Tank(string t, string s, int a=200, int d=75, int h=1000);
+    Tank(string t, string s, int a=200, int d=75, int h=1000, CountryObserver* c=NULL);
     /**
      * @brief a normal member
      * 
@@ -296,7 +303,7 @@ public:
      * @param sh 
      * @param ca 
      */
-    Ship(string t, string s, int a=200, int d=200, int h=1000, int sh=250, int ca=150);
+    Ship(string t, string s, int a=200, int d=200, int h=1000, CountryObserver* c=NULL, int sh=250, int ca=150);
     /**
      * @brief a normal member
      * 
