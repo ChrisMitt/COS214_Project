@@ -60,12 +60,12 @@ void Alliance::removeCountry(CountryObserver* c)
 
 void Alliance::removeCountry(int i) 
 {
-    list<CountryObserver*>::iterator ite = countryList.begin();
-    advance(ite, (i-1));
-    (*ite)->setAllianceState(0);// Set country's alliance state to not in an alliance
-    (*ite)->setSubject(NULL);
-    cout << (*ite)->getName() << " has been removed from " << name <<".\n\n";
-    countryList.remove(*ite);// Remove country from alliance
+    list<CountryObserver*>::iterator iter = countryList.begin();
+    advance(iter, (i-1));
+    (*iter)->setAllianceState(0);// Set country's alliance state to not in an alliance
+    (*iter)->setSubject(NULL);
+    cout << (*iter)->getName() << " has been removed from " << name <<".\n\n";
+    countryList.remove(*iter);// Remove country from alliance
 }
 
 void Alliance::setState(State* s) 
@@ -83,9 +83,9 @@ void Alliance::showAlliance()
 {
     int num = 1;
     cout << "----- " << name << " -----\n";
-    for (auto ite = countryList.begin(); ite != countryList.end(); ++ite)
+    for (auto iter = countryList.begin(); iter != countryList.end(); ++iter)
     {
-        cout << "[" << num << "] " << (*ite)->getName() << endl;
+        cout << "[" << num << "] " << (*iter)->getName() << endl;
         num++;
     }
 }
@@ -97,8 +97,8 @@ list<CountryObserver*> Alliance::getCountryList()
 
 void Alliance::notify() 
 {
-    for (auto ite = countryList.begin(); ite != countryList.end(); ++ite)
+    for (auto iter = countryList.begin(); iter != countryList.end(); ++iter)
     {
-        (*ite)->update();
+        (*iter)->update();
     }
 }

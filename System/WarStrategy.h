@@ -1,6 +1,6 @@
 //
 // Created by Akani Hlungwani
-//
+// Edited by Rebecca Oosthuizen
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,14 +25,14 @@ class WarStrategy
     protected:
 
        /** 
-       * A private variable.
+       * A protected variable.
        * A String that holds the name of the Strategy.
        */
-        string startegy_name;
+        string strategy_name;
 
         
        /** 
-       * A private variable.
+       * A protected variable.
        * A Boolean that stores the status of the Strategy.
        */
         bool status;

@@ -14,7 +14,7 @@ using namespace std;
 
 Diplomacy::Diplomacy(bool s) : WarStrategy(s)
 {
-    this->startegy_name="Diplomacy";
+    this->strategy_name="Diplomacy";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

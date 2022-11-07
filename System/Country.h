@@ -10,10 +10,19 @@
 #include <iostream>
 using namespace std;
 
-
+/**
+ * @brief a Country class. a composite class for the composite pattern
+ * 
+ */
 class Country : public CountryObserver {
   public:
+  /**
+   * @brief a normal member.
+   * 
+   */
     void update();
+    void fight();
+    void add(CountryObserver* c);
   };
 
 #endif

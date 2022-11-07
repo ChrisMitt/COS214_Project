@@ -1,6 +1,7 @@
 //
 // Created by Rebecca on 2022/10/31.
 //
+// Edited by Charl on 2022/10/31
 
 #include <iostream>
 #include "Country.h"
@@ -8,6 +9,7 @@
 #include "State.h"
 #include <list>
 #include <iterator>
+#include "WarTheatre.h"
 using namespace std;
 
 Country* UN[12]; // Array of countries in UN
@@ -139,8 +141,7 @@ void editAlliances()
             }
         }
     }
-}   
-               
+}                
 
 void showUN()
 {
@@ -166,14 +167,47 @@ void showUN()
     }
 }
 
+void startBattle(){
+    WarTheatre* w = new WarTheatre();
+
+    cout << "Where will the battle take place?\n";
+    for (int i = 0; i < 12; i+=6)
+    {
+        cout << "["<< (i+1) << "] " << UN[i]->getName() << "\t["<< (i+2) << "] " << UN[i+1]->getName()
+        << "\t["<< (i+3) << "] " << UN[i+2]->getName()<< "\t["<< (i+4) << "] " << UN[i+3]->getName()
+        << "\t["<< (i+5) << "] " << UN[i+4]->getName()<< "\t["<< (i+6) << "] " << UN[i+5]->getName()<< endl;
+    }
+    int location;
+    cin >> location;
+
+    cout << "\nWhat type of battle will take place?\n[1] Land\n[2] Sea\n[3] Airspace\n";
+    int type;
+    cin >> type;
+
+    if (type == 1)
+    {
+        w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "Land", UN[location+1]->getName());
+    }
+    else if (type == 2)
+    {
+        w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "Sea", UN[location+1]->getName());
+    }
+    else
+    {
+        w->battle(allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "Airspace", UN[location+1]->getName());
+    }
+}
+
 int main()
 {
     //Populating countries array
-    string names[12] = {"Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan", "Bahamas"};
+    string names[12] = {"Afghanistan", "China", "France", "Germany", "Japan", "North Korea", "Norway", "Russia", "South Korea", "United Kingdom", "United States of America", "Zimbabwe"};
     for (int i = 0; i < 12; i++)
     {
         UN[i] = new Country();
         UN[i] -> setName(names[i]);
+        UN[i] -> setEntities(names[i]);//set the base armies for the countries
+        UN[i] -> printArmy();
     }
     
     
@@ -198,7 +232,11 @@ int main()
         {
             showUN();
         }
-        cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[0] Exit\n";
+        else if (input==5)
+        {
+            startBattle();
+        }
+        cout << "\nWhat would you like to do?\n[1] View alliances\n[2] Create a new alliance\n[3] Edit an alliance\n[4] View UN\n[5] Start battle\n[0] Exit\n";
         cin >> input;
     }
     

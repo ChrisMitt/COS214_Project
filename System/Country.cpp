@@ -9,3 +9,11 @@ void Country::update()
 {
     state = subject->getState();
 }
+
+void Country::fight(){
+    cout << name << " is now fighting\n";
+}
+
+void Country::add(CountryObserver* c){
+
+}

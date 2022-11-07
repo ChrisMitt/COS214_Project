@@ -10,15 +10,41 @@
 #include "Vehicle.h"
 
 using namespace std;
-
+/**
+ * @brief a UnitFactory class. an abstractfactory class for the abstarct factory design pattern
+ * 
+ */
 class UnitFactory {
 public:
+/**
+ * @brief Construct a new Unit Factory object
+ * 
+ */
     UnitFactory();
+    /**
+     * @brief Destroy the Unit Factory object
+     * 
+     */
     virtual ~UnitFactory();
-    virtual Person* createPerson(string) = 0;
-    virtual Vehicle* createVehicle(string) = 0;
+    /**
+     * @brief Create a Person object
+     * a pure virtual member
+     * @return Person* 
+     */
+    virtual Person* createPerson(string, string) = 0;
+    /**
+     * @brief Create a Vehicle object
+     * a pure virtual member
+     * @return Vehicle* 
+     */
+    virtual Vehicle* createVehicle(string, string) = 0;
 
 protected:
+/**
+ * @brief Get the Name object
+ * 
+ * @return string 
+ */
     string getName();
 };
 
