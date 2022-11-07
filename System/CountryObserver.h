@@ -20,6 +20,7 @@ using namespace std;
  */
 struct Army
 {
+
     struct{
         int amount = 0;
         int instanceHP = 100;
@@ -186,29 +187,132 @@ class CountryObserver{
      * @return false 
      */
     bool removeSoldier(Soldier* s);
+
+    /**
+     * @brief remove soldiers, remove tank, remove ship, remove plane member functions
+     * 
+     * @param t pionter represents a Tank 
+     * @return true 
+     * @return false 
+     */
     bool removeTank(Tank* t);
+
+    /**
+     * @brief remove soldiers, remove tank, remove ship, remove plane member functions
+     * 
+     * @param s pionter represents a Ship 
+     * @return true 
+     * @return false 
+     */
     bool removeShip(Ship* s);
+
+    /**
+     * @brief remove soldiers, remove tank, remove ship, remove plane member functions
+     * 
+     * @param t pionter represents a Plane 
+     * @return true 
+     * @return false 
+     */
     bool removePlane(Plane* s);
 
     //1.Ground
+    /**
+     * a public variable
+     * a vector that holds the medic
+     * 
+     */
     vector<Medic*> medics;
+
+    /**
+     * a public variable
+     * a vector that holds the soldiers
+     * 
+     */
     vector<Soldier*> soldiers;
+
+    /**
+     * a public variable
+     * a vector that holds the mechanics
+     * 
+     */
     vector<Mechanic*> mechanics;
+
+    /**
+     * a public variable
+     * a vector that holds the tanks
+     * 
+     */
     vector<Tank*> tanks;
     //2.Navy
+    /**
+     * a public variable
+     * a vector that holds the ships
+     * 
+     */
     vector<Ship*> ships;
     //3.Air
+    /**
+     * a public variable
+     * a vector that holds the planes
+     * 
+     */
     vector<Plane*> planes;
+
+    /**
+     * a public variable
+     * The resources which a country can spend on troop creation
+     * 
+     */
     int resources; // The resources which a country can spend on troop creation
   protected:
+
+    /**
+     * a protected variable
+     * Holds the Id of a Country
+     * 
+     */
     int id;
+
+    /**
+     * a protected variable
+     * Holds the Name of a Country
+     * 
+     */
     string name;
+
+    /**
+     * a protected variable
+     * Static integer. Total number of countries
+     * 
+     */
     static int total; // Total number of countries
+
+    /**
+     * a protected variable
+     * True if the country is part of an alliance, false if it is not
+     * 
+     */
     bool allianceState; // True if the country is part of an alliance, false if it is not
+
+    /**
+     * a protected variable
+     * Hold the States. Conflict/Peace/Negotiating
+     * 
+     */
     State* state; // Conflict/Peace/Negotiating
+
+    /**
+     * a protected variable
+     * The alliance the country is part of, which it observes
+     * 
+     */
     Alliance* subject; // The alliance the country is part of, which it observes
 
-    //Army stats
+    /**
+     * a protected variable
+     * Army stats
+     * 
+     */
     Army* army;
 
 };

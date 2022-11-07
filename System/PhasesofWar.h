@@ -22,35 +22,35 @@ class Phase;
 
 
 /**
-*  A PhasesofWar class. State Class for the StatePattern .
+*  @brief A PhasesofWar class. State Class for the StatePattern .
 */
 class PhasesofWar{
 public:
         /**
-        * A constructor.
+        * @brief A constructor.
         * Default PhasesofWar constructor.
         */
         PhasesofWar();
 
         /**
-        * A destructor.
+        * @brief A destructor.
         * virtual PhasesofWar destructor.
         */
         virtual ~PhasesofWar();
 
         /**
-        * A void member.
+        * @brief A void member.
         */
         void changePhase();
 
         /**
-        * A void member.
+        * @brief A void member.
         * @return A string 
         */
         string getPhase();
 
     /**
-    * A void member.
+    * @brief A void member.
     * @param p  a pointer argument
     */
     void setPhase(Phase* p);
