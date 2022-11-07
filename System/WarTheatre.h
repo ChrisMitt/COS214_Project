@@ -42,7 +42,8 @@ private:
 
     //Context of Strategy dp
     list<DeployContext*> deployments;
-
+    Alliance* dAlliance;
+    Alliance* aAlliance;
 public:
     list<Alliance*> allAlliances;
     vector<Soldier*> allSoldiers;//combined attacker and defender soldiers
@@ -57,6 +58,7 @@ public:
     list<Mechanic*> allMechanics;
     Squad* getDefenders();
     Squad* getAttackers();
+    void printResult();
 
 
     string country;
@@ -67,13 +69,7 @@ public:
  * @brief  Construct a new War Theatre object
  * 
  */
-    WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, string area, string country, list<Alliance*>  aa);
-    /**
-     * @brief Construct a new War Theatre object
-     * 
-     * @param as 
-     */
-    WarTheatre(list<Alliance*> as);
+    WarTheatre(list<Alliance*>  aa);
     /**
      * @brief Destroy the War Theatre object
      * 

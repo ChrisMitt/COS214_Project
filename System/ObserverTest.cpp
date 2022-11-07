@@ -170,14 +170,16 @@ void showUN()
 
 void startBattle(bool firstBattle){
     if(firstBattle){
-        allAlliances.push_back(new Alliance("Goodies"));
-        allAlliances.push_back(new Alliance("Baddies"));
+        allAlliances.push_back(new Alliance("Royal soldiers"));
+        allAlliances.push_back(new Alliance("United troops"));
         allAlliances.front()->addCountry( UN[1] );
-        allAlliances.back()->addCountry( UN[2] );
+        allAlliances.front()->addCountry( UN[2] );
+        allAlliances.back()->addCountry( UN[3] );
+        allAlliances.back()->addCountry( UN[4] );
         printAlliances();
     }
 
-    WarTheatre* w = new WarTheatre( allAlliances.front()->getCountryList(), allAlliances.back()->getCountryList(), "land", "Afghanistan", allAlliances );
+    WarTheatre* w = new WarTheatre( allAlliances );
     w->battle();
     delete w;
 }

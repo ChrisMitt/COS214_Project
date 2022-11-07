@@ -5,17 +5,84 @@
 
 using namespace std;
 
-WarTheatre::WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, string area, string country, list<Alliance*> aa){
-    this->area = area;
-    this->country = country;
+WarTheatre::WarTheatre(list<Alliance*> aa){
+    list<CountryObserver*> d;
+    list<CountryObserver*> a;
+
+    bool valid=false;
+    int input=0;
+    int i=0;
+    while(!valid){
+        system("clear");
+        cout<<"\nWhich alliance will be defending?\n";
+        for(auto it=aa.begin(); it!=aa.end(); it++){
+            cout<<"["<<i+1<<"]"<<" "<<(*it)->getName()<<endl;
+            i++;
+        }
+        cin>>input;
+        if(input==1){
+            valid=true;
+            d = aa.front()->getCountryList();
+            a = aa.back()->getCountryList();
+        }else if(input==2){
+            valid=true;
+            d = aa.back()->getCountryList();
+            a = aa.front()->getCountryList();
+        }else{
+            cout<<"Invalid input\n";
+        }
+    }
+    valid=false;
+
+    while(!valid){
+        system("clear");
+        i=0;
+        cout<<"\nWhere should the battle take place?\n";
+        for(auto it=d.begin(); it!=d.end(); it++){
+            cout<<"["<<i+1<<"]"<<" "<<(*it)->getName()<<endl;
+            i++;
+        }
+        cin>>input;
+        if(input>=1 && input<=d.size()){
+            valid=true;
+            auto it=d.begin();
+            advance(it, input-1);
+            country = (*it)->getName();
+        }else{
+            cout<<"Invalid input"<<endl;
+        }
+    }
+    valid=false;
+
+    while(!valid){
+        system("clear");
+        i=0;
+        cout<<"\nSelect the area where the battle will take place\n";
+        cout<<"[1] Land: Ground and air units will fight here\n";
+        cout<<"[2] Sea: Navy and air units will fight here\n";
+        cout<<"[3] Mountains: Only air units will fight here\n";
+        cin>>input;
+        if(input==1){
+            valid=true;
+            area="land";
+        }else if(input==2){
+            valid=true;
+            area="sea";
+        }else if(input==3){
+            valid=true;
+            area="mountains";
+        }else{
+            cout<<"Invalid input"<<endl;
+        }
+    }
+    valid=false;
+
     srand( time(NULL) );
 
-    Alliance* dAlliance = d.front()->getSubject();
+    dAlliance = d.front()->getSubject();
     defenders = new Squad(d, dAlliance->getName());
     
-    
-
-    Alliance* aAlliance = a.front()->getSubject();
+    aAlliance = a.front()->getSubject();
     attackers = new Squad(a, aAlliance->getName());
 
     allAlliances=aa;
@@ -25,13 +92,11 @@ WarTheatre::WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, strin
     deployments.push_back( new DeployContext( new ShipDeploy(this) ) );
     deployments.push_back( new DeployContext( new PlaneDeploy(this) ) );
     deployments.push_back( new DeployContext( new MedicDeploy(this) ) );
-}
-
-WarTheatre::WarTheatre(list<Alliance*> as){
-
+    deployments.push_back( new DeployContext( new MechanicDeploy(this) ) );
 }
 
 void WarTheatre::printInit(){
+    system("clear");
     cout << "***********************************\n";
     cout << "****** W A R  T H E A T R E *******\n";
     cout << "***********************************\n";
@@ -46,13 +111,26 @@ void WarTheatre::printInit(){
     }
     cout << "***********************************\n";
 
-    cout<<"=============================\n";
-    cout<<"DEFENDERS: \n";
+    cout<<"\n=============================\n";
+    cout<<"DEFENDERS: " << dAlliance->getName() <<endl;
     defenders->printSquad();
     cout<<"\n=============================\n";
-    cout<<"ATTACKERS: \n";
+    cout<<"ATTACKERS: " << aAlliance->getName() <<endl;
     attackers->printSquad();
     cout<<"\n=============================\n";
+    
+    bool valid=false;
+    while(!valid){
+        cout<<"ENTER [1] TO CONTINUE"<<endl;
+        int input;
+        cin>>input;
+        if(input==1){
+            valid=true;
+        }else{
+            system("clear");
+            cout<<"Invalid input"<<endl;
+        }
+    }
 }
 
 void WarTheatre::fillLists(){
@@ -116,6 +194,18 @@ void WarTheatre::fillLists(){
             allMedics.push_back( attackers->getMedics()[i] );
         }
     }
+
+    //Mechanics
+    int maxMechanicSize=0;
+    defenders->getMechanics().size() >= attackers->getMechanics().size() ? maxMechanicSize = defenders->getMechanics().size() : maxMechanicSize = attackers->getMechanics().size();
+    for(int i=0; i<maxMechanicSize; i++){
+        if(i<defenders->getMechanics().size()){
+            allMechanics.push_back(defenders->getMechanics()[i]);
+        }
+        if(i<attackers->getMechanics().size()){
+            allMechanics.push_back( attackers->getMechanics()[i] );
+        }
+    }
 }
 
 WarTheatre::~WarTheatre(){
@@ -128,7 +218,7 @@ void WarTheatre::battle(){
     fillLists();
     printInit();
     fight();
-    
+    printResult();
     //clearLists();
     deleteUnits();
 }
@@ -174,6 +264,41 @@ Vehicle* WarTheatre::getRandVehicle(string type, Squad* squad){
 void WarTheatre::clearLists(){
     delete defenders;
     delete attackers;
+}
+
+void WarTheatre::printResult(){
+    int defenderFirePower;
+    int attackerFirePower;
+
+    cout<< "\n\n#############################\n";
+    cout << "######## R E S U L T ########\n";
+    if(defenders->calcFirepower() > attackers->calcFirepower() ){
+        cout << dAlliance->getName() << " won the battle!" <<endl;
+    }else{
+        cout << aAlliance->getName() << " won the battle!" <<endl;
+    }
+    cout<<"a result of having the largest remaining firepower"<<endl;
+    cout<< "#############################\n\n";
+
+    cout << "- DEFENDERS: " << dAlliance->getName() << "-" << endl;
+    cout << "REMAINING FIREPOWER: " << defenders->calcFirepower() << endl;
+    cout << "Enemy soldiers killed: " << defenders->getSoldiersKilled() <<endl;
+    cout << "Enemy tanks killed: " << defenders->getTanksKilled() <<endl;
+    cout << "Enemy ships killed: " << defenders->getShipsKilled() <<endl;
+    cout << "Enemy planes killed: " << defenders->getPlanesKilled() <<endl;
+    cout << "Friendly soldiers hospitalized: "<< defenders->getHospCount() <<endl;
+    cout << "Friendly tank repairs: "<< defenders->getTankRepairs() <<endl;
+    
+    cout<<endl<<"------------------------"<<endl;
+
+    cout << "- ATTACKERS: " << aAlliance->getName() << " -" << endl;
+    cout << "REMAINING FIREPOWER: " << attackers->calcFirepower() << endl;
+    cout << "Enemy soldiers killed: " << attackers->getSoldiersKilled() <<endl;
+    cout << "Enemy tanks killed: " << attackers->getTanksKilled() <<endl;
+    cout << "Enemy ships killed: " << attackers->getShipsKilled() <<endl;
+    cout << "Enemy planes killed: " << attackers->getPlanesKilled() <<endl;
+    cout << "Friendly soldiers hospitalized: "<< attackers->getHospCount() <<endl;
+    cout << "Friendly tank repairs: "<< attackers->getTankRepairs() <<endl;
 }
 
 //This will delete the units globally

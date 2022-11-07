@@ -7,17 +7,28 @@ Squad::Squad()
 
 Squad::Squad(list<CountryObserver*> countries, string allianceName)
 {
+    name = allianceName;
     involvedCountries=countries;
     list<CountryObserver*>::iterator it;
     for(it=countries.begin(); it!=countries.end(); it++){
         CountryObserver* co = *it;
         addTroops(co);
     }
+    soldiersKilled=0;
+    tanksKilled=0;
+    shipsKilled=0;
+    planesKilled=0;
+    hospCount=0;
+    tankRepairs=0;
 }
 
 Squad::~Squad()
 {
     
+}
+
+string Squad::getName(){
+    return name;
 }
 
 void Squad::addTroops(CountryObserver* co){
@@ -72,20 +83,15 @@ void Squad::addPlanes(CountryObserver* co){
 }
 
 void Squad::printSquad(){
-    cout<<"Alliance: "<<involvedCountries.front()->getSubject()<<endl;
-    cout<<"Countries involved: ";
-    for(auto it=involvedCountries.begin(); it!=involvedCountries.end(); it++){
-        cout<<(*it)->getName();;
-        if( it!=involvedCountries.end() ) cout<<", ";
-    }
-    cout<<endl;
-    cout<<"Total medics: "<<medics.size()<<endl;
     cout<<"Total soldiers: "<<soldiers.size()<<endl;
+    cout<<"Total medics: "<<medics.size()<<endl;
     cout<<"Total mechanics: "<<mechanics.size()<<endl;
     cout<<"Total tanks: "<<tanks.size()<<endl;
     cout<<"Total ships: "<<ships.size()<<endl;
     cout<<"Total planes: "<<planes.size()<<endl;
-    cout<<"Total medics: "<<medics.size()<<endl;
+    
+    
+    
 }
 
 vector<Medic*> Squad::getMedics(){
@@ -189,4 +195,69 @@ bool Squad::contains(Medic* m){
 
 bool Squad::contains(Mechanic* m){
     return ( find(mechanics.begin(), mechanics.end(), m) != mechanics.end() );
+}
+
+int Squad::getSoldiersKilled(){
+    return soldiersKilled;
+}
+
+int Squad::getTanksKilled(){
+    return tanksKilled;
+}
+
+int Squad::getShipsKilled(){
+    return shipsKilled;
+}
+
+int Squad::getPlanesKilled(){
+    return planesKilled;
+}
+
+int Squad::getHospCount(){
+    return hospCount;
+}
+
+int Squad::getTankRepairs(){
+    return tankRepairs;
+}
+
+void Squad::increaseSoldiersKilled(int t){
+    soldiersKilled+=t;
+}
+
+void Squad::increaseTanksKilled(int t){
+    tanksKilled+=t;
+}
+
+void Squad::increaseShipsKilled(int t){
+    shipsKilled+=t;
+}
+
+void Squad::increasePlanesKilled(int t){
+    planesKilled+=t;
+}
+
+void Squad::increaseHospCount(int t){
+    hospCount+=t;
+}
+
+void Squad::increaseTankRepairs(int t){
+    tankRepairs+=t;
+}
+
+int Squad::calcFirepower(){
+    int total=0;
+    for(auto it=soldiers.begin(); it!=soldiers.end(); it++){
+        total += 10;
+    }
+    for(auto it=tanks.begin(); it!=tanks.end(); it++){
+        total += 100;
+    }
+    for(auto it=ships.begin(); it!=ships.end(); it++){
+        total += 500;
+    }
+    for(auto it=planes.begin(); it!=planes.end(); it++){
+        total += 250;
+    }
+    return total;
 }

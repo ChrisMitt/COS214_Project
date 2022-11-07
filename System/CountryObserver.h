@@ -14,13 +14,13 @@ using namespace std;
 struct Army
 {
     struct{
-        int amount = 5;
+        int amount = 0;
         int instanceHP = 100;
     } medics;
     struct{
         int amount = 20;
         int instanceHP = 200;
-        int instanceDMG = 80;
+        int instanceDMG = 160;
     } soldiers;
     struct{
         int amount=0;
@@ -28,22 +28,22 @@ struct Army
     } mechanics;
     struct{
         string name="Sherman";
-        int amount=0;
+        int amount=8;
         int instanceHP=2000;
-        int instanceDMG=1000;
+        int instanceDMG=2000;
         int instanceArmour=400;//take 400 less damage from each shot
     } tanks;
     struct{
-        int amount=0;
+        int amount=2;
         int instanceHP=10000;
-        int instanceDMG=3000;
+        int instanceDMG=6000;
         int instanceArmour=800;//take 400 less damage from each shot
     } ships;
     struct{
         string name = "Spitfire";
-        int amount=0;
+        int amount=2;
         int instanceHP=1000;
-        int instanceDMG=900;
+        int instanceDMG=1400;
         int instanceArmour=500;//take 400 less damage from each shot
     } planes;
 };

@@ -111,6 +111,10 @@ void Vehicle::takeDamage(int amount){
     cout<<"---------------------\n";
 }
 
+void Vehicle::setHealth(int h){
+    health=h;
+}
+
 Plane::Plane() : Vehicle(){
 }
 

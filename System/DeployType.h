@@ -54,3 +54,11 @@ public:
     void deploy();
 };
 
+class MechanicDeploy:public DeployType
+{
+public:
+    MechanicDeploy(WarTheatre* w);
+    ~MechanicDeploy();
+    void deploy();
+};
+

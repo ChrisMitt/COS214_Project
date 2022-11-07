@@ -105,7 +105,7 @@ void CountryObserver::createArmy(){
     for(int i=0; i < army->tanks.amount; i++){
         tanks.push_back( 
             new Tank(
-                name+" " + army->tanks.name + " #"+to_string(i+1), 
+                name+" tank #"+to_string(i+1), 
                 "in battle", 
                 army->tanks.instanceArmour, 
                 army->tanks.instanceDMG, 
@@ -134,7 +134,7 @@ void CountryObserver::createArmy(){
     for(int i=0; i < army->planes.amount; i++){
         planes.push_back( 
             new Plane(
-                name+" " + army->planes.name + " #"+to_string(i+1), 
+                name+" plane #"+to_string(i+1), 
                 "in battle", 
                 army->planes.instanceArmour, 
                 army->planes.instanceDMG, 
@@ -149,7 +149,7 @@ void CountryObserver::createArmy(){
 void CountryObserver::printArmy(){
     cout<< "======= " << name << " army =======\n";
     cout<< "1.GROUND:\n";
-    cout<<"  "<<medics.size()<<"X  medics\n";
+    cout<<"  "<<medics.size()<<"X medics\n";
     cout<<"  "<<soldiers.size()<<"X soldiers\n";
     cout<<"  "<<mechanics.size()<<"X mechanics\n";
     cout<<"  "<<tanks.size()<<"X "<<army->tanks.name<<" tanks\n";
