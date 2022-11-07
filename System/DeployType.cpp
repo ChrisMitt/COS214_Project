@@ -71,35 +71,162 @@ void TankDeploy::deploy(){
                 enemySquad = defenders;
             }
 
-            //2. decide to aim for a tank or for soldiers
-            int randNum = rand()%100+1;
+            if(enemySquad->getSoldiers().size()!=0 || enemySquad->getTanks().size()!=0 ){
+                //2. decide to aim for a tank or for soldiers
+                int randNum = rand()%100+1;
 
-            //if decided on tank
-            if(enemySquad->getTanks().size()>0 &&  (randNum<=50 || enemySquad->getSoldiers().size()==0) ){
-                if(enemySquad->getTanks().size()>0){
-                    //3. hit random enemy tank
-                    Tank* enemyTank = (Tank*) (w->getRandVehicle("tank", enemySquad));
-                    currTank->doDamage(enemyTank);
+                //if decided on tank
+                if(enemySquad->getTanks().size()>0 &&  (randNum<=50 || enemySquad->getSoldiers().size()==0) ){
+                    if(enemySquad->getTanks().size()>0){
+                        //3. hit random enemy tank
+                        Tank* enemyTank = (Tank*) (w->getRandVehicle("tank", enemySquad));
+                        currTank->doDamage(enemyTank);
+                        //4. remove the random tank from the enemy squad, if he died
+                        if(!enemyTank->isAlive()){
+                            enemySquad->remove(enemyTank);
+                            w->deadTanks.push_back(enemyTank);
+                        }
+                    }
+                }else{
+                    int maxSoldiersHit = 5;
+                    if(enemySquad->getSoldiers().size()<maxSoldiersHit){
+                        maxSoldiersHit = enemySquad->getSoldiers().size();
+                    }
+                    int amountHit = rand()%maxSoldiersHit+1;
+                    cout<<currTank->getType()<<" kills "<<amountHit<<" enemy soldiers\n";
+                    for(int i=0; i<amountHit; i++){
+                        Soldier* randSoldier = (Soldier*)w->getRandPerson("soldier", enemySquad);
+                        currTank->doDamage(randSoldier);
+                        enemySquad->remove(randSoldier);
+                        w->deadSoldiers.push_back(randSoldier);
+                    }
+                }
+            }
+        }
+    }
+}
+
+ShipDeploy::ShipDeploy(WarTheatre* w) : DeployType(w){
+
+}
+
+void ShipDeploy::deploy(){
+    cout<<"== 3: SHIPS FIGHTING =="<<endl;
+    if(defenders->getShips().size()==0 || attackers->getShips().size()==0){
+        return;
+    }
+    //for all ships do
+    for(auto it=w->allShips.begin(); it!=w->allShips.end(); it++){
+        Ship* currShip = *it; //current ship attacking
+        if(currShip->isAlive()){
+            Squad* enemySquad; //the enemy squad of the current ship's squad
+            //1. set who the enemy squad is
+            if( defenders->contains(currShip) ){//if curr ship is a defender
+                enemySquad = attackers;
+            }else if( attackers->contains(currShip) ){
+                enemySquad = defenders;
+            }
+            if(enemySquad->getShips().size()>0){
+                //2. get a random ship in the enemy squad
+                Ship* enemyShip = (Ship*) (w->getRandVehicle("ship", enemySquad));
+
+                //3. do damage to the random enemy
+                currShip->doDamage(enemyShip);
+
+                //4. remove the random ship from the enemy squad, if he died
+                if(!enemyShip->isAlive()){
+                    enemySquad->remove(enemyShip);
+                    w->deadShips.push_back(enemyShip);
+                }
+            }
+        }
+    }
+}
+
+PlaneDeploy::PlaneDeploy(WarTheatre* w) : DeployType(w){
+
+}
+
+void PlaneDeploy::deploy(){
+    cout<<"== 4: PLANES FIGHTING =="<<endl;
+    if(defenders->getPlanes().size()==0 || attackers->getPlanes().size()==0){
+        return;
+    }
+    cout<<"ps: "<<w->allPlanes.size()<<endl;
+    for(auto it=w->allPlanes.begin(); it!=w->allPlanes.end(); it++){
+        Plane* currPlane = *it; 
+        if(currPlane->isAlive()){
+            Squad* enemySquad;
+            //1. set who the enemy squad is
+            if( defenders->contains(currPlane) ){
+                enemySquad = attackers;
+            }else if( attackers->contains(currPlane) ){
+                enemySquad = defenders;
+            }
+            
+            if(
+                (enemySquad->getPlanes().size()!=0) ||
+                (enemySquad->getTanks().size()!=0) ||
+                (enemySquad->getSoldiers().size()!=0) ||
+                (enemySquad->getShips().size()!=0)
+            )
+            {
+                //2. decide to aim for a tank, soldiers, boat, or plane
+                vector<string> unitTypes;
+                if(enemySquad->getPlanes().size()!=0){
+                    unitTypes.push_back("plane");
+                }
+                if(enemySquad->getSoldiers().size()!=0){
+                    unitTypes.push_back("soldier");
+                }
+                if(enemySquad->getTanks().size()!=0){
+                    unitTypes.push_back("tank");
+                }
+                if(enemySquad->getShips().size()!=0){
+                    unitTypes.push_back("ship");
+                }
+                int typeIdx = rand()%unitTypes.size();
+                
+                if(unitTypes[typeIdx]=="plane"){
+                    Plane* enemyPlane= (Plane*) (w->getRandVehicle("plane", enemySquad));
+                    currPlane->doDamage(enemyPlane);
+                    //4. remove the random plane from the enemy squad, if he died
+                    if(!enemyPlane->isAlive()){
+                        enemySquad->remove(enemyPlane);
+                        w->deadPlanes.push_back(enemyPlane);
+                    }
+                }else if(unitTypes[typeIdx]=="ship"){
+                    Ship* enemyShip= (Ship*) (w->getRandVehicle("ship", enemySquad));
+                    currPlane->doDamage(enemyShip);
+                    //4. remove the random ship from the enemy squad, if he died
+                    if(!enemyShip->isAlive()){
+                        enemySquad->remove(enemyShip);
+                        w->deadShips.push_back(enemyShip);
+                    }
+                }else if(unitTypes[typeIdx]=="tank"){
+                    Tank* enemyTank= (Tank*) (w->getRandVehicle("tank", enemySquad));
+                    currPlane->doDamage(enemyTank);
                     //4. remove the random tank from the enemy squad, if he died
                     if(!enemyTank->isAlive()){
                         enemySquad->remove(enemyTank);
                         w->deadTanks.push_back(enemyTank);
                     }
-                }
-            }else{
-                int maxSoldiersHit = 5;
-                if(enemySquad->getSoldiers().size()<maxSoldiersHit){
-                    maxSoldiersHit = enemySquad->getSoldiers().size();
-                }
-                int amountHit = rand()%maxSoldiersHit+1;
-                cout<<currTank->getType()<<" kills "<<amountHit<<" enemy soldiers\n";
-                for(int i=0; i<maxSoldiersHit; i++){
-                    Soldier* randSoldier = (Soldier*)w->getRandPerson("soldier", enemySquad);
-                    currTank->doDamage(randSoldier);
-                    enemySquad->remove(randSoldier);
-                    w->deadSoldiers.push_back(randSoldier);
+                }else if(unitTypes[typeIdx]=="soldier"){
+                    int maxSoldiersHit = 10;
+                    if(enemySquad->getSoldiers().size()<maxSoldiersHit){
+                        maxSoldiersHit = enemySquad->getSoldiers().size();
+                    }
+                    int amountHit = rand()%maxSoldiersHit+1;
+                    cout<<currPlane->getType()<<" carpet bombs "<<amountHit<<" enemy soldiers\n";
+                    for(int i=0; i<amountHit; i++){
+                        Soldier* randSoldier = (Soldier*)w->getRandPerson("soldier", enemySquad);
+                        currPlane->doDamage(randSoldier);
+                        enemySquad->remove(randSoldier);
+                        w->deadSoldiers.push_back(randSoldier);
+                    }
                 }
             }
+
         }
     }
 }

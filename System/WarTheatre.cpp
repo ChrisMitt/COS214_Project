@@ -20,8 +20,10 @@ WarTheatre::WarTheatre(list<CountryObserver*> d, list<CountryObserver*> a, strin
 
     allAlliances=aa;
 
-    deploySoldiers = new DeployContext( new SoldierDeploy(this) );
-    deployTanks = new DeployContext( new TankDeploy(this) );
+    deployments.push_back( new DeployContext( new SoldierDeploy(this) ) );
+    deployments.push_back( new DeployContext( new TankDeploy(this) ) );
+    deployments.push_back( new DeployContext( new ShipDeploy(this) ) );
+    deployments.push_back( new DeployContext( new PlaneDeploy(this) ) );
 }
 
 WarTheatre::WarTheatre(list<Alliance*> as){
@@ -77,11 +79,36 @@ void WarTheatre::fillLists(){
             allTanks.push_back( attackers->getTanks()[i] );
         }
     }
+
+    //Ships
+    int maxShipSize=0;
+    defenders->getShips().size() >= attackers->getShips().size() ? maxShipSize = defenders->getShips().size() : maxShipSize = attackers->getShips().size();
+    for(int i=0; i<maxShipSize; i++){
+        if(i<defenders->getShips().size()){
+            allShips.push_back(defenders->getShips()[i]);
+        }
+        if(i<attackers->getShips().size()){
+            allShips.push_back( attackers->getShips()[i] );
+        }
+    }
+
+    //Panes
+    int maxPlaneSize=0;
+    defenders->getPlanes().size() >= attackers->getPlanes().size() ? maxPlaneSize = defenders->getPlanes().size() : maxPlaneSize = attackers->getPlanes().size();
+    for(int i=0; i<maxPlaneSize; i++){
+        if(i<defenders->getPlanes().size()){
+            allPlanes.push_back(defenders->getPlanes()[i]);
+        }
+        if(i<attackers->getPlanes().size()){
+            allPlanes.push_back( attackers->getPlanes()[i] );
+        }
+    }
 }
 
 WarTheatre::~WarTheatre(){
-    delete deploySoldiers;
-    delete deployTanks;
+    for(auto it = deployments.begin(); it!=deployments.end(); it++){
+        delete (*it);
+    }
 }
 
 void WarTheatre::battle(){
@@ -94,9 +121,9 @@ void WarTheatre::battle(){
 }
 
 void WarTheatre::fight(){
-    deploySoldiers->go();
-    deployTanks->go();
-    //medicsHeal();
+    for(auto it = deployments.begin(); it!=deployments.end(); it++){
+        (*it)->go();
+    }
 }
 
 
@@ -110,62 +137,23 @@ Person* WarTheatre::getRandPerson(string type, Squad* squad){
     return nullptr;
 }
 
-void WarTheatre::tanksFight(){
-    cout<<"== 2: TANKS FIGHTING: ==\n";
-    if(defenders->getTanks().size()==0 || attackers->getTanks().size()==0){
-        return;
-    }
-    
-    for(auto it=allTanks.begin(); it!=allTanks.end(); it++){
-        Tank* currTank = *it; //current tank attacking
-        if(currTank->isAlive()){
-            Squad* enemySquad; //the enemy squad of the current tank's squad
-            //1. set who the enemy squad is
-            if( defenders->contains(currTank) ){//if curr tank is a defender
-                enemySquad = attackers;
-            }else if( attackers->contains(currTank) ){
-                enemySquad = defenders;
-            }
-
-            //2. decide to aim for a tank or for soldiers
-            int randNum = rand()%100+1;
-
-            //if decided on tank
-            if(enemySquad->getTanks().size()>0 &&  (randNum<=50 || enemySquad->getSoldiers().size()==0) ){
-                if(enemySquad->getTanks().size()>0){
-                    //3. hit random enemy tank
-                    Tank* enemyTank = (Tank*) (getRandVehicle("tank", enemySquad));
-                    currTank->doDamage(enemyTank);
-                    //4. remove the random tank from the enemy squad, if he died
-                    if(!enemyTank->isAlive()){
-                        enemySquad->remove(enemyTank);
-                        deadTanks.push_back(enemyTank);
-                    }
-                }
-            }else{
-                int maxSoldiersHit = 5;
-                if(enemySquad->getSoldiers().size()<maxSoldiersHit){
-                    maxSoldiersHit = enemySquad->getSoldiers().size();
-                }
-                int amountHit = rand()%maxSoldiersHit+1;
-                cout<<currTank->getType()<<" kills "<<amountHit<<" enemy soldiers\n";
-                for(int i=0; i<maxSoldiersHit; i++){
-                    Soldier* randSoldier = (Soldier*)getRandPerson("soldier", enemySquad);
-                    currTank->doDamage(randSoldier);
-                    enemySquad->remove(randSoldier);
-                    deadSoldiers.push_back(randSoldier);
-                }
-            }
-        }
-    }
-}
-
 Vehicle* WarTheatre::getRandVehicle(string type, Squad* squad){
     if(type=="tank"){
         int randTankIdx = rand() % squad->getTanks().size();
         Tank* randTank = squad->getTanks()[randTankIdx];
         return randTank;
     }
+    if(type=="ship"){
+        int randShipIdx = rand() % squad->getShips().size();
+        Ship* randShip = squad->getShips()[randShipIdx];
+        return randShip;
+    }
+    if(type=="plane"){
+        int randPlaneIndex = rand() % squad->getPlanes().size();
+        Plane* randPlane = squad->getPlanes()[randPlaneIndex];
+        return randPlane;
+    }
+
     return nullptr;
 }
 
@@ -189,6 +177,22 @@ void WarTheatre::deleteUnits(){
         (*it)->getCountry()->removeTank(*it);
     }
     for(auto it=deadTanks.begin(); it!=deadTanks.end(); it++){
+        delete (*it);
+    }
+
+    //ships
+    for(auto it=deadShips.begin(); it!=deadShips.end(); it++){
+        (*it)->getCountry()->removeShip(*it);
+    }
+    for(auto it=deadShips.begin(); it!=deadShips.end(); it++){
+        delete (*it);
+    }
+
+    //planes
+    for(auto it=deadPlanes.begin(); it!=deadPlanes.end(); it++){
+        (*it)->getCountry()->removePlane(*it);
+    }
+    for(auto it=deadPlanes.begin(); it!=deadPlanes.end(); it++){
         delete (*it);
     }
 }

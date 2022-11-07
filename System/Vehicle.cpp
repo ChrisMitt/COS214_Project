@@ -81,7 +81,7 @@ CountryObserver* Vehicle::getCountry(){
 }
 
 Vehicle::~Vehicle(){
-    delete upgrade;
+    //delete upgrade;
 }
 
 void Vehicle::doDamage(Vehicle* victim){

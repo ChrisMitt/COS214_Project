@@ -26,6 +26,7 @@ void Squad::addTroops(CountryObserver* co){
     addMechanics(co);
     addTanks(co);
     addShips(co);
+    addPlanes(co);
 }
 
 void Squad::addMedics(CountryObserver* co){
@@ -63,6 +64,13 @@ void Squad::addShips(CountryObserver* co){
     }
 }
 
+void Squad::addPlanes(CountryObserver* co){
+    for(auto it=co->planes.begin(); it!=co->planes.end(); it++){
+        Plane* currPlane = *it;
+        planes.push_back( currPlane );
+    }
+}
+
 void Squad::printSquad(){
     cout<<"Alliance: "<<involvedCountries.front()->getSubject()<<endl;
     cout<<"Countries involved: ";
@@ -76,6 +84,7 @@ void Squad::printSquad(){
     cout<<"Total mechanics: "<<mechanics.size()<<endl;
     cout<<"Total tanks: "<<tanks.size()<<endl;
     cout<<"Total ships: "<<ships.size()<<endl;
+    cout<<"Total planes: "<<planes.size()<<endl;
 }
 
 vector<Medic*> Squad::getMedics(){
@@ -96,6 +105,10 @@ vector<Tank*> Squad::getTanks(){
 
 vector<Ship*> Squad::getShips(){
     return ships;
+}
+
+vector<Plane*> Squad::getPlanes(){
+    return planes;
 }
 
 void Squad::remove(Soldier* s){
@@ -131,6 +144,17 @@ void Squad::remove(Ship* s){
     }
 }
 
+void Squad::remove(Plane* p){
+    auto it = planes.begin();
+    bool found = false;
+    for(it; it!=planes.end() && !found ; it++){
+        if((*it)==p && !found){
+            planes.erase(it);
+            found=true;
+        }
+    }
+}
+
 bool Squad::contains(Soldier* s){
     return ( find(soldiers.begin(), soldiers.end(), s) != soldiers.end() );
 }
@@ -141,4 +165,16 @@ bool Squad::contains(Tank* t){
 
 bool Squad::contains(Ship* s){
     return ( find(ships.begin(), ships.end(), s) != ships.end() );
+}
+
+bool Squad::contains(Plane* p){
+    return ( find(planes.begin(), planes.end(), p) != planes.end() );
+}
+
+bool Squad::contains(Medic* m){
+    return ( find(medics.begin(), medics.end(), m) != medics.end() );
+}
+
+bool Squad::contains(Mechanic* m){
+    return ( find(mechanics.begin(), mechanics.end(), m) != mechanics.end() );
 }

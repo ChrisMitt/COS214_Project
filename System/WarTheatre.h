@@ -41,8 +41,7 @@ private:
     Squad* attackers;
 
     //Context of Strategy dp
-    DeployContext* deploySoldiers;
-    DeployContext* deployTanks;
+    list<DeployContext*> deployments;
 
 public:
     list<Alliance*> allAlliances;
@@ -52,6 +51,8 @@ public:
     list<Tank*> deadTanks;
     list<Ship*> allShips;
     list<Ship*> deadShips;
+    list<Plane*> allPlanes;
+    list<Plane*> deadPlanes;
     Squad* getDefenders();
     Squad* getAttackers();
 
@@ -96,15 +97,6 @@ public:
      * 
      */
     void fight();
-    /**
-     * @brief a normal member
-     * 
-     */
-    void tanksFight();
-    /**
-     * @brief a normal member
-     * 
-     */
     /**
      * @brief a normal member
      * 

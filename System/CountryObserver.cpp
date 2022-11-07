@@ -3,6 +3,8 @@
 // Edited by Charl on 2022/10/31
 #include<bits/stdc++.h>
 #include "CountryObserver.h"
+#include <algorithm>
+
 using namespace std;
 
 
@@ -113,6 +115,35 @@ void CountryObserver::createArmy(){
         );
         //eg Germany Sherman #1, in battle
     }
+    //ships
+    for(int i=0; i < army->ships.amount; i++){
+        ships.push_back( 
+            new Ship(
+                name+" ship #"+to_string(i+1) ,
+                "in battle", 
+                army->ships.instanceArmour, 
+                army->ships.instanceDMG, 
+                army->ships.instanceHP,
+                this
+            ) 
+        );
+        //eg Germany ship #1, in battle
+    }
+
+    //Planes
+    for(int i=0; i < army->planes.amount; i++){
+        planes.push_back( 
+            new Plane(
+                name+" " + army->planes.name + " #"+to_string(i+1), 
+                "in battle", 
+                army->planes.instanceArmour, 
+                army->planes.instanceDMG, 
+                army->planes.instanceHP,
+                this
+            ) 
+        );
+        //eg Germany ship #1, in battle
+    }
 }
 
 void CountryObserver::printArmy(){
@@ -121,7 +152,11 @@ void CountryObserver::printArmy(){
     cout<<"  "<<medics.size()<<"X  medics\n";
     cout<<"  "<<soldiers.size()<<"X soldiers\n";
     cout<<"  "<<mechanics.size()<<"X mechanics\n";
-    cout<<"  "<<tanks.size()<<"X "<<army->tanks.name<<" tanks\n\n";
+    cout<<"  "<<tanks.size()<<"X "<<army->tanks.name<<" tanks\n";
+    cout<<"  "<<ships.size()<<"X ships\n";
+    cout<<"  "<<planes.size()<<"X planes\n";
+
+    cout<<endl;
 }
 
 void CountryObserver::printMedics(){
@@ -194,3 +229,14 @@ bool CountryObserver::removeTank(Tank* t){
     }
     return false;
 }
+
+bool CountryObserver::removeShip(Ship* s){
+    ships.erase( remove(ships.begin(), ships.end(), s), ships.end() );
+    return false;
+}
+
+bool CountryObserver::removePlane(Plane* p){
+    planes.erase( remove(planes.begin(), planes.end(), p), planes.end() );
+    return false;
+}
+

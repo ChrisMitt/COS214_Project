@@ -30,4 +30,19 @@ public:
     void deploy();
 };
 
+class ShipDeploy:public DeployType
+{
+public:
+    ShipDeploy(WarTheatre* w);
+    ~ShipDeploy();
+    void deploy();
+};
+
+class PlaneDeploy:public DeployType
+{
+public:
+    PlaneDeploy(WarTheatre* w);
+    ~PlaneDeploy();
+    void deploy();
+};
 
