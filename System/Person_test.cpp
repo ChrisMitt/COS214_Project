@@ -11,7 +11,7 @@ using namespace std;
 int main() {
     //Person units
     Research* re = new Research;
-    Soldier* maj = new Soldier("Major", "Deployed", re);
+    Soldier* maj = new Soldier("Major", "Deployed", new ExtraHealth(re));
     Medic* med = new Medic("Field Doctor", "in training");
     Mechanic* mech = new Mechanic("Airplane Mechanic", "Deployed");
     Person* civ = new Soldier();
@@ -73,6 +73,11 @@ int main() {
 
     int ret = rs->createUpgradedUnit(2, co);
     cout<<co->resources<<endl;
+
+    cout<<endl;
+    cout<<"Damage testing"<<endl;
+    cout<<maj->research()<<endl;
+    cout<<maj->getDamage()<<endl;
 
 
     return 0;

@@ -185,7 +185,7 @@ void WarTheatre::createResources(Country* co) {
         {case 1:
             Soldier* upgradedSoldier;
             if(choice==1){
-                upgradedSoldier = new Soldier("Colonel", "Deployed", new ExtraHealth(new Research));
+                upgradedSoldier = new Soldier("//", "Deployed", new ExtraHealth(new Research));
             }
             else{
                 upgradedSoldier = new Soldier("Heavy", "Deployed", new ExtraDamage(new Research));

@@ -64,11 +64,21 @@ int Vehicle::getArmour(){
 }
 
 int Vehicle::getDamage(){
-    return damage;
+    if(this->research() == 25){
+        return (damage + research());
+    }
+    else {
+        return damage;
+    }
 }
 
 int Vehicle::getHealth(){
-    return health;
+    if(this->research() == 50){
+        return (health + research());
+    }
+    else {
+        return health;
+    }
 }
 
 Vehicle::~Vehicle(){
@@ -81,7 +91,7 @@ void Vehicle::doDamage(Vehicle* victim){
     victim->takeDamage(damage);
 }
 
-void Vehicle::doDamage(Person* victim){
+void Vehicle::doDamage(Soldier* victim){
     victim->takeDamage(victim->getHealth());
 }
 
@@ -90,6 +100,11 @@ void Vehicle::takeDamage(int amount){
         cout<<getType()<<" blocked all of the damage\n";
     }else{
         int oldHealth = health;
+
+        if(research() == 50){
+            amount -= research();
+        }
+
         health -= amount-armour;
         if(health<0){
             health=0;

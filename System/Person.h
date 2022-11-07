@@ -11,7 +11,8 @@
 #include "Vehicle.h"
 #include "UnitBackup.h"
 #include "Decorator.h"
-//#include "SoldierState.h"
+
+class Vehicle;
 
 using namespace std;
 /**
@@ -76,12 +77,6 @@ public:
      * 
      */
     virtual ~Person();
-    /**
-     * @brief a normal agurment
-     * 
-     * @param amount 
-     */
-    void takeDamage(int amount);
 
 protected:
 /**
@@ -182,6 +177,12 @@ public:
      */
     UnitBackup* makeBackup();
     /**
+     * @brief Get the Health object
+     *
+     * @return int
+     */
+    int getHealth();
+    /**
      * @brief Get the Damage object
      * 
      * @return int 
@@ -192,7 +193,14 @@ public:
      * 
      * @param victim 
      */
-    void doDamage(Person* victim);
+    void doDamage(Soldier* victim);
+    /**
+     * @brief a normal agurment
+     *
+     * @param amount
+     */
+    void takeDamage(int amount);
+
 private:
 /**
  * @brief a private variable
@@ -201,11 +209,16 @@ private:
  */
     int damage;
     /**
-     * @brief a private varibale
+     * @brief a private variable
      * an RnD* pointer variable
      * 
      */
     RnD* upgrade;
+    /**
+     * @brief a private variable
+     * an int pointer variable
+     *
+     */
 };
 
 

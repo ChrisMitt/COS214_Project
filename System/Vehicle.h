@@ -11,8 +11,10 @@
 #include <string>
 #include "UnitBackup.h"
 #include "Decorator.h"
+#include "Person.h"
 
-class Person;
+class Soldier;
+
 using namespace std;
 
 /**
@@ -120,7 +122,7 @@ public:
      * 
      * @param victim 
      */
-    void doDamage(Person* victim);
+    void doDamage(Soldier* victim);
     /**
      * @brief a normal member
      * 

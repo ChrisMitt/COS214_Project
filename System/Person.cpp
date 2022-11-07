@@ -6,6 +6,7 @@
 //
 
 #include "Person.h"
+#include "Vehicle.h"
 #include <iostream>
 
 Person::Person() {
@@ -77,6 +78,15 @@ void Soldier::interact() {
     std::cout<<"ready for weapons upgrade" <<std::endl;
 }
 
+int Soldier::getHealth() {
+    if(this->research() == 50){
+        return (health + research());
+    }
+    else{
+        return health;
+    }
+}
+
 Soldier* Soldier::clone() {
     return new Soldier(*this);
 }
@@ -140,16 +150,26 @@ void Mechanic::setMemento(UnitBackup* mem) {
 }
 
 int Soldier::getDamage(){
-    return damage;
+    if(this->research() == 25){
+        return (damage + research());
+    }
+    else{
+        return damage;
+    }
 }
 
-void Soldier::doDamage(Person* victim){
-    cout<< type << " doing " << damage << " damage to " <<victim->getType() << endl;
-    victim->takeDamage(damage);
+void Soldier::doDamage(Soldier* victim){
+    cout<< type << " doing " << getDamage() << " damage to " <<victim->getType() << endl;
+    victim->takeDamage(getDamage());
 }
 
-void Person::takeDamage(int amount){
+void Soldier::takeDamage(int amount){
     int oldHealth=health;
+
+    if(research() == 50){
+        amount -= research();
+    }
+
     health-=amount;
     if(health<0){
         health=0;
