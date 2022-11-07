@@ -62,7 +62,7 @@ int main()
         cout<< "1 == Medic" <<endl;
         cout<< "2 == Mechanic" <<endl;
         cin>>personType;
-        cout<< "What is the person " << i+1 << "'s rank? "<<endl;
+        cout<< "What is the person " << i+1 << "'s rank/name? "<<endl;
         cin>>subType;
         if (personType == 0)
         {

@@ -23,17 +23,20 @@ public:
     PersonFactory();
     /**
      * @brief Destroy the Person Factory object
-     * 
+     *
      */
     ~PersonFactory();
     /**
      * @brief Create a Vehicle object
-     * 
+     * @param string
+     * @param string
+     * @return Vehicle*
      */
     Vehicle* createVehicle(string, string);
     /**
      * @brief Create a Person object
-     * 
+     * @param string
+     * @param string
      * @return Person* 
      */
     Person* createPerson(string, string);

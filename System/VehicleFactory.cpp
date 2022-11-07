@@ -17,7 +17,7 @@ VehicleFactory::VehicleFactory()
 
 VehicleFactory::~VehicleFactory()
 {
-    cout<<"The Vehicle Factory is closed down."<<endl;
+    cout<<"The Vehicle Factory is now closed down."<<endl;
 }
 
 Person* VehicleFactory::createPerson(string personType, string subType)
@@ -43,6 +43,4 @@ Vehicle* VehicleFactory::createVehicle(string vehicleType, string subType)
         Plane* createdPlane = new Plane(subType, "creating", new Research);
         return createdPlane;
     }
-    //Soldier* s = new Soldier(0, 0, "", "");
-    //return s;
 }

@@ -26,7 +26,13 @@ public:
      * 
      */
     ~VehicleFactory();
-    //Person* createPerson(string, string);
+    /**
+    * @brief Create a Person object
+    * @param string
+    * @param string
+    * @return Person*
+    */
+    Person* createPerson(string, string);
     /**
      * @brief Create a Vehicle object
      * @param string

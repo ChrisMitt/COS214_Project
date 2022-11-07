@@ -17,7 +17,7 @@ PersonFactory::PersonFactory()
 
 PersonFactory::~PersonFactory()
 {
-    cout<<"The Person Enlisting station is close."<<endl;
+    cout<<"The Person Enlisting station is now closed."<<endl;
 }
 
 Vehicle* PersonFactory::createVehicle(string vehicleType, string subType)
