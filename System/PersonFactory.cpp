@@ -20,6 +20,12 @@ PersonFactory::~PersonFactory()
     cout<<"The Person Enlisting station is close."<<endl;
 }
 
+Vehicle* PersonFactory::createVehicle(string vehicleType, string subType)
+{
+    Tank* createdTank = new Tank(vehicleType, subType);
+    return createdTank;
+}
+
 Person* PersonFactory::createPerson(string personType, string subType)
 {
     if (personType == "soldier")

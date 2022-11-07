@@ -26,13 +26,18 @@ public:
      * 
      */
     ~PersonFactory();
-    //Vehicle* createVehicle(string, string);
+    /**
+     * @brief Create a Vehicle object
+     * 
+     */
+    Vehicle* createVehicle(string, string);
     /**
      * @brief Create a Person object
      * 
      * @return Person* 
      */
     Person* createPerson(string, string);
+
 };
 
 #endif //PROJ_FACTORIES_CONCRETEPERSONFACTORY_H

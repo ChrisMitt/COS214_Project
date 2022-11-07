@@ -75,5 +75,5 @@ int main() {
     cout<<co->resources<<endl;
 
 
-    return 0;
+
 }

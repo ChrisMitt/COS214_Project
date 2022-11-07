@@ -13,6 +13,7 @@ int main()
 
     // factories
     //int numFacs = 2;
+    //VehicleFactory* vf = new VehicleFactory();
     UnitFactory* factories[2];
     factories[0] = new VehicleFactory();
     factories[1] = new PersonFactory();
