@@ -52,13 +52,10 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Classes/Classe
 https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Sequence_Diagrams/Sequence_Diagram.jpg <br/>
 <li>Communication Diagram:</li>
 https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Communication_Diagrams/Communication_Diagram.jpg <br/>
-<li>State Diagram:</li>
-
 <li>Object Diagrams:</li>
 <ul>
 <li>War Theatre:</li>
 https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Object_Diagram/WT_Object_Diagram.jpg <br/>
-<li></li>
 </ul>
 <li>Report:</li>
 https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Report/Report.pdf <br/>
