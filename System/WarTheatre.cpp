@@ -15,7 +15,8 @@ WarTheatre::WarTheatre(list<Alliance*> aa){
     int i=0;
     while(!valid){
         system("clear");
-        cout<<"\nWhich alliance will be defending?\n";
+        cout<<"\nA battle is imminent. \n";
+        cout<<"Which alliance will be defending?\n";
         for(auto it=aa.begin(); it!=aa.end(); it++){
             cout<<"["<<i+1<<"]"<<" "<<(*it)->getName()<<endl;
             i++;
