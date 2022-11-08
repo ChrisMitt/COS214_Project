@@ -41,7 +41,7 @@ public:
         /**
         * @brief A void member.
         */
-        void changePhase();
+        void changePhase(bool);
 
         /**
         * @brief A void member.

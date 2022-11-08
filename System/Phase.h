@@ -7,6 +7,8 @@
 
 #include <string>
 #include "PhasesofWar.h"
+#include "Country.h"
+
 class PhasesofWar;
 
 using namespace std;
@@ -21,7 +23,7 @@ public:
      * @brief A pure virtual member.
     * @param p  a pointer argument
     */
-    virtual void changePhase(PhasesofWar*) = 0;
+    virtual void changePhase(PhasesofWar*, bool) = 0;
     
     /**
     * @brief A pure virtual member.
@@ -34,6 +36,7 @@ public:
     * Phase1 destructor.
     */
     virtual ~Phase();
+    bool success;
 
 };
 
@@ -49,12 +52,11 @@ public:
     * Default Phase1 constructor.
     */
     Phase1();
-    
     /**
      * @brief A virtual member.
     * @param p  a pointer argument
     */
-    virtual void changePhase(PhasesofWar* p);
+    virtual void changePhase(PhasesofWar* p, bool);
 
     /**
     * @brief A pure virtual member.
@@ -68,19 +70,18 @@ public:
 */
 class Phase2: public Phase{
 public:
-
     /**
     * @brief A constructor.
     * Default Phase2 constructor.
     */
-    Phase2();
+    Phase2(bool);
 
     
     /**
      * @brief A virtual member.
     * @param p  a pointer argument
     */
-    virtual void changePhase(PhasesofWar* p);
+    virtual void changePhase(PhasesofWar* p, bool);
     
     /**
     * @brief A virtual member.
@@ -92,6 +93,7 @@ public:
     * @brief A normal member that creates Allaince for Phase2
     */
     void createAlliance();
+    void editAlliances();
 };
 
 
@@ -105,12 +107,11 @@ public:
     * Default Phase3 constructor.
     */
     Phase3();
-
     /**
     * @brief A virtual member.
     * @param p  a pointer argument
     */
-    virtual void changePhase(PhasesofWar* p);
+    virtual void changePhase(PhasesofWar* p, bool);
     
     /**
     * @brief A virtual member.
@@ -139,12 +140,11 @@ public:
     * Default Phase4 constructor.
     */
     Phase4();
-
     /**
     * @brief A virtual member.
     * @param p  a pointer argument
     */
-    virtual void changePhase(PhasesofWar* p);
+    virtual void changePhase(PhasesofWar* p, bool);
 
     /**
     * @brief A virtual member.
@@ -156,6 +156,7 @@ public:
     * @brief A normal member. Shows the Alliances after Phase 3
     */
     void showUN();
+    void createResources(Country *co);
 };
 
 
@@ -169,12 +170,11 @@ public:
     * Default Phase4 constructor.
     */
     Phase5();
-    
     /**
     * @brief A virtual member.
     * @param p  a pointer argument
     */
-    virtual void changePhase(PhasesofWar* p);
+    virtual void changePhase(PhasesofWar* p, bool);
 
     /**
     * @brief A virtual member.

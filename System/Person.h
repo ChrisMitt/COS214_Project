@@ -86,7 +86,7 @@ public:
     void takeDamage(int amount);
     bool isAlive();
     CountryObserver* getCountry();
-    research();
+    int research();
 
 protected:
 /**
