@@ -19,7 +19,7 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Video/Intro%20Video.m
 
 
 <h4>Final Class Diagram:</h4>
-
+https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Class_Diagrams/Main%20UML.jpg <br/>
 
 
 <h4>How to run the code:</h4>
