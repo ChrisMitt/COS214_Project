@@ -1,0 +1,3 @@
+main: g++ WarEngine.cpp Aggregate.cpp Alliance.cpp ConcreteAggregate.cpp ConcreteTurnControl.cpp Country.cpp CountryComposite.cpp CountryObserver.cpp Decorator.cpp Diplomacy.cpp Fight.cpp Negotiate.cpp Person.cpp PersonFactory.cpp Phase.cpp PhasesofWar.cpp SoldierState.cpp Squad.cpp Status.cpp TurnControl.cpp UnitBackup.cpp UnitFactory.cpp Vehicle.cpp VehicleFactory.cpp  WarStrategy.cpp WarTheatre.cpp DeployContext.cpp DeployType.cpp ArmyGeneral.cpp ResourceManagement.cpp -o observerTest
+clean:
+	rm main

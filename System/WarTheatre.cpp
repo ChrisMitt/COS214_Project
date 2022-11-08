@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "WarTheatre.h"
 #include "Phase.h"
+#include <gtest/gtest.h>
 
 using namespace std;
 

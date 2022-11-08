@@ -4,15 +4,18 @@
 
 #include <iostream>
 #include "PhasesofWar.h"
+#include <gtest/gtest.h>
 
 using namespace std;
 
-int main(){
+int main(int argc, char **argv){
 
     PhasesofWar* phase = new PhasesofWar();
     while(true){
         phase->changePhase(true);
     }
 
-    return 0;
+
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
