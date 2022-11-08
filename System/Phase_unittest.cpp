@@ -1,6 +1,6 @@
 #include <limits.h>
 #include "Phase.h"
-#include "gtest/gtest.h"
+//#include "gtest/gtest.h"
 
 // Tests getPhase().
 // Tests return vals of getPhase
