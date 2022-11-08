@@ -10,10 +10,9 @@ using namespace std;
 int main(){
 
     PhasesofWar* phase = new PhasesofWar();
-    for(int i=0; i<4; i++){
-        phase->changePhase();
+    while(true){
+        phase->changePhase(true);
     }
-
 
     return 0;
 }
