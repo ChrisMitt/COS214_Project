@@ -23,7 +23,7 @@ https://github.com/ChrisMitt/COS214_Project/blob/main/Data/Design/Class_Diagrams
 
 
 <h4>How to run the code:</h4>
-Download the entire "System" folder in a linux virtual environment. When the folder is downloaded, open up the terminal in linux and navigate to the "System" folder. Once the directory is changed to the "System" folder, build the program by typing in the terminal "make". Once this is done, type "make run" to execute the program. When finished, you can type "make clean" to clear all the builds that was created to execute the program.
+Download the entire "System" folder in a linux virtual environment. When the folder is downloaded, open up the terminal in linux and navigate to the "System" folder. Once the directory is changed to the "System" folder, build the program by typing in the terminal "make". Once this is done, type "make ./main" to execute the program. When finished, you can type "make clean" to clear all the builds that was created to execute the program.
 
 
 <h4>The Code:</h4>
