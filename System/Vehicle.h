@@ -35,7 +35,7 @@ public:
      * @brief a normal member
      * 
      */
-    Vehicle* clone();
+    virtual Vehicle* clone();
     /**
      * @brief Get the Type object
      * 
@@ -117,6 +117,7 @@ public:
     bool isAlive();
     CountryObserver* getCountry();
     void setHealth(int h);
+    string type;
     
 
 protected:
@@ -124,7 +125,7 @@ protected:
  * @brief a string object
  * 
  */
-    string type;
+    
 /**
  * @brief a string object
  * 
@@ -165,6 +166,7 @@ protected:
  */
 class Plane : public Vehicle{
 public:
+    Plane* clone();
 /**
  * @brief Construct a new Plane object
  * 
@@ -205,6 +207,7 @@ private:
  */
 class Tank : public Vehicle{
 public:
+    Tank* clone();
 /**
  * @brief Construct a new Tank object
  * 
@@ -238,6 +241,7 @@ private:
  */
 class Ship : public Vehicle{
 public:
+    Ship* clone();
 /**
  * @brief Construct a new Ship object
  * 

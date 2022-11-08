@@ -14,6 +14,18 @@ Vehicle* Vehicle::clone() {
     return new Vehicle(*this);
 }
 
+Tank* Tank::clone() {
+    return new Tank(*this);
+}
+
+Plane* Plane::clone() {
+    return new Plane(*this);
+}
+
+Ship* Ship::clone() {
+    return new Ship(*this);
+}
+
 string Vehicle::getType() {
     return this->type;
 }

@@ -86,6 +86,7 @@ public:
     bool isAlive();
     CountryObserver* getCountry();
     int research();
+    string type;
 
 protected:
 /**
@@ -101,11 +102,6 @@ protected:
     virtual Person* clone() = 0;
 
 protected:
-/**
- * @brief a protected variable
- * a string object
- */
-    string type;
     /**
  * @brief a protected variable
  * a string object
