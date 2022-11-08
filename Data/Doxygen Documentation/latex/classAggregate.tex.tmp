@@ -1,0 +1,76 @@
+\hypertarget{classAggregate}{}\doxysection{Aggregate Class Reference}
+\label{classAggregate}\index{Aggregate@{Aggregate}}
+
+
+description an \mbox{\hyperlink{classAggregate}{Aggregate}} class for turncontrol, an aggregate class for the iterator pattern  
+
+
+
+
+{\ttfamily \#include $<$Aggregate.\+h$>$}
+
+
+
+Inheritance diagram for Aggregate\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAggregate_a088508ca51068d0d51e8e495a31fc39f}{Aggregate}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classAggregate}{Aggregate}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAggregate_a637c71288cb20d28019d9df6c9381578}{$\sim$\+Aggregate}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classAggregate}{Aggregate}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTurnControl}{Turn\+Control}} $\ast$ \mbox{\hyperlink{classAggregate_a3f4d07ac295c8b5063fbfafc088373ad}{create\+Turn\+Control}} ()=0
+\begin{DoxyCompactList}\small\item\em Create a Turn Control object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+description an \mbox{\hyperlink{classAggregate}{Aggregate}} class for turncontrol, an aggregate class for the iterator pattern 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAggregate_a088508ca51068d0d51e8e495a31fc39f}\label{classAggregate_a088508ca51068d0d51e8e495a31fc39f}} 
+\index{Aggregate@{Aggregate}!Aggregate@{Aggregate}}
+\index{Aggregate@{Aggregate}!Aggregate@{Aggregate}}
+\doxysubsubsection{\texorpdfstring{Aggregate()}{Aggregate()}}
+{\footnotesize\ttfamily Aggregate\+::\+Aggregate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classAggregate}{Aggregate}} object. 
+
+\mbox{\Hypertarget{classAggregate_a637c71288cb20d28019d9df6c9381578}\label{classAggregate_a637c71288cb20d28019d9df6c9381578}} 
+\index{Aggregate@{Aggregate}!````~Aggregate@{$\sim$Aggregate}}
+\index{````~Aggregate@{$\sim$Aggregate}!Aggregate@{Aggregate}}
+\doxysubsubsection{\texorpdfstring{$\sim$Aggregate()}{~Aggregate()}}
+{\footnotesize\ttfamily virtual Aggregate\+::$\sim$\+Aggregate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classAggregate}{Aggregate}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAggregate_a3f4d07ac295c8b5063fbfafc088373ad}\label{classAggregate_a3f4d07ac295c8b5063fbfafc088373ad}} 
+\index{Aggregate@{Aggregate}!createTurnControl@{createTurnControl}}
+\index{createTurnControl@{createTurnControl}!Aggregate@{Aggregate}}
+\doxysubsubsection{\texorpdfstring{createTurnControl()}{createTurnControl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTurnControl}{Turn\+Control}} $\ast$ Aggregate\+::create\+Turn\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a Turn Control object. 
+
+a pure virtual member \begin{DoxyReturn}{Returns}
+Turn\+Control$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classConcreteAggregate_aeeda04f2c2735811abd8207d2176ba8f}{Concrete\+Aggregate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Aggregate.\+h\item 
+Aggregate.\+cpp\end{DoxyCompactItemize}

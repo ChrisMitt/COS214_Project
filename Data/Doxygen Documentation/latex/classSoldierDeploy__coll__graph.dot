@@ -1,0 +1,13 @@
+digraph "SoldierDeploy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="SoldierDeploy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="a soldierDeploy class"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="DeployType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDeployType.html",tooltip="a DeployType class."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" attackers\ndefenders" ];
+  Node3 [label="Squad",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSquad.html",tooltip="a Squad class. a Product for Builder dp"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" w" ];
+  Node4 [label="WarTheatre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWarTheatre.html",tooltip="a Wartheatre calss. this where the war takes place"];
+}

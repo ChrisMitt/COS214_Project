@@ -12,7 +12,7 @@
 #include "WarTheatre.h"
 using namespace std;
 
-Country* UN[12]; // Array of countries in UN
+Country* UN[20]; // Array of countries in UN
 list<Alliance*> allAlliances;// List of all alliances
 
 void createAlliance()
@@ -25,13 +25,21 @@ void createAlliance()
     while (countryLoop != 0)
     {
         cout << "What country would you like to add to "<< aName << "?\n";
-        cout << "[0] Stop adding countries\n";
-        for (int i = 0; i < 12; i+=6)
+        cout << "0    Stop adding countries\n";
+        
+        for (int i = 0; i < 20; i+=4)
         {
-            cout << "["<< (i+1) << "] " << UN[i]->getName() << "\t["<< (i+2) << "] " << UN[i+1]->getName()
-            << "\t["<< (i+3) << "] " << UN[i+2]->getName()<< "\t["<< (i+4) << "] " << UN[i+3]->getName()
-            << "\t["<< (i+5) << "] " << UN[i+4]->getName()<< "\t["<< (i+6) << "] " << UN[i+5]->getName()<< endl;
+            cout.width(5); cout << left << i+1;
+            cout.width(30); cout << left << UN[i] -> getName();
+            cout.width(5); cout << left << i+2;
+            cout.width(30); cout << left << UN[i+1] -> getName();
+            cout.width(5); cout << left << i+3;
+            cout.width(30); cout << left << UN[i+2] -> getName();
+            cout.width(5); cout << left << i+4;
+            cout.width(30); cout << left << UN[i+3] -> getName();
+            cout<<endl;
         }
+        
         cin >> countryLoop;
         if (countryLoop != 0)
         {
@@ -88,13 +96,20 @@ void editAlliances()
                         while (add != 0)
                         {
                             cout << "Which country would you like to add to " << (*itr)->getName() << "?\n";
-                            cout << "[0] Stop adding countries\n";
-                            for (int i = 0; i < 12; i+=6)
+                            cout << "0    Stop adding countries\n";
+                            for (int i = 0; i < 20; i+=4)
                             {
-                                cout << "["<< (i+1) << "] " << UN[i]->getName() << "\t["<< (i+2) << "] " << UN[i+1]->getName()
-                                << "\t["<< (i+3) << "] " << UN[i+2]->getName()<< "\t["<< (i+4) << "] " << UN[i+3]->getName()
-                                << "\t["<< (i+5) << "] " << UN[i+4]->getName()<< "\t["<< (i+6) << "] " << UN[i+5]->getName()<< endl;
+                                cout.width(5); cout << left << i+1;
+                                cout.width(30); cout << left << UN[i] -> getName();
+                                cout.width(5); cout << left << i+2;
+                                cout.width(30); cout << left << UN[i+1] -> getName();
+                                cout.width(5); cout << left << i+3;
+                                cout.width(30); cout << left << UN[i+2] -> getName();
+                                cout.width(5); cout << left << i+4;
+                                cout.width(30); cout << left << UN[i+3] -> getName();
+                                cout<<endl;
                             }
+                            
                             cin >> add;
                             if (add != 0)
                             {
@@ -151,7 +166,7 @@ void showUN()
     cout.width(20); cout << left << "ALLIANCE";
     cout << left << "STATE\n";
     
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < 20; i++)
     {
         cout.width(15); cout << left << i+1;
         cout.width(35); cout << left << UN[i] -> getName();
@@ -171,14 +186,14 @@ void startBattle(bool firstBattle){
     if(firstBattle){
         allAlliances.push_back(new Alliance("Royal soldiers"));
         allAlliances.push_back(new Alliance("United troops"));
-        allAlliances.front()->addCountry( UN[1] );
-        allAlliances.front()->addCountry( UN[2] );
-        allAlliances.back()->addCountry( UN[3] );
-        allAlliances.back()->addCountry( UN[4] );
+        allAlliances.front()->addCountry(UN[1]);
+        allAlliances.front()->addCountry(UN[2]);
+        allAlliances.back()->addCountry(UN[3]);
+        allAlliances.back()->addCountry(UN[4]);
         printAlliances();
     }
 
-    WarTheatre* w = new WarTheatre( allAlliances );
+    WarTheatre* w = new WarTheatre(allAlliances);
     w->battle();
     delete w;
 }
@@ -186,8 +201,8 @@ void startBattle(bool firstBattle){
 int main()
 {
     //Populating countries array
-    string names[12] = {"Afghanistan", "China", "France", "Germany", "Japan", "North Korea", "Norway", "Russia", "South Korea", "United Kingdom", "United States of America", "Zimbabwe"};
-    for (int i = 0; i < 12; i++)
+    string names[20] = {"Afghanistan", "Austria", "Brazil", "Canada", "China", "Ethiopia", "France", "Germany", "India", "Israel", "Japan", "North Korea", "Norway", "Russia", "South Africa", "South Korea", "United Kingdom", "United States of America", "Vietnam", "Zimbabwe"};
+    for (int i = 0; i < 20; i++)
     {
         UN[i] = new Country();
         UN[i] -> setName(names[i]);
@@ -196,7 +211,7 @@ int main()
     }
     
     
-    cout << "Welcome to the simulator!\n";
+    cout << "Welcome to the war simulator!\n";
     
     int input = -1;
     bool firstBattle=true;
@@ -217,7 +232,9 @@ int main()
         else if (input == 4)
         {
             showUN();
-        }else if (input==5){
+        }
+        else if (input==5)
+        {
             startBattle(firstBattle);
             firstBattle=false;
         }

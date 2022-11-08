@@ -1,0 +1,106 @@
+\hypertarget{classPhase3}{}\doxysection{Phase3 Class Reference}
+\label{classPhase3}\index{Phase3@{Phase3}}
+
+
+A Phases3 class. Concrete\+State Class for the State\+Pattern .  
+
+
+
+
+{\ttfamily \#include $<$Phase.\+h$>$}
+
+
+
+Inheritance diagram for Phase3\+:
+% FIG 0
+
+
+Collaboration diagram for Phase3\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPhase3_a6452a81e3686355bf1f73a5901937a7f}{Phase3}} ()
+\begin{DoxyCompactList}\small\item\em A constructor. Default \mbox{\hyperlink{classPhase3}{Phase3}} constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPhase3_ac8ac3268cb3ee3b23335d531b6e73bbf}{change\+Phase}} (\mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em A virtual member. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classPhase3_a88e61b2998efcc501042e025ff1dd54a}{get\+Phase}} ()
+\begin{DoxyCompactList}\small\item\em A virtual member. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPhase3_a8f3352c6cdad0f10370652d2e9b87562}\label{classPhase3_a8f3352c6cdad0f10370652d2e9b87562}} 
+void \mbox{\hyperlink{classPhase3_a8f3352c6cdad0f10370652d2e9b87562}{start\+Battle}} (bool)
+\begin{DoxyCompactList}\small\item\em A normal member that starts the Battle between Alliances. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhase3_a16f21e39a82994a4b2018b464440ccce}{print\+Alliances}} ()
+\begin{DoxyCompactList}\small\item\em A normal member that displays \mbox{\hyperlink{classAlliance}{Alliance}} for \mbox{\hyperlink{classPhase3}{Phase3}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Phases3 class. Concrete\+State Class for the State\+Pattern . 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPhase3_a6452a81e3686355bf1f73a5901937a7f}\label{classPhase3_a6452a81e3686355bf1f73a5901937a7f}} 
+\index{Phase3@{Phase3}!Phase3@{Phase3}}
+\index{Phase3@{Phase3}!Phase3@{Phase3}}
+\doxysubsubsection{\texorpdfstring{Phase3()}{Phase3()}}
+{\footnotesize\ttfamily Phase3\+::\+Phase3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A constructor. Default \mbox{\hyperlink{classPhase3}{Phase3}} constructor. 
+
+Start battle will happen here. start\+Battle(first\+Battle);
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPhase3_ac8ac3268cb3ee3b23335d531b6e73bbf}\label{classPhase3_ac8ac3268cb3ee3b23335d531b6e73bbf}} 
+\index{Phase3@{Phase3}!changePhase@{changePhase}}
+\index{changePhase@{changePhase}!Phase3@{Phase3}}
+\doxysubsubsection{\texorpdfstring{changePhase()}{changePhase()}}
+{\footnotesize\ttfamily void Phase3\+::change\+Phase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}} $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A virtual member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & a pointer argument \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPhase_a1267dbbaa00a44340e79484a4dee9558}{Phase}}.
+
+\mbox{\Hypertarget{classPhase3_a88e61b2998efcc501042e025ff1dd54a}\label{classPhase3_a88e61b2998efcc501042e025ff1dd54a}} 
+\index{Phase3@{Phase3}!getPhase@{getPhase}}
+\index{getPhase@{getPhase}!Phase3@{Phase3}}
+\doxysubsubsection{\texorpdfstring{getPhase()}{getPhase()}}
+{\footnotesize\ttfamily string Phase3\+::get\+Phase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A virtual member. 
+
+\begin{DoxyReturn}{Returns}
+A string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPhase_a395b3411ecca0fea9469af5f8e7bb6f2}{Phase}}.
+
+\mbox{\Hypertarget{classPhase3_a16f21e39a82994a4b2018b464440ccce}\label{classPhase3_a16f21e39a82994a4b2018b464440ccce}} 
+\index{Phase3@{Phase3}!printAlliances@{printAlliances}}
+\index{printAlliances@{printAlliances}!Phase3@{Phase3}}
+\doxysubsubsection{\texorpdfstring{printAlliances()}{printAlliances()}}
+{\footnotesize\ttfamily void Phase3\+::print\+Alliances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A normal member that displays \mbox{\hyperlink{classAlliance}{Alliance}} for \mbox{\hyperlink{classPhase3}{Phase3}}. 
+
+void \mbox{\hyperlink{classPhase3_a8f3352c6cdad0f10370652d2e9b87562}{Phase3\+::start\+Battle(bool first\+Battle)}}\{ if(first\+Battle)\{ all\+Alliances.\+push\+\_\+back(new \mbox{\hyperlink{classAlliance}{Alliance}}(\char`\"{}\+Royal soldiers\char`\"{})); all\+Alliances.\+push\+\_\+back(new \mbox{\hyperlink{classAlliance}{Alliance}}(\char`\"{}\+United troops\char`\"{})); all\+Alliances.\+front()-\/$>$add\+Country( U\+N\mbox{[}1\mbox{]} ); all\+Alliances.\+front()-\/$>$add\+Country( U\+N\mbox{[}2\mbox{]} ); all\+Alliances.\+back()-\/$>$add\+Country( U\+N\mbox{[}3\mbox{]} ); all\+Alliances.\+back()-\/$>$add\+Country( U\+N\mbox{[}4\mbox{]} ); \mbox{\hyperlink{classPhase3_a16f21e39a82994a4b2018b464440ccce}{print\+Alliances()}}; \}
+
+War\+Theatre$\ast$ w = new \mbox{\hyperlink{classWarTheatre}{War\+Theatre( all\+Alliances )}}; w-\/$>$battle(); delete w; \} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Phase.\+h\item 
+Phase.\+cpp\end{DoxyCompactItemize}

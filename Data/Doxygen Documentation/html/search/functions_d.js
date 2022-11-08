@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['setalliancestate_380',['setAllianceState',['../classCountryObserver.html#a6f7930639beba1d35cba639783b48ee8',1,'CountryObserver']]],
+  ['setentities_381',['setEntities',['../classCountryObserver.html#a1175a4a46a08d0775b221f92230f4a1c',1,'CountryObserver']]],
+  ['sethealth_382',['setHealth',['../classPerson.html#a889f2bcae69d5b1e6be5726a3b132985',1,'Person']]],
+  ['sethealthchanged_383',['setHealthChanged',['../classStatus.html#a1572f6099b2b275ad5b666e8e3b390a5',1,'Status']]],
+  ['setmemento_384',['setMemento',['../classMedic.html#abc6c05c382bcd5acd4a3d536d2b85285',1,'Medic::setMemento()'],['../classMechanic.html#ad8cf206c8b77e9864ab06db3e1ae367d',1,'Mechanic::setMemento()'],['../classSoldierState.html#ac93c0f3caaf4d33c68cfc73a15908bd8',1,'SoldierState::setMemento()']]],
+  ['setname_385',['setName',['../classCountryObserver.html#aa3acb59a13115d3ecc64064cb3f3d1ff',1,'CountryObserver']]],
+  ['setphase_386',['setPhase',['../classPhasesofWar.html#a3d5549cce9dc029fe285157f30b0ec85',1,'PhasesofWar::setPhase()'],['../classWarPhaseChanger.html#aad063af4a7e72135c29103ce889f89e0',1,'WarPhaseChanger::setPhase()']]],
+  ['setstate_387',['setState',['../classAlliance.html#a0a556839a7e3adbfa9b343b882c20029',1,'Alliance']]],
+  ['setstatus_388',['setStatus',['../classWarStrategy.html#a90333a0245b59f0b0ffe65e6e1c08cdb',1,'WarStrategy']]],
+  ['setstrategy_389',['setStrategy',['../classWarPhaseChanger.html#a3f045f823578d5ccb2be9035c638e85a',1,'WarPhaseChanger']]],
+  ['setsubject_390',['setSubject',['../classCountryObserver.html#a8ef0954ff110bb3c7012802483f1a28e',1,'CountryObserver']]],
+  ['shellfire_391',['shellFire',['../classShip.html#aeb8d72c3d7ae64df19db664f36bd5b27',1,'Ship']]],
+  ['ship_392',['Ship',['../classShip.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship::Ship()'],['../classShip.html#a8dabfe8d852302c0c0053527a56e8048',1,'Ship::Ship(string, string, RnD *)'],['../classShip.html#a655d647d6edfbe9fb08b39cc049ddae0',1,'Ship::Ship(string t, string s, int a=200, int d=200, int h=1000, CountryObserver *c=NULL, int sh=250, int ca=150)']]],
+  ['shipdeploy_393',['ShipDeploy',['../classShipDeploy.html#a4666365c61ad50a65ae65d369e3d2c12',1,'ShipDeploy']]],
+  ['showalliance_394',['showAlliance',['../classAlliance.html#a359cceb3a04f76c60fca342e3eb13d6a',1,'Alliance']]],
+  ['showstatus_395',['showStatus',['../classStatus.html#a113ddbe838b5006922ce6308a4408603',1,'Status']]],
+  ['showun_396',['showUN',['../classPhase4.html#a099b4a4879ddc93e4fe580feb0b8ee41',1,'Phase4']]],
+  ['soldier_397',['Soldier',['../classSoldier.html#ad3144b22a146ef85eaff30a2a5ab78c0',1,'Soldier::Soldier()'],['../classSoldier.html#a5980eca9bf99f71f8cae1ef617e89248',1,'Soldier::Soldier(string, string, RnD *)'],['../classSoldier.html#a87e09aae0ddc6d04e777eca279a9a755',1,'Soldier::Soldier(string, string, int h=100, CountryObserver *c=NULL, int d=25)']]],
+  ['soldierdeploy_398',['SoldierDeploy',['../classSoldierDeploy.html#a15cee94f43dce165084c7a93190ed9ad',1,'SoldierDeploy']]],
+  ['soldierstate_399',['SoldierState',['../classSoldierState.html#a938882b7c046eefd60f954092b72807e',1,'SoldierState']]],
+  ['squad_400',['Squad',['../classSquad.html#a0e37f7593f55bff89220ec031d19f5f0',1,'Squad::Squad()'],['../classSquad.html#a1c405930cce51fd0c95b56716b85e3a4',1,'Squad::Squad(list&lt; CountryObserver * &gt; countries, string allianceName)']]],
+  ['startbattle_401',['startBattle',['../classPhase3.html#a8f3352c6cdad0f10370652d2e9b87562',1,'Phase3']]],
+  ['status_402',['Status',['../classStatus.html#a944586fb328a3524805748c8f7b17f32',1,'Status::Status()'],['../classStatus.html#af52d6013623af0167f769dbbe61e7344',1,'Status::Status(const Status &amp;)'],['../classWarPhaseChanger.html#a463492cc2486986d8307cd9dfcfe6bab',1,'WarPhaseChanger::Status()']]]
+];

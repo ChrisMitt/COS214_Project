@@ -1,0 +1,537 @@
+\hypertarget{classCountryObserver}{}\doxysection{Country\+Observer Class Reference}
+\label{classCountryObserver}\index{CountryObserver@{CountryObserver}}
+
+
+Inheritance diagram for Country\+Observer\+:
+% FIG 0
+
+
+Collaboration diagram for Country\+Observer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCountryObserver_a847ea1285565f9bc9a440ab6d113e312}{Country\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classCountry}{Country}} Observer object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCountryObserver_a29a299505b2d1a5dc5988a32009268b3}{$\sim$\+Country\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classCountry}{Country}} Observer object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_aa3acb59a13115d3ecc64064cb3f3d1ff}{set\+Name}} (string)
+\begin{DoxyCompactList}\small\item\em Set the Name object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCountryObserver_ad205c3aedad62be5a9de8b645d86acdc}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the Name object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCountryObserver_a254a79fe7d0424009a5cd6afcbc33fa4}{get\+ID}} ()
+\item 
+\mbox{\hyperlink{classState}{State}} $\ast$ \mbox{\hyperlink{classCountryObserver_a9715dea5a7ce885f966c947f330673a1}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classState}{State}} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCountryObserver_a95ff583e8bceea5f8be9aaa51008a905}{get\+Alliance\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classAlliance}{Alliance}} \mbox{\hyperlink{classState}{State}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_a6f7930639beba1d35cba639783b48ee8}{set\+Alliance\+State}} (bool)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classAlliance}{Alliance}} \mbox{\hyperlink{classState}{State}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_a8ef0954ff110bb3c7012802483f1a28e}{set\+Subject}} (\mbox{\hyperlink{classAlliance}{Alliance}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Set the Subject object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAlliance}{Alliance}} $\ast$ \mbox{\hyperlink{classCountryObserver_a57fda23a7cbbd6199cfc09240e071687}{get\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em Get the Subject object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCountryObserver_aa3112ed284280ab4c4458105309fa9b0}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em a pure virtual member \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCountryObserver_a32d550acbee51aed65fca696fb94a966}{fight}} ()=0
+\begin{DoxyCompactList}\small\item\em a pure virtual member \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCountryObserver_a531ff8aa3bb095e9eed8bc0d08ba24ee}{add}} (\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$c)=0
+\begin{DoxyCompactList}\small\item\em a pure virtual memner \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_a1175a4a46a08d0775b221f92230f4a1c}{set\+Entities}} (string country\+Name)
+\begin{DoxyCompactList}\small\item\em Set the Entities object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_ae02154809fda8dfa4e22bfb50365d524}{fill\+Army\+Struct}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_aa84cbb55d8b51b69b62bf1766b522ec7}{create\+Army}} ()
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{structArmy}{Army}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_a51b8d8da667b7336f05c2d95126d86b1}{print\+Army}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCountryObserver_a1a122756c9011aaadaa45770d1bc128d}\label{classCountryObserver_a1a122756c9011aaadaa45770d1bc128d}} 
+void {\bfseries print\+Medics} ()
+\item 
+void \mbox{\hyperlink{classCountryObserver_a9d56a948e93c48060bd510c60b7351b7}{print\+Soldiers}} ()
+\begin{DoxyCompactList}\small\item\em a normal memeber \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_a6d58407c49cee82d7c1113c9cc4398b8}{print\+Mechanics}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCountryObserver_aea1f02f095216c8f372e2a72885bae6d}{print\+Tanks}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCountryObserver_a810ed15787b9b12c9d6259ff17b7191c}{remove\+Soldier}} (\mbox{\hyperlink{classSoldier}{Soldier}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em remove soldiers, remove tank, remove ship, remove plane member functions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCountryObserver_adaf9951cdb3c73ecbcc5cd32e27ead01}{remove\+Tank}} (\mbox{\hyperlink{classTank}{Tank}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em remove soldiers, remove tank, remove ship, remove plane member functions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCountryObserver_ad1b77ef9960115867a09c4ddaeabd727}{remove\+Ship}} (\mbox{\hyperlink{classShip}{Ship}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em remove soldiers, remove tank, remove ship, remove plane member functions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCountryObserver_acadeb2cc7db25a24ac12483d4cfc6976}{remove\+Plane}} (\mbox{\hyperlink{classPlane}{Plane}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em remove soldiers, remove tank, remove ship, remove plane member functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classMedic}{Medic}} $\ast$ $>$ \mbox{\hyperlink{classCountryObserver_a140acc5e0f41fe136eeb7781eed515f5}{medics}}
+\item 
+vector$<$ \mbox{\hyperlink{classSoldier}{Soldier}} $\ast$ $>$ \mbox{\hyperlink{classCountryObserver_a0b8c078bf46116ba1397ea100e2eeb75}{soldiers}}
+\item 
+vector$<$ \mbox{\hyperlink{classMechanic}{Mechanic}} $\ast$ $>$ \mbox{\hyperlink{classCountryObserver_af7614ae68b95871481fb3d03416eb521}{mechanics}}
+\item 
+vector$<$ \mbox{\hyperlink{classTank}{Tank}} $\ast$ $>$ \mbox{\hyperlink{classCountryObserver_a970fa6cd011bb1d5f27e823c10930b06}{tanks}}
+\item 
+vector$<$ \mbox{\hyperlink{classShip}{Ship}} $\ast$ $>$ \mbox{\hyperlink{classCountryObserver_a0b614a4311d91b63936f0bf286b37532}{ships}}
+\item 
+vector$<$ \mbox{\hyperlink{classPlane}{Plane}} $\ast$ $>$ \mbox{\hyperlink{classCountryObserver_acb156471de054fa430242c107c0a5574}{planes}}
+\item 
+int \mbox{\hyperlink{classCountryObserver_a8f8ef6c0c746333053a97f54a526c244}{resources}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCountryObserver_ab1247526a4efb92568c12aa79e8e19cd}{id}}
+\item 
+string \mbox{\hyperlink{classCountryObserver_ae46f45336ed1e3f8505f3f993d055249}{name}}
+\item 
+bool \mbox{\hyperlink{classCountryObserver_a829f43545600a3143b00f87075bdb7b7}{alliance\+State}}
+\item 
+\mbox{\hyperlink{classState}{State}} $\ast$ \mbox{\hyperlink{classCountryObserver_a757e9953273a2a6b00e75ac84397c15c}{state}}
+\item 
+\mbox{\hyperlink{classAlliance}{Alliance}} $\ast$ \mbox{\hyperlink{classCountryObserver_ad478d9e7f838297daf5d595fad95ee69}{subject}}
+\item 
+\mbox{\hyperlink{structArmy}{Army}} $\ast$ \mbox{\hyperlink{classCountryObserver_afaa2bcf757bed89aa625dd04853fa6d9}{army}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classCountryObserver_a9fd234280842111f96fe1ae7f1c890b2}{total}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCountryObserver_a847ea1285565f9bc9a440ab6d113e312}\label{classCountryObserver_a847ea1285565f9bc9a440ab6d113e312}} 
+\index{CountryObserver@{CountryObserver}!CountryObserver@{CountryObserver}}
+\index{CountryObserver@{CountryObserver}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{CountryObserver()}{CountryObserver()}}
+{\footnotesize\ttfamily Country\+Observer\+::\+Country\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classCountry}{Country}} Observer object. 
+
+\mbox{\Hypertarget{classCountryObserver_a29a299505b2d1a5dc5988a32009268b3}\label{classCountryObserver_a29a299505b2d1a5dc5988a32009268b3}} 
+\index{CountryObserver@{CountryObserver}!````~CountryObserver@{$\sim$CountryObserver}}
+\index{````~CountryObserver@{$\sim$CountryObserver}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{$\sim$CountryObserver()}{~CountryObserver()}}
+{\footnotesize\ttfamily Country\+Observer\+::$\sim$\+Country\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classCountry}{Country}} Observer object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCountryObserver_a531ff8aa3bb095e9eed8bc0d08ba24ee}\label{classCountryObserver_a531ff8aa3bb095e9eed8bc0d08ba24ee}} 
+\index{CountryObserver@{CountryObserver}!add@{add}}
+\index{add@{add}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily virtual void Country\+Observer\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+a pure virtual memner 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCountryComposite_abc3730d02a1743e29ae64f5f42f2ac2c}{Country\+Composite}}, and \mbox{\hyperlink{classCountry_a0e76bd33f591f9fb573b1b494fc1d36e}{Country}}.
+
+\mbox{\Hypertarget{classCountryObserver_aa84cbb55d8b51b69b62bf1766b522ec7}\label{classCountryObserver_aa84cbb55d8b51b69b62bf1766b522ec7}} 
+\index{CountryObserver@{CountryObserver}!createArmy@{createArmy}}
+\index{createArmy@{createArmy}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{createArmy()}{createArmy()}}
+{\footnotesize\ttfamily void Country\+Observer\+::create\+Army (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a \mbox{\hyperlink{structArmy}{Army}} object. 
+
+\mbox{\Hypertarget{classCountryObserver_a32d550acbee51aed65fca696fb94a966}\label{classCountryObserver_a32d550acbee51aed65fca696fb94a966}} 
+\index{CountryObserver@{CountryObserver}!fight@{fight}}
+\index{fight@{fight}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{fight()}{fight()}}
+{\footnotesize\ttfamily virtual void Country\+Observer\+::fight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+a pure virtual member 
+
+
+
+Implemented in \mbox{\hyperlink{classCountryComposite_a08a8d5a672ba8068ee7fa68bdcdea9d0}{Country\+Composite}}, and \mbox{\hyperlink{classCountry_a3e8cc294ff0ba4c71871733466fc70b0}{Country}}.
+
+\mbox{\Hypertarget{classCountryObserver_ae02154809fda8dfa4e22bfb50365d524}\label{classCountryObserver_ae02154809fda8dfa4e22bfb50365d524}} 
+\index{CountryObserver@{CountryObserver}!fillArmyStruct@{fillArmyStruct}}
+\index{fillArmyStruct@{fillArmyStruct}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{fillArmyStruct()}{fillArmyStruct()}}
+{\footnotesize\ttfamily void Country\+Observer\+::fill\+Army\+Struct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\mbox{\Hypertarget{classCountryObserver_a95ff583e8bceea5f8be9aaa51008a905}\label{classCountryObserver_a95ff583e8bceea5f8be9aaa51008a905}} 
+\index{CountryObserver@{CountryObserver}!getAllianceState@{getAllianceState}}
+\index{getAllianceState@{getAllianceState}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{getAllianceState()}{getAllianceState()}}
+{\footnotesize\ttfamily bool Country\+Observer\+::get\+Alliance\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \mbox{\hyperlink{classAlliance}{Alliance}} \mbox{\hyperlink{classState}{State}} object. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_a254a79fe7d0424009a5cd6afcbc33fa4}\label{classCountryObserver_a254a79fe7d0424009a5cd6afcbc33fa4}} 
+\index{CountryObserver@{CountryObserver}!getID@{getID}}
+\index{getID@{getID}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Country\+Observer\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_ad205c3aedad62be5a9de8b645d86acdc}\label{classCountryObserver_ad205c3aedad62be5a9de8b645d86acdc}} 
+\index{CountryObserver@{CountryObserver}!getName@{getName}}
+\index{getName@{getName}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Country\+Observer\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Name object. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_a9715dea5a7ce885f966c947f330673a1}\label{classCountryObserver_a9715dea5a7ce885f966c947f330673a1}} 
+\index{CountryObserver@{CountryObserver}!getState@{getState}}
+\index{getState@{getState}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classState}{State}} $\ast$ Country\+Observer\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classState}{State}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em State$\ast$} & void set\+State(\+State$\ast$); /$\ast$$\ast$\\
+\hline
+\end{DoxyParams}
+Get the \mbox{\hyperlink{classState}{State}} object
+
+\begin{DoxyReturn}{Returns}
+State$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_a57fda23a7cbbd6199cfc09240e071687}\label{classCountryObserver_a57fda23a7cbbd6199cfc09240e071687}} 
+\index{CountryObserver@{CountryObserver}!getSubject@{getSubject}}
+\index{getSubject@{getSubject}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{getSubject()}{getSubject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAlliance}{Alliance}} $\ast$ Country\+Observer\+::get\+Subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Subject object. 
+
+\begin{DoxyReturn}{Returns}
+Alliance$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_a51b8d8da667b7336f05c2d95126d86b1}\label{classCountryObserver_a51b8d8da667b7336f05c2d95126d86b1}} 
+\index{CountryObserver@{CountryObserver}!printArmy@{printArmy}}
+\index{printArmy@{printArmy}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{printArmy()}{printArmy()}}
+{\footnotesize\ttfamily void Country\+Observer\+::print\+Army (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\mbox{\Hypertarget{classCountryObserver_a6d58407c49cee82d7c1113c9cc4398b8}\label{classCountryObserver_a6d58407c49cee82d7c1113c9cc4398b8}} 
+\index{CountryObserver@{CountryObserver}!printMechanics@{printMechanics}}
+\index{printMechanics@{printMechanics}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{printMechanics()}{printMechanics()}}
+{\footnotesize\ttfamily void Country\+Observer\+::print\+Mechanics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\mbox{\Hypertarget{classCountryObserver_a9d56a948e93c48060bd510c60b7351b7}\label{classCountryObserver_a9d56a948e93c48060bd510c60b7351b7}} 
+\index{CountryObserver@{CountryObserver}!printSoldiers@{printSoldiers}}
+\index{printSoldiers@{printSoldiers}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{printSoldiers()}{printSoldiers()}}
+{\footnotesize\ttfamily void Country\+Observer\+::print\+Soldiers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal memeber 
+
+\mbox{\Hypertarget{classCountryObserver_aea1f02f095216c8f372e2a72885bae6d}\label{classCountryObserver_aea1f02f095216c8f372e2a72885bae6d}} 
+\index{CountryObserver@{CountryObserver}!printTanks@{printTanks}}
+\index{printTanks@{printTanks}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{printTanks()}{printTanks()}}
+{\footnotesize\ttfamily void Country\+Observer\+::print\+Tanks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\mbox{\Hypertarget{classCountryObserver_acadeb2cc7db25a24ac12483d4cfc6976}\label{classCountryObserver_acadeb2cc7db25a24ac12483d4cfc6976}} 
+\index{CountryObserver@{CountryObserver}!removePlane@{removePlane}}
+\index{removePlane@{removePlane}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{removePlane()}{removePlane()}}
+{\footnotesize\ttfamily bool Country\+Observer\+::remove\+Plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlane}{Plane}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+remove soldiers, remove tank, remove ship, remove plane member functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & pionter represents a \mbox{\hyperlink{classPlane}{Plane}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_ad1b77ef9960115867a09c4ddaeabd727}\label{classCountryObserver_ad1b77ef9960115867a09c4ddaeabd727}} 
+\index{CountryObserver@{CountryObserver}!removeShip@{removeShip}}
+\index{removeShip@{removeShip}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{removeShip()}{removeShip()}}
+{\footnotesize\ttfamily bool Country\+Observer\+::remove\+Ship (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classShip}{Ship}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+remove soldiers, remove tank, remove ship, remove plane member functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & pionter represents a \mbox{\hyperlink{classShip}{Ship}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_a810ed15787b9b12c9d6259ff17b7191c}\label{classCountryObserver_a810ed15787b9b12c9d6259ff17b7191c}} 
+\index{CountryObserver@{CountryObserver}!removeSoldier@{removeSoldier}}
+\index{removeSoldier@{removeSoldier}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{removeSoldier()}{removeSoldier()}}
+{\footnotesize\ttfamily bool Country\+Observer\+::remove\+Soldier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSoldier}{Soldier}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+remove soldiers, remove tank, remove ship, remove plane member functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_adaf9951cdb3c73ecbcc5cd32e27ead01}\label{classCountryObserver_adaf9951cdb3c73ecbcc5cd32e27ead01}} 
+\index{CountryObserver@{CountryObserver}!removeTank@{removeTank}}
+\index{removeTank@{removeTank}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{removeTank()}{removeTank()}}
+{\footnotesize\ttfamily bool Country\+Observer\+::remove\+Tank (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTank}{Tank}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+remove soldiers, remove tank, remove ship, remove plane member functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & pionter represents a \mbox{\hyperlink{classTank}{Tank}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCountryObserver_a6f7930639beba1d35cba639783b48ee8}\label{classCountryObserver_a6f7930639beba1d35cba639783b48ee8}} 
+\index{CountryObserver@{CountryObserver}!setAllianceState@{setAllianceState}}
+\index{setAllianceState@{setAllianceState}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{setAllianceState()}{setAllianceState()}}
+{\footnotesize\ttfamily void Country\+Observer\+::set\+Alliance\+State (\begin{DoxyParamCaption}\item[{bool}]{i }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classAlliance}{Alliance}} \mbox{\hyperlink{classState}{State}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCountryObserver_a1175a4a46a08d0775b221f92230f4a1c}\label{classCountryObserver_a1175a4a46a08d0775b221f92230f4a1c}} 
+\index{CountryObserver@{CountryObserver}!setEntities@{setEntities}}
+\index{setEntities@{setEntities}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{setEntities()}{setEntities()}}
+{\footnotesize\ttfamily void Country\+Observer\+::set\+Entities (\begin{DoxyParamCaption}\item[{string}]{country\+Name }\end{DoxyParamCaption})}
+
+
+
+Set the Entities object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em country\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCountryObserver_aa3acb59a13115d3ecc64064cb3f3d1ff}\label{classCountryObserver_aa3acb59a13115d3ecc64064cb3f3d1ff}} 
+\index{CountryObserver@{CountryObserver}!setName@{setName}}
+\index{setName@{setName}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Country\+Observer\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+Set the Name object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCountryObserver_a8ef0954ff110bb3c7012802483f1a28e}\label{classCountryObserver_a8ef0954ff110bb3c7012802483f1a28e}} 
+\index{CountryObserver@{CountryObserver}!setSubject@{setSubject}}
+\index{setSubject@{setSubject}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{setSubject()}{setSubject()}}
+{\footnotesize\ttfamily void Country\+Observer\+::set\+Subject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAlliance}{Alliance}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Set the Subject object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Alliance$\ast$} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCountryObserver_aa3112ed284280ab4c4458105309fa9b0}\label{classCountryObserver_aa3112ed284280ab4c4458105309fa9b0}} 
+\index{CountryObserver@{CountryObserver}!update@{update}}
+\index{update@{update}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Country\+Observer\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+a pure virtual member 
+
+
+
+Implemented in \mbox{\hyperlink{classCountry_ac46fe023b8667ae0ea555db0ad4e4261}{Country}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCountryObserver_a829f43545600a3143b00f87075bdb7b7}\label{classCountryObserver_a829f43545600a3143b00f87075bdb7b7}} 
+\index{CountryObserver@{CountryObserver}!allianceState@{allianceState}}
+\index{allianceState@{allianceState}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{allianceState}{allianceState}}
+{\footnotesize\ttfamily bool Country\+Observer\+::alliance\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+a protected variable True if the country is part of an alliance, false if it is not \mbox{\Hypertarget{classCountryObserver_afaa2bcf757bed89aa625dd04853fa6d9}\label{classCountryObserver_afaa2bcf757bed89aa625dd04853fa6d9}} 
+\index{CountryObserver@{CountryObserver}!army@{army}}
+\index{army@{army}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{army}{army}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structArmy}{Army}}$\ast$ Country\+Observer\+::army\hspace{0.3cm}{\ttfamily [protected]}}
+
+a protected variable \mbox{\hyperlink{structArmy}{Army}} stats \mbox{\Hypertarget{classCountryObserver_ab1247526a4efb92568c12aa79e8e19cd}\label{classCountryObserver_ab1247526a4efb92568c12aa79e8e19cd}} 
+\index{CountryObserver@{CountryObserver}!id@{id}}
+\index{id@{id}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Country\+Observer\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+a protected variable Holds the Id of a \mbox{\hyperlink{classCountry}{Country}} \mbox{\Hypertarget{classCountryObserver_af7614ae68b95871481fb3d03416eb521}\label{classCountryObserver_af7614ae68b95871481fb3d03416eb521}} 
+\index{CountryObserver@{CountryObserver}!mechanics@{mechanics}}
+\index{mechanics@{mechanics}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{mechanics}{mechanics}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classMechanic}{Mechanic}}$\ast$$>$ Country\+Observer\+::mechanics}
+
+a public variable a vector that holds the mechanics \mbox{\Hypertarget{classCountryObserver_a140acc5e0f41fe136eeb7781eed515f5}\label{classCountryObserver_a140acc5e0f41fe136eeb7781eed515f5}} 
+\index{CountryObserver@{CountryObserver}!medics@{medics}}
+\index{medics@{medics}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{medics}{medics}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classMedic}{Medic}}$\ast$$>$ Country\+Observer\+::medics}
+
+a public variable a vector that holds the medic \mbox{\Hypertarget{classCountryObserver_ae46f45336ed1e3f8505f3f993d055249}\label{classCountryObserver_ae46f45336ed1e3f8505f3f993d055249}} 
+\index{CountryObserver@{CountryObserver}!name@{name}}
+\index{name@{name}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Country\+Observer\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+a protected variable Holds the Name of a \mbox{\hyperlink{classCountry}{Country}} \mbox{\Hypertarget{classCountryObserver_acb156471de054fa430242c107c0a5574}\label{classCountryObserver_acb156471de054fa430242c107c0a5574}} 
+\index{CountryObserver@{CountryObserver}!planes@{planes}}
+\index{planes@{planes}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{planes}{planes}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classPlane}{Plane}}$\ast$$>$ Country\+Observer\+::planes}
+
+a public variable a vector that holds the planes \mbox{\Hypertarget{classCountryObserver_a8f8ef6c0c746333053a97f54a526c244}\label{classCountryObserver_a8f8ef6c0c746333053a97f54a526c244}} 
+\index{CountryObserver@{CountryObserver}!resources@{resources}}
+\index{resources@{resources}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{resources}{resources}}
+{\footnotesize\ttfamily int Country\+Observer\+::resources}
+
+a public variable The resources which a country can spend on troop creation \mbox{\Hypertarget{classCountryObserver_a0b614a4311d91b63936f0bf286b37532}\label{classCountryObserver_a0b614a4311d91b63936f0bf286b37532}} 
+\index{CountryObserver@{CountryObserver}!ships@{ships}}
+\index{ships@{ships}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{ships}{ships}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classShip}{Ship}}$\ast$$>$ Country\+Observer\+::ships}
+
+a public variable a vector that holds the ships \mbox{\Hypertarget{classCountryObserver_a0b8c078bf46116ba1397ea100e2eeb75}\label{classCountryObserver_a0b8c078bf46116ba1397ea100e2eeb75}} 
+\index{CountryObserver@{CountryObserver}!soldiers@{soldiers}}
+\index{soldiers@{soldiers}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{soldiers}{soldiers}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classSoldier}{Soldier}}$\ast$$>$ Country\+Observer\+::soldiers}
+
+a public variable a vector that holds the soldiers \mbox{\Hypertarget{classCountryObserver_a757e9953273a2a6b00e75ac84397c15c}\label{classCountryObserver_a757e9953273a2a6b00e75ac84397c15c}} 
+\index{CountryObserver@{CountryObserver}!state@{state}}
+\index{state@{state}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classState}{State}}$\ast$ Country\+Observer\+::state\hspace{0.3cm}{\ttfamily [protected]}}
+
+a protected variable Hold the States. Conflict/\+Peace/\+Negotiating \mbox{\Hypertarget{classCountryObserver_ad478d9e7f838297daf5d595fad95ee69}\label{classCountryObserver_ad478d9e7f838297daf5d595fad95ee69}} 
+\index{CountryObserver@{CountryObserver}!subject@{subject}}
+\index{subject@{subject}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{subject}{subject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAlliance}{Alliance}}$\ast$ Country\+Observer\+::subject\hspace{0.3cm}{\ttfamily [protected]}}
+
+a protected variable The alliance the country is part of, which it observes \mbox{\Hypertarget{classCountryObserver_a970fa6cd011bb1d5f27e823c10930b06}\label{classCountryObserver_a970fa6cd011bb1d5f27e823c10930b06}} 
+\index{CountryObserver@{CountryObserver}!tanks@{tanks}}
+\index{tanks@{tanks}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{tanks}{tanks}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classTank}{Tank}}$\ast$$>$ Country\+Observer\+::tanks}
+
+a public variable a vector that holds the tanks \mbox{\Hypertarget{classCountryObserver_a9fd234280842111f96fe1ae7f1c890b2}\label{classCountryObserver_a9fd234280842111f96fe1ae7f1c890b2}} 
+\index{CountryObserver@{CountryObserver}!total@{total}}
+\index{total@{total}!CountryObserver@{CountryObserver}}
+\doxysubsubsection{\texorpdfstring{total}{total}}
+{\footnotesize\ttfamily int Country\+Observer\+::total = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+a protected variable Static integer. Total number of countries 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Country\+Observer.\+h\item 
+Country\+Observer.\+cpp\end{DoxyCompactItemize}

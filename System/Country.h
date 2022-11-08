@@ -16,12 +16,23 @@ using namespace std;
  */
 class Country : public CountryObserver {
   public:
-  /**
-   * @brief a normal member.
-   * 
-   */
+
+    /**
+     * @brief a normal member. Udates any changes to other Contries
+     * 
+    */
     void update();
+
+    /**
+     * @brief a normal member. Shows if the coutry s fighting 
+     * 
+    */
     void fight();
+    
+    /**
+     * @brief a normal member. Adds the country into the Observer
+    *  @param c pointer argument that represents the coutry 
+    */
     void add(CountryObserver* c);
   };
 

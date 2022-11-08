@@ -1,0 +1,152 @@
+\hypertarget{classMechanic}{}\doxysection{Mechanic Class Reference}
+\label{classMechanic}\index{Mechanic@{Mechanic}}
+
+
+a \mbox{\hyperlink{classMechanic}{Mechanic}} class. a product of the person class  
+
+
+
+
+{\ttfamily \#include $<$Person.\+h$>$}
+
+
+
+Inheritance diagram for Mechanic\+:
+% FIG 0
+
+
+Collaboration diagram for Mechanic\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMechanic_a39ae598d740a821ca9c99185e0b3561b}{Mechanic}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMechanic}{Mechanic}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMechanic_aee5fd11da0cdda328c0c3083867060c1}{Mechanic}} (string, string, int h=100, \mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$c=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMechanic}{Mechanic}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMechanic_a1536181b77aa1b1aac28c515c317edae}{repair}} (\mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$)
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMechanic_a689e71fcbd5d70fd98295a2a70ae403d}{interact}} ()
+\begin{DoxyCompactList}\small\item\em a virtual member \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMechanic}{Mechanic}} $\ast$ \mbox{\hyperlink{classMechanic_a63ebd800560cdb5405566f2c497249eb}{clone}} ()
+\begin{DoxyCompactList}\small\item\em a virtual member \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$ \mbox{\hyperlink{classMechanic_a3d33ca9d854025a7f52986c8d0c06e10}{get\+Memento}} ()
+\begin{DoxyCompactList}\small\item\em Get the Memento object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMechanic_ad8cf206c8b77e9864ab06db3e1ae367d}{set\+Memento}} (\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Set the Memento object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+a \mbox{\hyperlink{classMechanic}{Mechanic}} class. a product of the person class 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMechanic_a39ae598d740a821ca9c99185e0b3561b}\label{classMechanic_a39ae598d740a821ca9c99185e0b3561b}} 
+\index{Mechanic@{Mechanic}!Mechanic@{Mechanic}}
+\index{Mechanic@{Mechanic}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{Mechanic()}{Mechanic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mechanic\+::\+Mechanic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMechanic}{Mechanic}} object. 
+
+\mbox{\Hypertarget{classMechanic_aee5fd11da0cdda328c0c3083867060c1}\label{classMechanic_aee5fd11da0cdda328c0c3083867060c1}} 
+\index{Mechanic@{Mechanic}!Mechanic@{Mechanic}}
+\index{Mechanic@{Mechanic}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{Mechanic()}{Mechanic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mechanic\+::\+Mechanic (\begin{DoxyParamCaption}\item[{string}]{t,  }\item[{string}]{s,  }\item[{int}]{h = {\ttfamily 100},  }\item[{\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$}]{c = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMechanic}{Mechanic}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+{\em h} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMechanic_a63ebd800560cdb5405566f2c497249eb}\label{classMechanic_a63ebd800560cdb5405566f2c497249eb}} 
+\index{Mechanic@{Mechanic}!clone@{clone}}
+\index{clone@{clone}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMechanic}{Mechanic}} $\ast$ Mechanic\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a virtual member 
+
+\begin{DoxyReturn}{Returns}
+Mechanic$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPerson_a1b1099a7fe99bd551e8785d7458a560f}{Person}}.
+
+\mbox{\Hypertarget{classMechanic_a3d33ca9d854025a7f52986c8d0c06e10}\label{classMechanic_a3d33ca9d854025a7f52986c8d0c06e10}} 
+\index{Mechanic@{Mechanic}!getMemento@{getMemento}}
+\index{getMemento@{getMemento}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{getMemento()}{getMemento()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$ Mechanic\+::get\+Memento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Memento object. 
+
+\begin{DoxyReturn}{Returns}
+Unit\+Backup$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMechanic_a689e71fcbd5d70fd98295a2a70ae403d}\label{classMechanic_a689e71fcbd5d70fd98295a2a70ae403d}} 
+\index{Mechanic@{Mechanic}!interact@{interact}}
+\index{interact@{interact}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{interact()}{interact()}}
+{\footnotesize\ttfamily void Mechanic\+::interact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+a virtual member 
+
+
+
+Implements \mbox{\hyperlink{classPerson_aaac0eec8058450c6c94bd531d6edc5bb}{Person}}.
+
+\mbox{\Hypertarget{classMechanic_a1536181b77aa1b1aac28c515c317edae}\label{classMechanic_a1536181b77aa1b1aac28c515c317edae}} 
+\index{Mechanic@{Mechanic}!repair@{repair}}
+\index{repair@{repair}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{repair()}{repair()}}
+{\footnotesize\ttfamily void Mechanic\+::repair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classVehicle}{Vehicle}}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMechanic_ad8cf206c8b77e9864ab06db3e1ae367d}\label{classMechanic_ad8cf206c8b77e9864ab06db3e1ae367d}} 
+\index{Mechanic@{Mechanic}!setMemento@{setMemento}}
+\index{setMemento@{setMemento}!Mechanic@{Mechanic}}
+\doxysubsubsection{\texorpdfstring{setMemento()}{setMemento()}}
+{\footnotesize\ttfamily void Mechanic\+::set\+Memento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$}]{mem }\end{DoxyParamCaption})}
+
+
+
+Set the Memento object. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Person.\+h\item 
+Person.\+cpp\end{DoxyCompactItemize}

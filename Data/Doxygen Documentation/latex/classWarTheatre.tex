@@ -1,0 +1,273 @@
+\hypertarget{classWarTheatre}{}\doxysection{War\+Theatre Class Reference}
+\label{classWarTheatre}\index{WarTheatre@{WarTheatre}}
+
+
+a Wartheatre calss. this where the war takes place  
+
+
+
+
+{\ttfamily \#include $<$War\+Theatre.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSquad}{Squad}} $\ast$ \mbox{\hyperlink{classWarTheatre_a57460bdba7837b7b668eb95145956499}{get\+Defenders}} ()
+\begin{DoxyCompactList}\small\item\em Get the Defenders object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSquad}{Squad}} $\ast$ \mbox{\hyperlink{classWarTheatre_a9c70d5806bd8662cac49676b160913bb}{get\+Attackers}} ()
+\begin{DoxyCompactList}\small\item\em Get the Attackers object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWarTheatre_ab197f035404b0a1f809058b4387df2e2}\label{classWarTheatre_ab197f035404b0a1f809058b4387df2e2}} 
+void {\bfseries print\+Result} ()
+\item 
+\mbox{\hyperlink{classWarTheatre_a2a049d2d49b743a269873fd96a5d5698}{War\+Theatre}} (list$<$ \mbox{\hyperlink{classAlliance}{Alliance}} $\ast$ $>$ aa)
+\begin{DoxyCompactList}\small\item\em Construct a new War Theatre object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWarTheatre_a28324e2234a88933e1697c0f7f9ff222}{$\sim$\+War\+Theatre}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the War Theatre object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarTheatre_aa203fd11a0ae6290f5e9f51732862570}{print\+Init}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWarTheatre_aa8b2c450969c7f24c53d1a16470cde16}\label{classWarTheatre_aa8b2c450969c7f24c53d1a16470cde16}} 
+void {\bfseries fill\+Lists} ()
+\item 
+void \mbox{\hyperlink{classWarTheatre_ae49e1aa394e9f24e919a7bcffd482e08}{battle}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarTheatre_abed87fc3495b3e0b124c3334f88b9e5f}{fight}} ()
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarTheatre_a1fdc5952528a133a8526a4b6c321e067}{tank\+Attack}} (\mbox{\hyperlink{classTank}{Tank}} $\ast$damage\+Dealer, \mbox{\hyperlink{classSquad}{Squad}} $\ast$enemy\+Squad)
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarTheatre_a21b2e0cbfa0a68fab3df4c67a0ca81ea}{remove\+Dead\+Units}} ()
+\begin{DoxyCompactList}\small\item\em a normal memeber \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarTheatre_a71c8f22fd9df6ce5c7b5cc6643944ac3}{create\+Resources}} (\mbox{\hyperlink{classCountry}{Country}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Create a Resources object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPerson}{Person}} $\ast$ \mbox{\hyperlink{classWarTheatre_abbcb47ce334ba9bed906f7a91c1bcbe4}{get\+Rand\+Person}} (string type, \mbox{\hyperlink{classSquad}{Squad}} $\ast$squad)
+\begin{DoxyCompactList}\small\item\em Get the Rand \mbox{\hyperlink{classPerson}{Person}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$ \mbox{\hyperlink{classWarTheatre_acb78236692c92b200f26192051aecbe3}{get\+Rand\+Vehicle}} (string type, \mbox{\hyperlink{classSquad}{Squad}} $\ast$squad)
+\begin{DoxyCompactList}\small\item\em Get the Rand \mbox{\hyperlink{classVehicle}{Vehicle}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWarTheatre_af9c915b3de3c48dc4f2ff2135388a5f9}\label{classWarTheatre_af9c915b3de3c48dc4f2ff2135388a5f9}} 
+void {\bfseries delete\+Units} ()
+\item 
+\mbox{\Hypertarget{classWarTheatre_a85db0ca49ded43c5e48b6c46e55298d9}\label{classWarTheatre_a85db0ca49ded43c5e48b6c46e55298d9}} 
+void {\bfseries clear\+Lists} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWarTheatre_ad8d3a63d178f1e1ae3bd47233a12e302}\label{classWarTheatre_ad8d3a63d178f1e1ae3bd47233a12e302}} 
+list$<$ \mbox{\hyperlink{classAlliance}{Alliance}} $\ast$ $>$ {\bfseries all\+Alliances}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a1638d121260ebff54a052409f126f8be}\label{classWarTheatre_a1638d121260ebff54a052409f126f8be}} 
+vector$<$ \mbox{\hyperlink{classSoldier}{Soldier}} $\ast$ $>$ {\bfseries all\+Soldiers}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a7cad66487f4acdc60313fb293f6da13d}\label{classWarTheatre_a7cad66487f4acdc60313fb293f6da13d}} 
+list$<$ \mbox{\hyperlink{classSoldier}{Soldier}} $\ast$ $>$ {\bfseries dead\+Soldiers}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a4c04aa18803dc0f990e8bdcb99419f06}\label{classWarTheatre_a4c04aa18803dc0f990e8bdcb99419f06}} 
+vector$<$ \mbox{\hyperlink{classTank}{Tank}} $\ast$ $>$ {\bfseries all\+Tanks}
+\item 
+\mbox{\Hypertarget{classWarTheatre_aef4d01aed181c32af7cae17be8ad3b05}\label{classWarTheatre_aef4d01aed181c32af7cae17be8ad3b05}} 
+list$<$ \mbox{\hyperlink{classTank}{Tank}} $\ast$ $>$ {\bfseries dead\+Tanks}
+\item 
+\mbox{\Hypertarget{classWarTheatre_aafae2c4897ccc14d3e9f69005c2d5151}\label{classWarTheatre_aafae2c4897ccc14d3e9f69005c2d5151}} 
+list$<$ \mbox{\hyperlink{classShip}{Ship}} $\ast$ $>$ {\bfseries all\+Ships}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a18cc2444edfb8d58693744a325f687e3}\label{classWarTheatre_a18cc2444edfb8d58693744a325f687e3}} 
+list$<$ \mbox{\hyperlink{classShip}{Ship}} $\ast$ $>$ {\bfseries dead\+Ships}
+\item 
+\mbox{\Hypertarget{classWarTheatre_acd41206a946786d107254ff5cb665239}\label{classWarTheatre_acd41206a946786d107254ff5cb665239}} 
+list$<$ \mbox{\hyperlink{classPlane}{Plane}} $\ast$ $>$ {\bfseries all\+Planes}
+\item 
+\mbox{\Hypertarget{classWarTheatre_af371fee9a3b8e112e7c15588e3132fca}\label{classWarTheatre_af371fee9a3b8e112e7c15588e3132fca}} 
+list$<$ \mbox{\hyperlink{classPlane}{Plane}} $\ast$ $>$ {\bfseries dead\+Planes}
+\item 
+\mbox{\Hypertarget{classWarTheatre_afb5d61acec0b25a9adcf1f89ee30fa79}\label{classWarTheatre_afb5d61acec0b25a9adcf1f89ee30fa79}} 
+list$<$ \mbox{\hyperlink{classMedic}{Medic}} $\ast$ $>$ {\bfseries all\+Medics}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a1becca256aebd4ca5f564b8ad3677ddd}\label{classWarTheatre_a1becca256aebd4ca5f564b8ad3677ddd}} 
+list$<$ \mbox{\hyperlink{classMechanic}{Mechanic}} $\ast$ $>$ {\bfseries all\+Mechanics}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a3805e0cd2e3e80c7a52b7d4d6ff51e3a}\label{classWarTheatre_a3805e0cd2e3e80c7a52b7d4d6ff51e3a}} 
+string {\bfseries country}
+\item 
+\mbox{\Hypertarget{classWarTheatre_a49004b976a386fb258ecde485c1d03a6}\label{classWarTheatre_a49004b976a386fb258ecde485c1d03a6}} 
+string {\bfseries area}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a Wartheatre calss. this where the war takes place 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWarTheatre_a2a049d2d49b743a269873fd96a5d5698}\label{classWarTheatre_a2a049d2d49b743a269873fd96a5d5698}} 
+\index{WarTheatre@{WarTheatre}!WarTheatre@{WarTheatre}}
+\index{WarTheatre@{WarTheatre}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{WarTheatre()}{WarTheatre()}}
+{\footnotesize\ttfamily War\+Theatre\+::\+War\+Theatre (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{classAlliance}{Alliance}} $\ast$ $>$}]{aa }\end{DoxyParamCaption})}
+
+
+
+Construct a new War Theatre object. 
+
+\mbox{\Hypertarget{classWarTheatre_a28324e2234a88933e1697c0f7f9ff222}\label{classWarTheatre_a28324e2234a88933e1697c0f7f9ff222}} 
+\index{WarTheatre@{WarTheatre}!````~WarTheatre@{$\sim$WarTheatre}}
+\index{````~WarTheatre@{$\sim$WarTheatre}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{$\sim$WarTheatre()}{~WarTheatre()}}
+{\footnotesize\ttfamily War\+Theatre\+::$\sim$\+War\+Theatre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the War Theatre object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWarTheatre_ae49e1aa394e9f24e919a7bcffd482e08}\label{classWarTheatre_ae49e1aa394e9f24e919a7bcffd482e08}} 
+\index{WarTheatre@{WarTheatre}!battle@{battle}}
+\index{battle@{battle}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{battle()}{battle()}}
+{\footnotesize\ttfamily void War\+Theatre\+::battle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \\
+\hline
+{\em a} & \\
+\hline
+{\em area} & \\
+\hline
+{\em country} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWarTheatre_a71c8f22fd9df6ce5c7b5cc6643944ac3}\label{classWarTheatre_a71c8f22fd9df6ce5c7b5cc6643944ac3}} 
+\index{WarTheatre@{WarTheatre}!createResources@{createResources}}
+\index{createResources@{createResources}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{createResources()}{createResources()}}
+{\footnotesize\ttfamily void War\+Theatre\+::create\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCountry}{Country}} $\ast$}]{co }\end{DoxyParamCaption})}
+
+
+
+Create a Resources object. 
+
+\mbox{\Hypertarget{classWarTheatre_abed87fc3495b3e0b124c3334f88b9e5f}\label{classWarTheatre_abed87fc3495b3e0b124c3334f88b9e5f}} 
+\index{WarTheatre@{WarTheatre}!fight@{fight}}
+\index{fight@{fight}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{fight()}{fight()}}
+{\footnotesize\ttfamily void War\+Theatre\+::fight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\mbox{\Hypertarget{classWarTheatre_a9c70d5806bd8662cac49676b160913bb}\label{classWarTheatre_a9c70d5806bd8662cac49676b160913bb}} 
+\index{WarTheatre@{WarTheatre}!getAttackers@{getAttackers}}
+\index{getAttackers@{getAttackers}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{getAttackers()}{getAttackers()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSquad}{Squad}} $\ast$ War\+Theatre\+::get\+Attackers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Attackers object. 
+
+\begin{DoxyReturn}{Returns}
+Squad$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWarTheatre_a57460bdba7837b7b668eb95145956499}\label{classWarTheatre_a57460bdba7837b7b668eb95145956499}} 
+\index{WarTheatre@{WarTheatre}!getDefenders@{getDefenders}}
+\index{getDefenders@{getDefenders}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{getDefenders()}{getDefenders()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSquad}{Squad}} $\ast$ War\+Theatre\+::get\+Defenders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Defenders object. 
+
+\begin{DoxyReturn}{Returns}
+Squad$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWarTheatre_abbcb47ce334ba9bed906f7a91c1bcbe4}\label{classWarTheatre_abbcb47ce334ba9bed906f7a91c1bcbe4}} 
+\index{WarTheatre@{WarTheatre}!getRandPerson@{getRandPerson}}
+\index{getRandPerson@{getRandPerson}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{getRandPerson()}{getRandPerson()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPerson}{Person}} $\ast$ War\+Theatre\+::get\+Rand\+Person (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{\mbox{\hyperlink{classSquad}{Squad}} $\ast$}]{squad }\end{DoxyParamCaption})}
+
+
+
+Get the Rand \mbox{\hyperlink{classPerson}{Person}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+{\em squad} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Person$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWarTheatre_acb78236692c92b200f26192051aecbe3}\label{classWarTheatre_acb78236692c92b200f26192051aecbe3}} 
+\index{WarTheatre@{WarTheatre}!getRandVehicle@{getRandVehicle}}
+\index{getRandVehicle@{getRandVehicle}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{getRandVehicle()}{getRandVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVehicle}{Vehicle}} $\ast$ War\+Theatre\+::get\+Rand\+Vehicle (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{\mbox{\hyperlink{classSquad}{Squad}} $\ast$}]{squad }\end{DoxyParamCaption})}
+
+
+
+Get the Rand \mbox{\hyperlink{classVehicle}{Vehicle}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+{\em squad} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vehicle$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWarTheatre_aa203fd11a0ae6290f5e9f51732862570}\label{classWarTheatre_aa203fd11a0ae6290f5e9f51732862570}} 
+\index{WarTheatre@{WarTheatre}!printInit@{printInit}}
+\index{printInit@{printInit}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{printInit()}{printInit()}}
+{\footnotesize\ttfamily void War\+Theatre\+::print\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+\mbox{\Hypertarget{classWarTheatre_a21b2e0cbfa0a68fab3df4c67a0ca81ea}\label{classWarTheatre_a21b2e0cbfa0a68fab3df4c67a0ca81ea}} 
+\index{WarTheatre@{WarTheatre}!removeDeadUnits@{removeDeadUnits}}
+\index{removeDeadUnits@{removeDeadUnits}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{removeDeadUnits()}{removeDeadUnits()}}
+{\footnotesize\ttfamily void War\+Theatre\+::remove\+Dead\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal memeber 
+
+\mbox{\Hypertarget{classWarTheatre_a1fdc5952528a133a8526a4b6c321e067}\label{classWarTheatre_a1fdc5952528a133a8526a4b6c321e067}} 
+\index{WarTheatre@{WarTheatre}!tankAttack@{tankAttack}}
+\index{tankAttack@{tankAttack}!WarTheatre@{WarTheatre}}
+\doxysubsubsection{\texorpdfstring{tankAttack()}{tankAttack()}}
+{\footnotesize\ttfamily void War\+Theatre\+::tank\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTank}{Tank}} $\ast$}]{damage\+Dealer,  }\item[{\mbox{\hyperlink{classSquad}{Squad}} $\ast$}]{enemy\+Squad }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage\+Dealer} & \\
+\hline
+{\em enemy\+Squad} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+War\+Theatre.\+h\item 
+War\+Theatre.\+cpp\end{DoxyCompactItemize}

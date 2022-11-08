@@ -1,0 +1,270 @@
+\hypertarget{classPerson}{}\doxysection{Person Class Reference}
+\label{classPerson}\index{Person@{Person}}
+
+
+Inheritance diagram for Person\+:
+% FIG 0
+
+
+Collaboration diagram for Person\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPerson_a0397c6f89fafc12e738923f612bc41a3}{Person}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classPerson}{Person}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPerson_a84e179afcd04de36c4edab061ecf4365}{Person}} (string, string, int h=100, \mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$c=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classPerson}{Person}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPerson_a27ebb08e136058dae5df2e63ac478aa5}{Person}} (\mbox{\hyperlink{classPerson}{Person}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classPerson}{Person}} object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPerson_a7e649262a9f6726ad01e1cc30a2d0049}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the Type object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPerson_aa21ef1d906126e5e09ccc87e39763d96}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classState}{State}} object. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classPerson_a5b21018464a92363d02637fd7be666cd}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Get the Health object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerson_a889f2bcae69d5b1e6be5726a3b132985}{set\+Health}} (int)
+\begin{DoxyCompactList}\small\item\em Set the Health object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStatus}{Status}} $\ast$ \mbox{\hyperlink{classPerson_ae88394708aa1320592e14ccca9a91d1a}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classStatus}{Status}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerson_a83c0f03d300c72ab7ecd7125d70febd3}{restore}} (\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$)
+\begin{DoxyCompactList}\small\item\em a normal member \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPerson_a700ffd693321c5fe6880262acf43d4da}{$\sim$\+Person}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classPerson}{Person}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerson_af75c9736b070612b8139eea0478d1224}{take\+Damage}} (int amount)
+\begin{DoxyCompactList}\small\item\em a normal agurment \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPerson_a0642e278cdbcbf16efebe6951beea1ae}\label{classPerson_a0642e278cdbcbf16efebe6951beea1ae}} 
+bool {\bfseries is\+Alive} ()
+\item 
+\mbox{\Hypertarget{classPerson_a0fabaec751abf72c9985d04cd7adfc1e}\label{classPerson_a0fabaec751abf72c9985d04cd7adfc1e}} 
+\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$ {\bfseries get\+Country} ()
+\item 
+\mbox{\Hypertarget{classPerson_a55ecef939b35c31efc290663703dbbc6}\label{classPerson_a55ecef939b35c31efc290663703dbbc6}} 
+{\bfseries research} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPerson_aaac0eec8058450c6c94bd531d6edc5bb}{interact}} ()=0
+\begin{DoxyCompactList}\small\item\em a pure virtual argument \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPerson}{Person}} $\ast$ \mbox{\hyperlink{classPerson_a1b1099a7fe99bd551e8785d7458a560f}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em a pure virtual argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPerson_a84a4dcf284f2671800a546ae8f1baece}\label{classPerson_a84a4dcf284f2671800a546ae8f1baece}} 
+string \mbox{\hyperlink{classPerson_a84a4dcf284f2671800a546ae8f1baece}{type}}
+\begin{DoxyCompactList}\small\item\em a protected variable a string object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPerson_a13d2f67705f591dce2a1e9fbe17c5db2}\label{classPerson_a13d2f67705f591dce2a1e9fbe17c5db2}} 
+string \mbox{\hyperlink{classPerson_a13d2f67705f591dce2a1e9fbe17c5db2}{state}}
+\begin{DoxyCompactList}\small\item\em a protected variable a string object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPerson_a270afb2b0ada5763d609e821e54e8a27}\label{classPerson_a270afb2b0ada5763d609e821e54e8a27}} 
+int \mbox{\hyperlink{classPerson_a270afb2b0ada5763d609e821e54e8a27}{health}}
+\begin{DoxyCompactList}\small\item\em a protected variable an integer object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPerson_ae1bc071a4799ad22b03d8fbb9c4eaef0}\label{classPerson_ae1bc071a4799ad22b03d8fbb9c4eaef0}} 
+\mbox{\hyperlink{classStatus}{Status}} $\ast$ \mbox{\hyperlink{classPerson_ae1bc071a4799ad22b03d8fbb9c4eaef0}{status}}
+\begin{DoxyCompactList}\small\item\em a protected variable a \mbox{\hyperlink{classStatus}{Status}} pointer object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPerson_a467a2a550a4341fb6da9c206b110c379}\label{classPerson_a467a2a550a4341fb6da9c206b110c379}} 
+\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$ {\bfseries country}
+\item 
+\mbox{\Hypertarget{classPerson_a911b07a24052f8e566feaaf76ddfcf0e}\label{classPerson_a911b07a24052f8e566feaaf76ddfcf0e}} 
+\mbox{\hyperlink{classRnD}{RnD}} $\ast$ {\bfseries upgrade}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPerson_a0397c6f89fafc12e738923f612bc41a3}\label{classPerson_a0397c6f89fafc12e738923f612bc41a3}} 
+\index{Person@{Person}!Person@{Person}}
+\index{Person@{Person}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{Person()}{Person()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Person\+::\+Person (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classPerson}{Person}} object. 
+
+\mbox{\Hypertarget{classPerson_a84e179afcd04de36c4edab061ecf4365}\label{classPerson_a84e179afcd04de36c4edab061ecf4365}} 
+\index{Person@{Person}!Person@{Person}}
+\index{Person@{Person}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{Person()}{Person()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Person\+::\+Person (\begin{DoxyParamCaption}\item[{string}]{t,  }\item[{string}]{s,  }\item[{int}]{h = {\ttfamily 100},  }\item[{\mbox{\hyperlink{classCountryObserver}{Country\+Observer}} $\ast$}]{c = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classPerson}{Person}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & a string argument \\
+\hline
+{\em string} & a string argument \\
+\hline
+{\em h} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPerson_a27ebb08e136058dae5df2e63ac478aa5}\label{classPerson_a27ebb08e136058dae5df2e63ac478aa5}} 
+\index{Person@{Person}!Person@{Person}}
+\index{Person@{Person}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{Person()}{Person()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Person\+::\+Person (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPerson}{Person}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classPerson}{Person}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classPerson}{Person}}} & a a pointer argument \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPerson_a700ffd693321c5fe6880262acf43d4da}\label{classPerson_a700ffd693321c5fe6880262acf43d4da}} 
+\index{Person@{Person}!````~Person@{$\sim$Person}}
+\index{````~Person@{$\sim$Person}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{$\sim$Person()}{~Person()}}
+{\footnotesize\ttfamily Person\+::$\sim$\+Person (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classPerson}{Person}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPerson_a1b1099a7fe99bd551e8785d7458a560f}\label{classPerson_a1b1099a7fe99bd551e8785d7458a560f}} 
+\index{Person@{Person}!clone@{clone}}
+\index{clone@{clone}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classPerson}{Person}}$\ast$ Person\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+a pure virtual argument 
+
+\begin{DoxyReturn}{Returns}
+Person$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classMechanic_a63ebd800560cdb5405566f2c497249eb}{Mechanic}}, \mbox{\hyperlink{classMedic_af7272a6ec508972b04999f06d80ab0a0}{Medic}}, and \mbox{\hyperlink{classSoldier_a750f27dae795c1f1c7a9641913944e02}{Soldier}}.
+
+\mbox{\Hypertarget{classPerson_a5b21018464a92363d02637fd7be666cd}\label{classPerson_a5b21018464a92363d02637fd7be666cd}} 
+\index{Person@{Person}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int Person\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the Health object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSoldier_a41888a54d99a5398f7444bf8fa2c5843}{Soldier}}.
+
+\mbox{\Hypertarget{classPerson_aa21ef1d906126e5e09ccc87e39763d96}\label{classPerson_aa21ef1d906126e5e09ccc87e39763d96}} 
+\index{Person@{Person}!getState@{getState}}
+\index{getState@{getState}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily string Person\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \mbox{\hyperlink{classState}{State}} object. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPerson_ae88394708aa1320592e14ccca9a91d1a}\label{classPerson_ae88394708aa1320592e14ccca9a91d1a}} 
+\index{Person@{Person}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatus}{Status}} $\ast$ Person\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \mbox{\hyperlink{classStatus}{Status}} object. 
+
+\begin{DoxyReturn}{Returns}
+Status$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPerson_a7e649262a9f6726ad01e1cc30a2d0049}\label{classPerson_a7e649262a9f6726ad01e1cc30a2d0049}} 
+\index{Person@{Person}!getType@{getType}}
+\index{getType@{getType}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Person\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Type object. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPerson_aaac0eec8058450c6c94bd531d6edc5bb}\label{classPerson_aaac0eec8058450c6c94bd531d6edc5bb}} 
+\index{Person@{Person}!interact@{interact}}
+\index{interact@{interact}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{interact()}{interact()}}
+{\footnotesize\ttfamily virtual void Person\+::interact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+a pure virtual argument 
+
+
+
+Implemented in \mbox{\hyperlink{classMechanic_a689e71fcbd5d70fd98295a2a70ae403d}{Mechanic}}, \mbox{\hyperlink{classMedic_a13eb2d98ac1c3ab2e42f005a1072c9d9}{Medic}}, and \mbox{\hyperlink{classSoldier_a86d7ad563f94ead543b5446f92aad876}{Soldier}}.
+
+\mbox{\Hypertarget{classPerson_a83c0f03d300c72ab7ecd7125d70febd3}\label{classPerson_a83c0f03d300c72ab7ecd7125d70febd3}} 
+\index{Person@{Person}!restore@{restore}}
+\index{restore@{restore}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily void Person\+::restore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUnitBackup}{Unit\+Backup}} $\ast$}]{mem }\end{DoxyParamCaption})}
+
+
+
+a normal member 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Unit\+Backup$\ast$} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPerson_a889f2bcae69d5b1e6be5726a3b132985}\label{classPerson_a889f2bcae69d5b1e6be5726a3b132985}} 
+\index{Person@{Person}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void Person\+::set\+Health (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Set the Health object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPerson_af75c9736b070612b8139eea0478d1224}\label{classPerson_af75c9736b070612b8139eea0478d1224}} 
+\index{Person@{Person}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily void Person\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+a normal agurment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Person.\+h\item 
+Person.\+cpp\end{DoxyCompactItemize}

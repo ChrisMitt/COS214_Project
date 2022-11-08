@@ -1,0 +1,14 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Vehicle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVehicle.html",tooltip="a Vehicle class. a an abstract product for the Vehiclefactory class an abtract product class for the ..."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="Plane",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlane.html",tooltip="a Plane Class. a a product of the vehicle clas"];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Ship",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classShip.html",tooltip="a Ship class. aproduct of the vehicle class"];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Tank",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTank.html",tooltip="a Tank class. aproduct of the vehicle class"];
+}

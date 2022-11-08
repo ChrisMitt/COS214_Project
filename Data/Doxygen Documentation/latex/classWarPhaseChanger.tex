@@ -1,0 +1,131 @@
+\hypertarget{classWarPhaseChanger}{}\doxysection{War\+Phase\+Changer Class Reference}
+\label{classWarPhaseChanger}\index{WarPhaseChanger@{WarPhaseChanger}}
+
+
+A \mbox{\hyperlink{classWarPhaseChanger}{War\+Phase\+Changer}} class. Context Class for both the Strategy and \mbox{\hyperlink{classState}{State}} Pattern .  
+
+
+
+
+{\ttfamily \#include $<$War\+Phase\+Changer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWarPhaseChanger_a2557bb1c4d22250c0112af400c245c36}\label{classWarPhaseChanger_a2557bb1c4d22250c0112af400c245c36}} 
+\mbox{\hyperlink{classWarPhaseChanger_a2557bb1c4d22250c0112af400c245c36}{War\+Phase\+Changer}} ()
+\begin{DoxyCompactList}\small\item\em A constructor. Default \mbox{\hyperlink{classWarPhaseChanger}{War\+Phase\+Changer}} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWarPhaseChanger_aca5f53d35557fdcd52bd5db577f5d810}\label{classWarPhaseChanger_aca5f53d35557fdcd52bd5db577f5d810}} 
+\mbox{\hyperlink{classWarPhaseChanger_aca5f53d35557fdcd52bd5db577f5d810}{$\sim$\+War\+Phase\+Changer}} ()
+\begin{DoxyCompactList}\small\item\em A destructor. \mbox{\hyperlink{classWarPhaseChanger}{War\+Phase\+Changer}} destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarPhaseChanger_a3f045f823578d5ccb2be9035c638e85a}{set\+Strategy}} (\mbox{\hyperlink{classWarStrategy}{War\+Strategy}} $\ast$Strategy)
+\begin{DoxyCompactList}\small\item\em a normal member taking one arguments and sets the \mbox{\hyperlink{classWarStrategy}{War\+Strategy}} pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarPhaseChanger_a248f3db51149478bd4169133e9cf2006}{Engage}} ()
+\begin{DoxyCompactList}\small\item\em a normal member taking one arguments and sets the \mbox{\hyperlink{classWarStrategy}{War\+Strategy}} pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWarPhaseChanger_aad063af4a7e72135c29103ce889f89e0}{set\+Phase}} (\mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}} $\ast$phase)
+\begin{DoxyCompactList}\small\item\em a normal member taking one arguments and sets the \mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}} pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWarPhaseChanger_a1b516e213185dfdb6c856ba71e52b83c}\label{classWarPhaseChanger_a1b516e213185dfdb6c856ba71e52b83c}} 
+void \mbox{\hyperlink{classWarPhaseChanger_a1b516e213185dfdb6c856ba71e52b83c}{request\+Phase}} ()
+\begin{DoxyCompactList}\small\item\em a normal member that changes the \mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classWarPhaseChanger_af70cf2ff834c3cb433ba19ff08f9f1e3}{get\+Phase}} ()
+\begin{DoxyCompactList}\small\item\em a normal member that return that type of \mbox{\hyperlink{classPhase}{Phase}}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classWarPhaseChanger_a6bb8f062db3b9e65e684c10122da51f0}{get\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em a normal member that return that type of Srategy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWarPhaseChanger_a463492cc2486986d8307cd9dfcfe6bab}{Status}} ()
+\begin{DoxyCompactList}\small\item\em a normal member that gets the \mbox{\hyperlink{classStatus}{Status}} of the Strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classWarPhaseChanger}{War\+Phase\+Changer}} class. Context Class for both the Strategy and \mbox{\hyperlink{classState}{State}} Pattern . 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWarPhaseChanger_a248f3db51149478bd4169133e9cf2006}\label{classWarPhaseChanger_a248f3db51149478bd4169133e9cf2006}} 
+\index{WarPhaseChanger@{WarPhaseChanger}!Engage@{Engage}}
+\index{Engage@{Engage}!WarPhaseChanger@{WarPhaseChanger}}
+\doxysubsubsection{\texorpdfstring{Engage()}{Engage()}}
+{\footnotesize\ttfamily void War\+Phase\+Changer\+::\+Engage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member taking one arguments and sets the \mbox{\hyperlink{classWarStrategy}{War\+Strategy}} pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Strategy} & a pointer argument. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWarPhaseChanger_af70cf2ff834c3cb433ba19ff08f9f1e3}\label{classWarPhaseChanger_af70cf2ff834c3cb433ba19ff08f9f1e3}} 
+\index{WarPhaseChanger@{WarPhaseChanger}!getPhase@{getPhase}}
+\index{getPhase@{getPhase}!WarPhaseChanger@{WarPhaseChanger}}
+\doxysubsubsection{\texorpdfstring{getPhase()}{getPhase()}}
+{\footnotesize\ttfamily string War\+Phase\+Changer\+::get\+Phase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member that return that type of \mbox{\hyperlink{classPhase}{Phase}}. 
+
+\begin{DoxyReturn}{Returns}
+The String name of the \mbox{\hyperlink{classPhase}{Phase}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWarPhaseChanger_a6bb8f062db3b9e65e684c10122da51f0}\label{classWarPhaseChanger_a6bb8f062db3b9e65e684c10122da51f0}} 
+\index{WarPhaseChanger@{WarPhaseChanger}!getStrategy@{getStrategy}}
+\index{getStrategy@{getStrategy}!WarPhaseChanger@{WarPhaseChanger}}
+\doxysubsubsection{\texorpdfstring{getStrategy()}{getStrategy()}}
+{\footnotesize\ttfamily string War\+Phase\+Changer\+::get\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member that return that type of Srategy. 
+
+\begin{DoxyReturn}{Returns}
+The String name of the Strategy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWarPhaseChanger_aad063af4a7e72135c29103ce889f89e0}\label{classWarPhaseChanger_aad063af4a7e72135c29103ce889f89e0}} 
+\index{WarPhaseChanger@{WarPhaseChanger}!setPhase@{setPhase}}
+\index{setPhase@{setPhase}!WarPhaseChanger@{WarPhaseChanger}}
+\doxysubsubsection{\texorpdfstring{setPhase()}{setPhase()}}
+{\footnotesize\ttfamily void War\+Phase\+Changer\+::set\+Phase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}} $\ast$}]{phase }\end{DoxyParamCaption})}
+
+
+
+a normal member taking one arguments and sets the \mbox{\hyperlink{classPhasesofWar}{Phasesof\+War}} pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phase} & a pointer argument. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWarPhaseChanger_a3f045f823578d5ccb2be9035c638e85a}\label{classWarPhaseChanger_a3f045f823578d5ccb2be9035c638e85a}} 
+\index{WarPhaseChanger@{WarPhaseChanger}!setStrategy@{setStrategy}}
+\index{setStrategy@{setStrategy}!WarPhaseChanger@{WarPhaseChanger}}
+\doxysubsubsection{\texorpdfstring{setStrategy()}{setStrategy()}}
+{\footnotesize\ttfamily void War\+Phase\+Changer\+::set\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWarStrategy}{War\+Strategy}} $\ast$}]{Strategy }\end{DoxyParamCaption})}
+
+
+
+a normal member taking one arguments and sets the \mbox{\hyperlink{classWarStrategy}{War\+Strategy}} pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Strategy} & a pointer argument. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWarPhaseChanger_a463492cc2486986d8307cd9dfcfe6bab}\label{classWarPhaseChanger_a463492cc2486986d8307cd9dfcfe6bab}} 
+\index{WarPhaseChanger@{WarPhaseChanger}!Status@{Status}}
+\index{Status@{Status}!WarPhaseChanger@{WarPhaseChanger}}
+\doxysubsubsection{\texorpdfstring{Status()}{Status()}}
+{\footnotesize\ttfamily bool War\+Phase\+Changer\+::\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a normal member that gets the \mbox{\hyperlink{classStatus}{Status}} of the Strategy. 
+
+\begin{DoxyReturn}{Returns}
+The Boolean \mbox{\hyperlink{classStatus}{Status}} of the Strategy 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+War\+Phase\+Changer.\+h\item 
+War\+Phase\+Changer.\+cpp\end{DoxyCompactItemize}
