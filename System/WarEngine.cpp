@@ -11,8 +11,11 @@ using namespace std;
 int main(int argc, char **argv){
 
     PhasesofWar* phase = new PhasesofWar();
-    while(true){
+    bool loop = true;
+    while(loop){
         phase->changePhase(true);
+        loop = false;
+        delete phase;
     }
 
 
