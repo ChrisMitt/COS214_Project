@@ -10,8 +10,11 @@ using namespace std;
 int main(){
 
     PhasesofWar* phase = new PhasesofWar();
-    while(true){
+    bool loop = true;
+    while(loop){
         phase->changePhase(true);
+        loop = false;
+        delete phase;
     }
 
     return 0;
