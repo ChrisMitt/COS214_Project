@@ -40,6 +40,7 @@ void SquadBuilder::addNavyUnits(){
 }
 
 ConcreteSquadBuilder::ConcreteSquadBuilder(Alliance* alliance){
+    a=alliance;
     squad = new Squad(alliance->getCountryList(), alliance->getName());
 }
 
@@ -58,6 +59,7 @@ void ConcreteSquadBuilder::addGroundUnits(){
 
 void ConcreteSquadBuilder::addAirUnits(){
     cout<<"l\n";
+    cout<<a->getCountryList().size()<<endl;
     for(auto it=a->getCountryList().begin(); it!=a->getCountryList().end(); it++){
         cout<<"ll\n";
         squad->addPlanes( (*it) );

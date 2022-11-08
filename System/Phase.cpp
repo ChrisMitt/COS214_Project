@@ -198,7 +198,7 @@ Phase5::Phase5() {
 void Phase5::changePhase(PhasesofWar *p, bool success) {
     if(success) {
         cout<< endl << "Diplomacy prevails! The War is Over!" <<endl;
-        p->setPhase(0);
+        p->setPhase(NULL);
     }
     else{
         cout<< endl << "The was has escalated!" <<endl;
