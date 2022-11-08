@@ -14,6 +14,9 @@ list<Alliance*> allAlliances;// List of all alliances
 Phase::~Phase() {
 }
 
+string Phase::dispute = "";
+int Phase::result = -1;
+
 Phase1::Phase1() {
     cout<< endl << getPhase() << endl <<endl;
 
@@ -25,14 +28,17 @@ Phase1::Phase1() {
     switch (val) {
         case 1:
             cout<< "You have chosen Land Dispute. Prepare to form alliances" <<endl;
+            dispute="land";
             break;
 
         case 2:
             cout<< "You have chosen Political Differences. Prepare to form alliances" <<endl;
+            dispute="politics";
             break;
 
         case 3:
             cout<< "You have chosen World Domination. Prepare to form alliances" <<endl;
+            dispute="domination";
             break;
     }
 
@@ -49,6 +55,7 @@ string Phase1::getPhase() {
 }
 
 Phase2::Phase2(){
+    system("clear");
     //Populating countries array
     string names[12] = {"Afghanistan", "China", "France", "Germany", "Japan", "North Korea", "Norway", "Russia", "South Korea", "United Kingdom", "United States of America", "Zimbabwe"};
     for (int i = 0; i < 12; i++)
@@ -56,10 +63,11 @@ Phase2::Phase2(){
         UN[i] = new Country();
         UN[i] -> setName(names[i]);
         UN[i] -> setEntities(names[i]);//set the base armies for the countries
-        //UN[i] -> printArmy();
+        UN[i] -> printArmy();
     }
 
     cout<< endl << getPhase()<<endl;
+    system("clear");
     cout<< endl << "Create the first alliance:" <<endl;
     createAlliance();
 
@@ -78,6 +86,7 @@ string Phase2::getPhase() {
 }
 
 Phase3::Phase3() {
+    system("clear");
     //war theatre conflict
     cout<< endl << getPhase() <<endl;
     cout<< endl << "The Battle Begins!" <<endl;
@@ -85,6 +94,9 @@ Phase3::Phase3() {
     /** Start battle will happen here.
     startBattle(firstBattle);
      **/
+    WarTheatre* w = new WarTheatre( allAlliances );
+    result = w->battle();
+    delete w;
 
     cout<< endl << "The Battle has ended." <<endl;
 }
@@ -112,6 +124,26 @@ string Phase4::getPhase() {
 
 Phase5::Phase5(){
     cout<< endl << getPhase() <<endl;
+    Alliance* winner;
+    Alliance* loser;
+    if(result==0){
+        winner = allAlliances.front();
+        loser = allAlliances.front();
+    }else if(result==1){
+        winner = allAlliances.back();
+        loser = allAlliances.back();
+    }
+
+    if(dispute=="land"){
+        cout<<winner->getName()<<" won the war and chose to colonise "<<loser->getCountryList().front()->getName()<<endl;
+    }
+    if(dispute=="politics"){
+        cout<<winner->getName()<<" won the war, and overruled the dictatorship of "<<loser->getCountryList().front()->getName()<<endl;
+    }
+    if(dispute=="domination"){
+        cout<<winner->getName()<<" won the war and proved that they are powerful "<<endl;
+    }
+    cout<<"\n ---- end of war simulator ----\n";
 }
 
 void Phase5::changePhase(PhasesofWar *p) {

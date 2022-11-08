@@ -26,7 +26,6 @@ public:
  * @brief Construct a new Person object
  * 
  */
-    Person();
     /**
      * @brief Construct a new Person object
      * @param string a string argument
@@ -86,7 +85,7 @@ public:
     void takeDamage(int amount);
     bool isAlive();
     CountryObserver* getCountry();
-    research();
+    int research();
 
 protected:
 /**
@@ -136,14 +135,7 @@ public:
  * @brief Construct a new Soldier object
  * 
  */
-    Soldier();
-    /**
-     * @brief Construct a new Soldier object
-     * @param string
-     * @param string
-     * @param  RnD*
-     */
-    Soldier(string, string, RnD*);
+    
     /**
      * @brief Construct a new Soldier object
      * @param string
@@ -222,7 +214,7 @@ public:
  * @brief Construct a new Medic object
  * 
  */
-    Medic();
+    
     /**
      * @brief Construct a new Medic object
      * @param string
@@ -278,7 +270,7 @@ public:
  * @brief Construct a new Mechanic object
  * 
  */
-    Mechanic();
+    
     /**
      * @brief Construct a new Mechanic object
      * @param string

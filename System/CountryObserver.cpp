@@ -8,6 +8,8 @@
 using namespace std;
 
 
+int CountryObserver::unitID = 0;
+
 int CountryObserver::total = 0;
 
 CountryObserver::CountryObserver() 
@@ -75,20 +77,56 @@ void CountryObserver::setEntities(string countryName) //sets the army for the co
 }
 
 void CountryObserver::fillArmyStruct(){
-    if(name=="Afghanistan"){
-        army->medics.amount=10;
-        army->soldiers.amount=20;
-        army->mechanics.amount=5;
-    }
-    if(name=="France"){
-        
-    }
+    
 }
 
 void CountryObserver::createArmy(){
+    UnitFactory* facs[2];
+    facs[0] = new VehicleFactory();
+    facs[1] = new PersonFactory();
+
+    //1.persons
+
     //medics
     for(int i=0; i < army->medics.amount; i++){
+        medics.push_back(  (Medic*) (facs[1]->createPerson(this, "medic")) );
+    }
+
+    //soldiers
+    for(int i=0; i < army->soldiers.amount; i++){
+        soldiers.push_back(  (Soldier*) (facs[1]->createPerson(this, "soldier")) );
+    }
+
+    //mechanics
+    for(int i=0; i < army->mechanics.amount; i++){
+        mechanics.push_back(  (Mechanic*) (facs[1]->createPerson(this, "mechanic")) );
+    }
+
+    //tanks
+    for(int i=0; i < army->tanks.amount; i++){
+        tanks.push_back(  (Tank*) (facs[0]->createVehicle(this, "tank")) );
+    }
+
+    //ships
+    for(int i=0; i < army->ships.amount; i++){
+        ships.push_back(  (Ship*) (facs[0]->createVehicle(this, "ship")) );
+    }
+
+    //planes
+    for(int i=0; i < army->planes.amount; i++){
+        planes.push_back(  (Plane*) (facs[0]->createVehicle(this, "plane")) );
+    }
+
+    for(int i=0; i<2; i++){
+        delete facs[i];
+    }
+
+    
+
+    /*//medics
+    for(int i=0; i < army->medics.amount; i++){
         medics.push_back( new Medic(name+" medic #"+to_string(i+1), "in battle", army->medics.instanceHP, this) );
+
         //eg France medic #1, in battle
     }
     //soldiers
@@ -143,7 +181,7 @@ void CountryObserver::createArmy(){
             ) 
         );
         //eg Germany ship #1, in battle
-    }
+    }*/
 }
 
 void CountryObserver::printArmy(){

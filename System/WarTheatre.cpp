@@ -2,6 +2,7 @@
 #include <time.h>
 #include <algorithm>
 #include "WarTheatre.h"
+#include "Phase.h"
 
 using namespace std;
 
@@ -224,13 +225,15 @@ WarTheatre::~WarTheatre(){
     }
 }
 
-void WarTheatre::battle(){
+int WarTheatre::battle(){
     fillLists();
     printInit();
     fight();
-    printResult();
+    int r = printResult();
     //clearLists();
     deleteUnits();
+
+    return r;
 }
 
 void WarTheatre::fight(){
@@ -276,7 +279,10 @@ void WarTheatre::clearLists(){
     delete attackers;
 }
 
-void WarTheatre::printResult(){
+string WarTheatre::result = "";
+
+int WarTheatre::printResult(){
+    int r;
     int defenderFirePower;
     int attackerFirePower;
 
@@ -284,8 +290,18 @@ void WarTheatre::printResult(){
     cout << "######## R E S U L T ########\n";
     if(defenders->calcFirepower() > attackers->calcFirepower() ){
         cout << dAlliance->getName() << " won the battle!" <<endl;
+        if(allAlliances.front()==dAlliance){
+            r = 0;
+        }else{
+            r=1;
+        }
     }else{
         cout << aAlliance->getName() << " won the battle!" <<endl;
+        if(allAlliances.front()==aAlliance){
+            r = 0;
+        }else{
+            r=1;
+        }
     }
     cout<<"a result of having the largest remaining firepower"<<endl;
     cout<< "#############################\n\n";
@@ -309,6 +325,8 @@ void WarTheatre::printResult(){
     cout << "Enemy planes killed: " << attackers->getPlanesKilled() <<endl;
     cout << "Friendly soldiers hospitalized: "<< attackers->getHospCount() <<endl;
     cout << "Friendly tank repairs: "<< attackers->getTankRepairs() <<endl;
+
+    return r;
 }
 
 //This will delete the units globally
@@ -355,7 +373,7 @@ Squad* WarTheatre::getAttackers(){
 }
 
 void WarTheatre::createResources(Country* co) {
-
+/*
     int unitType = (rand()%4)+1;
     int val = co->resources;
     ResourceManagement* rs = new UnitProducer(60, 4);
@@ -414,4 +432,5 @@ void WarTheatre::createResources(Country* co) {
             co->ships.push_back(upgradedShip);
             break;}
     }
+    */
 }

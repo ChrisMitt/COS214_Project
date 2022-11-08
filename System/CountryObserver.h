@@ -8,27 +8,32 @@
 #include "Person.h"
 #include <iostream>
 #include <vector>
+#include "UnitFactory.h"
+#include "PersonFactory.h"
+#include "VehicleFactory.h"
+
 using namespace std;
+
 
 //The default/minimum values for any country's army
 struct Army
 {
     struct{
-        int amount = 0;
+        int amount = 5;
         int instanceHP = 100;
     } medics;
     struct{
-        int amount = 20;
+        int amount = 10;
         int instanceHP = 200;
         int instanceDMG = 160;
     } soldiers;
     struct{
-        int amount=0;
+        int amount=4;
         int instanceHP = 150;
     } mechanics;
     struct{
         string name="Sherman";
-        int amount=8;
+        int amount=4;
         int instanceHP=2000;
         int instanceDMG=2000;
         int instanceArmour=400;//take 400 less damage from each shot
@@ -41,7 +46,7 @@ struct Army
     } ships;
     struct{
         string name = "Spitfire";
-        int amount=2;
+        int amount=5;
         int instanceHP=1000;
         int instanceDMG=1400;
         int instanceArmour=500;//take 400 less damage from each shot
@@ -90,6 +95,9 @@ class CountryObserver{
     //3.Air
     vector<Plane*> planes;
     int resources; // The resources which a country can spend on troop creation
+    //Army stats
+    Army* army;
+    static int unitID;
   protected:
     int id;
     string name;
@@ -97,9 +105,6 @@ class CountryObserver{
     bool allianceState; // True if the country is part of an alliance, false if it is not
     State* state; // Conflict/Peace/Negotiating
     Alliance* subject; // The alliance the country is part of, which it observes
-
-    //Army stats
-    Army* army;
 
 };
 

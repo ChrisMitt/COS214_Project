@@ -9,11 +9,13 @@
 #include "Person.h"
 #include "Vehicle.h"
 
+
 using namespace std;
 /**
  * @brief a UnitFactory class. an abstractfactory class for the abstarct factory design pattern
  * 
  */
+class CountryObserver;
 class UnitFactory {
 public:
 /**
@@ -31,13 +33,13 @@ public:
      * a pure virtual member
      * @return Person* 
      */
-    virtual Person* createPerson(string, string) = 0;
+    virtual Person* createPerson(CountryObserver* co, string type) = 0;
     /**
      * @brief Create a Vehicle object
      * a pure virtual member
      * @return Vehicle* 
      */
-    virtual Vehicle* createVehicle(string, string) = 0;
+    virtual Vehicle* createVehicle(CountryObserver* co, string type) = 0;
 
 protected:
 /**

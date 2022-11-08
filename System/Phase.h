@@ -16,7 +16,8 @@ public:
     virtual void changePhase(PhasesofWar*) = 0;
     virtual string getPhase() = 0;
     virtual ~Phase();
-
+    static string dispute;
+    static int result;
 };
 
 class Phase1: public Phase{

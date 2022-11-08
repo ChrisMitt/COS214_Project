@@ -259,7 +259,18 @@ MedicDeploy::MedicDeploy(WarTheatre* w) : DeployType(w){
 
 void MedicDeploy::deploy(){
     cout<<"== 5: MEDICS DEPLOYED =="<<endl;
-    if( defenders->getSoldiers().size() == 0 || attackers->getSoldiers().size()==0 ){
+    for( auto it = w->allSoldiers.begin(); it!=w->allSoldiers.end(); it++){
+        Soldier* currSoldier = (*it);
+        if( currSoldier->getHealth()!=0 && currSoldier->getHealth()<200 ){
+            if( currSoldier->getCountry()->getSubject()== w->dAlliance ){
+                defenders->increaseHospCount(1);
+            }else{
+                attackers->increaseHospCount(1);
+            }
+            cout << "Medic healing: " << currSoldier->getType()<<endl;
+        }
+    }
+    /*if( defenders->getSoldiers().size() == 0 || attackers->getSoldiers().size()==0 ){
         return;
     }
     
@@ -271,15 +282,18 @@ void MedicDeploy::deploy(){
         }else{
             currSquad = attackers;
         }
+        cout<<"a\n";
         for(auto tIT=currSquad->getSoldiers().begin(); tIT!=currSquad->getSoldiers().end(); tIT++){
+            cout<<"b\n";
             if( (*tIT)!=NULL && ( (*tIT)->getHealth()>0 ) && ( (*tIT)->getHealth()<=50 ) ){
+                cout<<"c\n";
                 cout<< currMedic->getType() <<" sends " << (*tIT)->getType() << " to the hospital to fight another day\n";
                 (*tIT)->setHealth(200);
                 currSquad->increaseHospCount(1);
                 break;
             }
         }
-    }
+    }*/
 }
 
 MechanicDeploy::MechanicDeploy(WarTheatre* w) : DeployType(w){
@@ -288,8 +302,19 @@ MechanicDeploy::MechanicDeploy(WarTheatre* w) : DeployType(w){
 
 void MechanicDeploy::deploy(){
     cout<<"== 6: MECHANICS DEPLOYED =="<<endl;
-    if( defenders->getTanks().size() == 0 && attackers->getTanks().size()==0 ){
-        cout<<"yeet\n";
+    for( auto it = w->allTanks.begin(); it!=w->allTanks.end(); it++){
+        Tank* currTank = (*it);
+        if( currTank->getHealth()!=0 && currTank->getHealth()<2000 ){
+            if( currTank->getCountry()->getSubject()== w->dAlliance ){
+                defenders->increaseTankRepairs(1);
+            }else{
+                attackers->increaseTankRepairs(1);
+            }
+            cout << "Mechanic healing: " << currTank->getType()<<endl;
+        }
+    }
+
+    /*if( defenders->getTanks().size() == 0 && attackers->getTanks().size()==0 ){
         return;
     }
     
@@ -309,5 +334,5 @@ void MechanicDeploy::deploy(){
                 break;
             }
         }
-    }
+    }*/
 }

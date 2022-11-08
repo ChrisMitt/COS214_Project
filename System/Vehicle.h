@@ -30,23 +30,6 @@ public:
  * @brief Construct a new Vehicle object
  * 
  */
-    Vehicle();
-    /**
-     * @brief Construct a new Vehicle object
-     * @param string
-     * @param string
-     * @param RnD*
-     */
-    Vehicle(string, string, RnD*);
-    /**
-     * @brief Construct a new Vehicle object
-     * 
-     * @param t 
-     * @param s 
-     * @param a 
-     * @param d 
-     * @param h 
-     */
     Vehicle(string t, string s, int a=200, int d=75, int h=1000, CountryObserver* c=NULL);
     /**
      * @brief a normal member
@@ -186,12 +169,6 @@ public:
  * @brief Construct a new Plane object
  * 
  */
-    Plane();
-    /**
-     * @brief Construct a new Plane object
-     * 
-     */
-    Plane(string, string, RnD*);
     /**
      * @brief Construct a new Plane object
      * 
@@ -221,7 +198,6 @@ private:
     //int armour;
     int bomb;
     int strafe;
-    RnD* upgrade;
 };
 /**
  * @brief a Tank class. aproduct of the vehicle class
@@ -233,23 +209,6 @@ public:
  * @brief Construct a new Tank object
  * 
  */
-    Tank();
-    /**
-     * @brief Construct a new Tank object
-     * @param string
-     * @param string
-     * @param Rnd*
-     */
-    Tank(string, string, RnD*);
-    /**
-     * @brief Construct a new Tank object
-     * 
-     * @param t 
-     * @param s 
-     * @param a 
-     * @param d 
-     * @param h 
-     */
     Tank(string t, string s, int a=200, int d=75, int h=1000, CountryObserver* c=NULL);
     /**
      * @brief a normal member
@@ -269,7 +228,6 @@ private:
  * @brief a  RnD pointer object
  * 
  */
-    RnD* upgrade;
     //int armour;
     //int damage;
 };
@@ -284,14 +242,6 @@ public:
  * @brief Construct a new Ship object
  * 
  */
-    Ship();
-    /**
-     * @brief Construct a new Tank object
-     * @param string
-     * @param string
-     * @param Rnd*
-     */
-    Ship(string, string, RnD*);
     /**
      * @brief Construct a new Ship object
      * 
@@ -333,7 +283,6 @@ private:
      * @brief an  RnD ointer object
      * 
      */
-    RnD* upgrade;
 };
 
 

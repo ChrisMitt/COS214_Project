@@ -46,9 +46,9 @@ private:
 
     //Context of Strategy dp
     list<DeployContext*> deployments;
+public:
     Alliance* dAlliance;
     Alliance* aAlliance;
-public:
     list<Alliance*> allAlliances;
     vector<Soldier*> allSoldiers;//combined attacker and defender soldiers
     list<Soldier*> deadSoldiers;
@@ -62,11 +62,12 @@ public:
     list<Mechanic*> allMechanics;
     Squad* getDefenders();
     Squad* getAttackers();
-    void printResult();
+    int printResult();
 
 
     string country;
     string area;
+    static string result;
 
 public:
 /**
@@ -93,7 +94,7 @@ public:
      * @param area 
      * @param country 
      */
-    void battle();
+    int battle();
     /**
      * @brief a normal member
      * 

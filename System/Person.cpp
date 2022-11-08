@@ -10,14 +10,6 @@
 #include "CountryObserver.h"
 #include <iostream>
 
-Person::Person() {
-    type = "Civilian";
-    state = "N/A";
-    health = 100;
-    status = new Status();
-    country=NULL;
-}
-
 Person::Person(string t, string s, int h, CountryObserver* c) : type(t), state(s), health(h){
     country=c;
     status = new Status();
@@ -49,6 +41,7 @@ void Person::restore(UnitBackup* mem) {
 }
 
 int Person::research() {
+    if(upgrade==NULL) return 0;
     return upgrade->research();
 }
 
@@ -64,13 +57,7 @@ bool Person::isAlive(){
     return (health>0);
 }
 
-Soldier::Soldier() : Person(){
-}
 
-Soldier::Soldier(string t, string s, RnD* up) : Person(t, s){
-    damage = 25;
-    upgrade = up;
-}
 
 Soldier::Soldier(string t, string s, int h, CountryObserver* c, int d) : Person(t, s, h, c), damage(d){
     
@@ -102,9 +89,6 @@ Soldier* Soldier::clone() {
     return new Soldier(*this);
 }
 
-Medic::Medic() : Person(){
-}
-
 Medic::Medic(string t, string s, int h, CountryObserver* c) : Person(t, s, h, c){
 }
 
@@ -133,9 +117,6 @@ UnitBackup* Soldier::makeBackup(){
     return new UnitBackup(this->getHealth(), this->getStatus());
 }
 
-Mechanic::Mechanic() : Person(){
-}
-
 Mechanic::Mechanic(string t, string s, int h, CountryObserver* c) : Person(t, s, h, c){
 }
 
@@ -161,12 +142,13 @@ void Mechanic::setMemento(UnitBackup* mem) {
 }
 
 int Soldier::getDamage(){
-    if(this->research() == 25){
+    /*if(this->research() == 25){
         return (damage + research());
     }
     else{
         return damage;
-    }
+    }*/
+    return damage;
 }
 
 void Soldier::doDamage(Person* victim){

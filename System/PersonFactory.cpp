@@ -5,6 +5,7 @@
 #include "PersonFactory.h"
 #include "UnitFactory.h"
 #include "Person.h"
+#include "CountryObserver.h"
 #include <string>
 #include <iostream>
 
@@ -20,27 +21,42 @@ PersonFactory::~PersonFactory()
     cout<<"The Person Enlisting station is now closed."<<endl;
 }
 
-Vehicle* PersonFactory::createVehicle(string vehicleType, string subType)
+Vehicle* PersonFactory::createVehicle(CountryObserver* co, string vehicleType)
 {
-    Tank* createdTank = new Tank(vehicleType, subType);
-    return createdTank;
+    return NULL;
 }
 
-Person* PersonFactory::createPerson(string personType, string subType)
+Person* PersonFactory::createPerson(CountryObserver* co, string personType)
 {
-    if (personType == "soldier")
-    {
-        Soldier* createdSoldier = new Soldier(subType, "enlisted", new Research);
+    if(personType=="soldier"){
+        Soldier* createdSoldier = new Soldier(
+                        co->getName()+" soldier-"+to_string(++co->unitID), 
+                        "in battle", 
+                        co->army->soldiers.instanceHP, 
+                        co, 
+                        co->army->soldiers.instanceDMG 
+                    );
         return createdSoldier;
-    }
-    else if (personType == "medic")
-    {
-        Medic* createdMedic = new Medic(subType, "enlisted");
+
+    }else if(personType=="medic"){
+        Medic* createdMedic = new Medic(
+                        co->getName()+" medic-"+to_string(++co->unitID), 
+                        "in battle", 
+                        co->army->medics.instanceHP, 
+                        co
+                    );
         return createdMedic;
-    }
-    else
-    {
-        Mechanic* createdMechanic = new Mechanic(subType, "enlisted");
+
+    }else if(personType=="mechanic"){
+        Mechanic* createdMechanic = new Mechanic(
+                        co->getName()+" mechanic-"+to_string(++co->unitID), 
+                        "in battle", 
+                        co->army->mechanics.instanceHP, 
+                        co
+                    );
         return createdMechanic;
     }
+
+    cout<<"Create person error\n";
+    return NULL;
 }

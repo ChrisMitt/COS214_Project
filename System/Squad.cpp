@@ -9,11 +9,11 @@ Squad::Squad(list<CountryObserver*> countries, string allianceName)
 {
     name = allianceName;
     involvedCountries=countries;
-    /*list<CountryObserver*>::iterator it;
+    list<CountryObserver*>::iterator it;
     for(it=countries.begin(); it!=countries.end(); it++){
         CountryObserver* co = *it;
         addTroops(co);
-    }*/
+    }
     soldiersKilled=0;
     tanksKilled=0;
     shipsKilled=0;
@@ -89,9 +89,6 @@ void Squad::printSquad(){
     cout<<"Total tanks: "<<tanks.size()<<endl;
     cout<<"Total ships: "<<ships.size()<<endl;
     cout<<"Total planes: "<<planes.size()<<endl;
-    
-    
-    
 }
 
 vector<Medic*> Squad::getMedics(){
