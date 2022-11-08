@@ -16,8 +16,8 @@ PhasesofWar::~PhasesofWar()
     phase = 0;
 }
 
-void PhasesofWar::changePhase() {
-    phase->changePhase(this);
+void PhasesofWar::changePhase(bool val) {
+    phase->changePhase(this, val);
 }
 
 string PhasesofWar::getPhase() {

@@ -96,7 +96,7 @@ class CountryObserver{
     /**
      * @brief Set the State object
      * @param State*
-     *
+     */
     void setState(State*);
     /**
      * @brief Get the State object

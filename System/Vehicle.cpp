@@ -10,8 +10,8 @@ Vehicle::Vehicle(string t, string s, int a, int d, int h, CountryObserver* c) : 
     country=c;
 }
 
-void Vehicle::clone() {
-    //apply prototype here
+Vehicle* Vehicle::clone() {
+    return new Vehicle(*this);
 }
 
 string Vehicle::getType() {

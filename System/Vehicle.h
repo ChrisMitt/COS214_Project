@@ -35,7 +35,7 @@ public:
      * @brief a normal member
      * 
      */
-    void clone();
+    Vehicle* clone();
     /**
      * @brief Get the Type object
      * 
