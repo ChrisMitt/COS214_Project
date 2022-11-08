@@ -163,7 +163,7 @@ string Phase4::getPhase() {
 Phase5::Phase5() {
     cout << endl << getPhase() << endl;
     cout<< endl << "The Alliances are now engaging in diplomacy in hopes of ending the war." <<endl;
-    cout<< "[1] - The alliances come to a peaceful solution. \n[2] - The alliances keep fighting and the war is escalated." <<endl;
+    cout<< "[1] - The losing alliance accepts their defeat. \n[2] - The losing alliance rejects their defeat and the war is escalated." <<endl;
     int in;
     cin>>in;
 
@@ -187,7 +187,6 @@ Phase5::Phase5() {
         if(dispute=="domination"){
             cout<<winner->getName()<<" won the war and proved that they are powerful "<<endl;
         }
-        cout<<"\n ---- end of war simulator ----\n";
         this->changePhase(p, true);
     }
     else{
@@ -198,7 +197,8 @@ Phase5::Phase5() {
 void Phase5::changePhase(PhasesofWar *p, bool success) {
     if(success) {
         cout<< endl << "Diplomacy prevails! The War is Over!" <<endl;
-        p->setPhase(0);
+        cout<<"\n ---- end of war simulator ----\n";
+        p->setPhase(nullptr);
     }
     else{
         cout<< endl << "The was has escalated!" <<endl;
@@ -340,6 +340,10 @@ void Phase4::createResources(Country* co) {
                 Soldier* upgradedSoldier;
                 upgradedSoldier = soldierPrototype->clone();
                 upgradedSoldier->type = co->getName()+" soldier-"+to_string(++co->unitID);
+                co->medics.front()->setMemento(upgradedSoldier->makeBackup());
+                Medic* medi = co->medics.front();
+                co->medics.erase(co->medics.begin());
+                co->medics.push_back(medi);
                 co->soldiers.push_back(upgradedSoldier);
                 break;}
 
@@ -347,20 +351,32 @@ void Phase4::createResources(Country* co) {
                 Tank* upgradedTank;
                 upgradedTank = tankPrototype->clone();
                 upgradedTank->type = co->getName()+" tank-"+to_string(++co->unitID);
+                co->mechanics.front()->setMemento(upgradedTank->makeBackup());
+                Mechanic* mech = co->mechanics.front();
+                co->mechanics.erase(co->mechanics.begin());
+                co->mechanics.push_back(mech);
                 co->tanks.push_back(upgradedTank);
                 break;}
 
             {case 3:
-                    Plane* upgradedPlane;
-                    upgradedPlane = planePrototype->clone();
-                    upgradedPlane->type = co->getName()+" plane-"+to_string(++co->unitID);
+                Plane* upgradedPlane;
+                upgradedPlane = planePrototype->clone();
+                upgradedPlane->type = co->getName()+" plane-"+to_string(++co->unitID);
+                co->mechanics.front()->setMemento(upgradedPlane->makeBackup());
+                Mechanic* mech = co->mechanics.front();
+                co->mechanics.erase(co->mechanics.begin());
+                co->mechanics.push_back(mech);
                 co->planes.push_back(upgradedPlane);
                 break;}
 
             {case 4:
-                    Ship* upgradedShip;
-                    upgradedShip = shipPrototype->clone();
-                    upgradedShip->type = co->getName()+" ship-"+to_string(++co->unitID);
+                Ship* upgradedShip;
+                upgradedShip = shipPrototype->clone();
+                upgradedShip->type = co->getName()+" ship-"+to_string(++co->unitID);
+                co->mechanics.front()->setMemento(upgradedShip->makeBackup());
+                Mechanic* mech = co->mechanics.front();
+                co->mechanics.erase(co->mechanics.begin());
+                co->mechanics.push_back(mech);
                 co->ships.push_back(upgradedShip);
                 break;}
     }
